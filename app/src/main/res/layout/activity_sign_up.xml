@@ -6,4 +6,76 @@
     android:layout_height="match_parent"
     tools:context=".SignUpActivity">
 
+    <EditText
+        android:id="@+id/edt_signup_id"
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:hint="아이디"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:layout_marginTop="100dp">
+    </EditText>
+    <EditText
+        android:id="@+id/edt_signup_name"
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:hint="이름"
+        app:layout_constraintTop_toBottomOf ="@id/edt_signup_id"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:layout_marginTop="30dp">
+    </EditText>
+    <EditText
+        android:id="@+id/edt_signup_age"
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:hint="나이"
+        app:layout_constraintTop_toBottomOf ="@id/edt_signup_name"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:layout_marginTop="30dp">
+    </EditText>
+    <EditText
+        android:id="@+id/edt_signup_place"
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:hint="지역"
+        app:layout_constraintTop_toBottomOf ="@id/edt_signup_age"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:layout_marginTop="30dp">
+    </EditText>
+    <EditText
+        android:id="@+id/edt_signup_pw"
+        android:layout_height="wrap_content"
+        android:layout_width="250dp"
+        android:hint="비밀번호"
+        app:layout_constraintTop_toBottomOf ="@id/edt_signup_place"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:layout_marginTop="30dp">
+    </EditText>
+    <EditText
+        android:id="@+id/edt_signup_school"
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:hint="이름"
+        app:layout_constraintTop_toBottomOf ="@id/edt_signup_pw"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:layout_marginTop="30dp">
+    </EditText>
+
+    <Button
+        android:id="@+id/btn_signup_next"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf ="@id/edt_signup_school"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:layout_marginTop="30dp"
+        android:text="넥스트">
+    </Button>
+
 </androidx.constraintlayout.widget.ConstraintLayout>
