@@ -48,5 +48,9 @@ dependencies {
     //Retrofit 에서 Gson 을 사용하기 위한 라이브러리
     implementation 'com.squareup.retrofit2:converter-gson:2.6.2'
 
-    //
+    // add the Firebase SDK for Google Analytics
+    implementation 'com.google.firebase:firebase-analytics:17.2.0'
+    implementation 'com.google.firebase:firebase-database:19.2.0'
+
 }
+apply plugin: 'com.google.gms.google-services'
