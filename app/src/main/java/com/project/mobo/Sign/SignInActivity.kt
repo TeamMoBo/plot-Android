@@ -1,8 +1,9 @@
-package com.project.mobo
+package com.project.mobo.Sign
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.project.mobo.R
 import kotlinx.android.synthetic.main.activity_sign_in.*
 
 class SignInActivity : AppCompatActivity() {
@@ -15,9 +16,9 @@ class SignInActivity : AppCompatActivity() {
     }
 
     private fun initialUI(){
-        btn_sigin_signup.setOnClickListener {
-            val nextIntent = Intent(this, SignUpActivity::class.java)
-            startActivity(nextIntent)
+        btnSigninLogin.setOnClickListener {
+            val login = Intent(this, SignUpBasicActivity::class.java)
+            startActivity(login)
         }
     }
 }
