@@ -4,14 +4,13 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Sign.SignInActivity">
-
+    tools:context=".sign.SignInActivity">
 
     <ImageView
         android:id="@+id/imageView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:srcCompat="@drawable/an_login_navigator"
+        app:srcCompat="@drawable/img_top_bg"
         tools:layout_editor_absoluteX="9dp"
         tools:layout_editor_absoluteY="2dp"
         app:layout_constraintStart_toStartOf="parent"

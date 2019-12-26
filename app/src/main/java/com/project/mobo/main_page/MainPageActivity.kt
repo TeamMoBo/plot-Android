@@ -5,10 +5,11 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.project.mobo.main_page.choice_movie.choiceMovieAdapter
-import com.project.mobo.main_page.choice_movie.choiceMovieRepository
+import com.project.mobo.Main.Choice_Movie.choiceMovieAdapter
+import com.project.mobo.Main.Choice_Movie.choiceMovieRepository
 import com.project.mobo.MainActivity
 import com.project.mobo.R
+import com.project.mobo.mypage.MyPage_new
 import kotlinx.android.synthetic.main.activity_main_page.*
 
 class MainPageActivity : AppCompatActivity() {
@@ -28,7 +29,7 @@ class MainPageActivity : AppCompatActivity() {
     private fun moveMyPage() {
         btnMyPG.setOnClickListener(){
 
-            val intent = Intent(this, MainActivity::class.java)
+            val intent = Intent(this, MyPage_new::class.java)
             startActivity(intent)
         }
     }
