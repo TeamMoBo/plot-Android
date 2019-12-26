@@ -12,16 +12,18 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity android:name=".mypage.MyPage_new"></activity>
-        <activity android:name=".mypage.NamePopupActivity" />
-        <activity android:name=".mypage.MyPage_original">
+        <activity android:name=".main_page.MainPageActivity" />
+        <activity android:name=".sign.SignUpSuccessActivity" />
+        <activity android:name=".sign.SignUpPlusActivity" />
+        <activity android:name=".sign.SignUpBasicActivity" />
+        <activity android:name=".sign.SignInActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+                <action android:name="android.intent.action.VIEW" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".SignUpActivity" />
-        <activity android:name=".SignInActivity" />
         <activity android:name=".MainActivity" />
     </application>
 
