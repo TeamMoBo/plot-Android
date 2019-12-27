@@ -6,7 +6,7 @@ apply plugin: 'kotlin-android-extensions'
 
 android {
     compileSdkVersion 29
-    buildToolsVersion "29.0.2"
+    buildToolsVersion '29.0.2'
     defaultConfig {
         applicationId "com.project.mobo"
         minSdkVersion 26
@@ -59,7 +59,6 @@ dependencies {
     //------------------------------------------------//
     //------------------------------------------------//
     implementation 'de.hdodenhof:circleimageview:3.0.1'
-    //------------------------------------------------//
     //------------------------------------------------//
     //------------------------------------------------//
     //------------------------------------------------//

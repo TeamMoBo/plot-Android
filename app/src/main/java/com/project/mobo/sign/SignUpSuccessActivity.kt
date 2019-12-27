@@ -18,7 +18,7 @@ class SignUpSuccessActivity : AppCompatActivity() {
 
     private fun initialUI(){
         btnSignupNext.setOnClickListener {
-            val login = Intent(this, MainPageActivity::class.java)
+            val login = Intent(this, SignInActivity::class.java)
             startActivity(login)
         }
     }

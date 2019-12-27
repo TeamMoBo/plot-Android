@@ -68,7 +68,7 @@ class MyPage_new : AppCompatActivity() {
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         if(resultCode == Activity.RESULT_OK && requestCode == IMAGE_PICK_CODE){
             profile_image.setImageURI(data?.data)
-        }
+    }
 
         else if (requestCode == 1){
             if(resultCode == Activity.RESULT_OK) run {

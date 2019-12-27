@@ -8,13 +8,13 @@
 
     <ImageView
         android:id="@+id/imageView"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:srcCompat="@drawable/img_top_bg"
-        tools:layout_editor_absoluteX="9dp"
-        tools:layout_editor_absoluteY="2dp"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"/>
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/img_top_bg"
+        android:scaleType="fitXY"/>
 
     <EditText
         android:id="@+id/edtSigninID"
