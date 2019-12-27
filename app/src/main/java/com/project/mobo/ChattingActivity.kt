@@ -144,11 +144,11 @@ class ChattingActivity : AppCompatActivity() {
         ): RecyclerView.ViewHolder {
             return when (viewType) {
                 MY_CHAT -> {
-                    val view = layoutInflater.inflate(R.layout.rv_my_chatting, parent, false)
+                    val view = layoutInflater.inflate(R.layout.rv_mychat_item, parent, false)
                     MyChatViewHolder(view)
                 }
                 else -> {
-                    val view = layoutInflater.inflate(R.layout.rv_your_chatting, parent, false)
+                    val view = layoutInflater.inflate(R.layout.rv_yourchat_item, parent, false)
                     OtherChatViewHolder(view)
                 }
             }
