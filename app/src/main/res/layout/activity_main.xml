@@ -8,13 +8,13 @@
 
 
     <EditText
-        android:id="@+id/edtUserId"
+        android:id="@+id/edtUserId_1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="50dp"
         android:ems="10"
+        android:hint="사용자 1"
         android:inputType="textPersonName"
-        android:hint="아이디 입력하세요"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -23,9 +23,21 @@
         android:id="@+id/btnLogin"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="63dp"
+        android:layout_marginTop="20dp"
         android:text="로그인"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/edtUserId" />
+        app:layout_constraintTop_toBottomOf="@+id/edtUserId_2" />
+
+    <EditText
+        android:id="@+id/edtUserId_2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:ems="10"
+        android:hint="사용자 2"
+        android:inputType="textPersonName"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/edtUserId_1" />
 </androidx.constraintlayout.widget.ConstraintLayout>

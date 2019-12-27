@@ -3,11 +3,15 @@ package com.project.mobo
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
+import android.view.View
+import android.view.ViewGroup
+import android.widget.TextView
 import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.google.firebase.FirebaseApp
 import com.google.firebase.database.*
+import com.project.mobo.UserObject.TEST_ID
 import kotlinx.android.synthetic.main.activity_chatting.*
 
 class ChattingActivity : AppCompatActivity() {
@@ -19,14 +23,19 @@ class ChattingActivity : AppCompatActivity() {
 //        private val TAG = "ClassName"
 //    }
 
-    private lateinit var rvMainChatting: RecyclerView
-    private lateinit var ChattingAdapter: ChattingAdapter
+    //private lateinit var rvMainChatting: RecyclerView
+    //private lateinit var ChattingAdapter: ChattingAdapter
 
-    private val Chattingchatting = Chattingchatting()
+    //private val Chattingchatting = Chattingchatting()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_chatting)
+
+        val UserId_1 = intent.getStringExtra("UserId_1")
+        val UserId_2 = intent.getStringExtra("UserId_2")
+        //val userId_1:UserObject=UserId_1.toString()
+        // UserId_2.toString()
 
         initFirebase()
         setupSendButton()
@@ -60,6 +69,7 @@ class ChattingActivity : AppCompatActivity() {
 
 
     }
+
     /**
      * Setup firebase
      */
@@ -91,8 +101,8 @@ class ChattingActivity : AppCompatActivity() {
      */
     private fun sendData() {
         databaseReference?.child("ChattingUrl")
-            ?.child(java.lang.String.valueOf(System.currentTimeMillis()))
-            ?.setValue(Message(edtMessage.text.toString()))
+            ?.child(TEST_ID)
+            ?.setValue(Message(TEST_ID, edtMessage.text.toString()))
 
 //        databaseReference?.child("ChattingUrl")
 //            ?.child(java.lang.String.valueOf(System.currentTimeMillis()))
@@ -105,12 +115,92 @@ class ChattingActivity : AppCompatActivity() {
     inner class Message {
         constructor() //empty for firebase
 
-        constructor(messageText: String) {
-            text = messageText
+        constructor(nickName: String, messageText: String) {
+            nickname = nickName
+            messagetext = messageText
         }
 
-        var text: String? = null
+        var nickname: String? = null
+        var messagetext: String? = null
         var timestamp: Long = System.currentTimeMillis()
+    }
+
+    private inner class Adapter : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
+        private var messages: List<Message> = listOf()
+
+        fun setMessagesWithNotify(messages: List<Message>) {
+            this.messages = messages
+            notifyDataSetChanged()
+        }
+
+        fun addMessageWithNotify(message: Message) {
+            this.messages += message
+            notifyItemChanged(this.messages.size - 1)
+        }
+
+        override fun onCreateViewHolder(
+            parent: ViewGroup,
+            viewType: Int
+        ): RecyclerView.ViewHolder {
+            return when (viewType) {
+                MY_CHAT -> {
+                    val view = layoutInflater.inflate(R.layout.rv_my_chatting, parent, false)
+                    MyChatViewHolder(view)
+                }
+                else -> {
+                    val view = layoutInflater.inflate(R.layout.rv_your_chatting, parent, false)
+                    OtherChatViewHolder(view)
+                }
+            }
+        }
+
+        override fun getItemCount(): Int {
+            return messages.size
+        }
+
+        override fun onBindViewHolder(holder: RecyclerView.ViewHolder, position: Int) {
+            val message = messages[position]
+            when(holder) {
+                is MyChatViewHolder -> { holder.onBind(message) }
+                is OtherChatViewHolder -> { holder.onBind(message) }
+            }
+        }
+        override fun getItemViewType(position: Int): Int {
+            val message = messages[position]
+
+            return if (isMe(message)) MY_CHAT else OTHER_CHAT
+        }
+
+        private fun isMe(message: Message): Boolean {
+            //Log.d(StudySendBirdApp.LOG_HEAD, "${FakeUserRepo.userId}  ${sender.userId}")
+            return message.nickname == TEST_ID
+        }
+
+    }
+
+    private inner class MyChatViewHolder(view: View) : RecyclerView.ViewHolder(view) {
+        private val myChatText: TextView = view.findViewById(R.id.myChatText)
+        private val chatNickNameText: TextView = view.findViewById(R.id.myChatNickNameText)
+
+        fun onBind(message: Message) {
+            myChatText.text = message.messagetext
+            chatNickNameText.text = message.nickname
+        }
+    }
+
+    private inner class OtherChatViewHolder(view: View) : RecyclerView.ViewHolder(view) {
+        private val otherChatText: TextView = view.findViewById(R.id.otherChatText)
+        private val chatNickNameText: TextView = view.findViewById(R.id.otherChatNickNameText)
+
+        fun onBind(message: Message) {
+            otherChatText.text = message.messagetext
+            chatNickNameText.text = message.nickname
+        }
+    }
+
+    private companion object {
+        const val MY_CHAT = 0
+        const val OTHER_CHAT = 1
     }
 
 
@@ -128,6 +218,7 @@ class ChattingActivity : AppCompatActivity() {
 
         ChattingAdapter.notifyDataSetChanged()
     }
- */
+*/
+
 
 }

@@ -1,29 +1,40 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/ctnRvYourItem"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="wrap_content">
 
-    <TextView
-        android:id="@+id/tv_yourchat_name"
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/chatGuideline"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="62dp"
-        android:layout_marginTop="16dp"
-        android:text="your"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.8" />
+
+    <TextView
+        android:id="@+id/otherChatNickNameText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="8dp"
+        android:textColor="#000000"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="쿼카카카카쿼쿼쿼카" />
 
     <TextView
-        android:id="@+id/tv_yourchat"
+        android:id="@+id/otherChatText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
+        android:layout_margin="8dp"
         android:background="@color/colorAccent"
-        android:text="안녕하세요! 저는 상대방의 채팅입니다!"
-        android:textSize="20dp"
-        app:layout_constraintEnd_toEndOf="parent"
+        android:textAlignment="viewStart"
+        app:layout_constrainedWidth="true"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@id/chatGuideline"
+        app:layout_constraintHorizontal_bias="0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tv_yourchat_name" />
+        app:layout_constraintTop_toBottomOf="@id/otherChatNickNameText"
+        tools:text="동해물과 백두산이 마를르르르르 마르르르를 하라라랄 하라라랄라" />
 </androidx.constraintlayout.widget.ConstraintLayout>
