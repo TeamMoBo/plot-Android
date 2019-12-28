@@ -19,7 +19,7 @@ class SignInActivity : AppCompatActivity() {
             val nextIntent = Intent(this, SignUpActivity::class.java)
             startActivity(nextIntent)
 
-            
+
         }
     }
 }
