@@ -16,6 +16,7 @@ class MoviePagerAdapter(private val list: ArrayList<MovieData>): PagerAdapter() 
 
     override fun instantiateItem(container: ViewGroup, position: Int): Any {
         val inflater = LayoutInflater.from(container.context)
+        //val view = inflater.inflate(R.layout.tab_main_page, container, false)
         val view = inflater.inflate(R.layout.fragment_main, container, false)
 
         //view.imgMainFirstPoster.text=list[position].photo

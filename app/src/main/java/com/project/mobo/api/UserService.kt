@@ -7,7 +7,7 @@ import retrofit2.http.POST
 import java.lang.NullPointerException
 
 interface UserService {
-    @POST("user/signin")
+    @POST("user/testlogin")
     fun requestSignIn(
         @Body signInRequest: SignInRequest
     ): Call<SignInResponse>
@@ -27,13 +27,20 @@ data class SignInRequest(
 )
 
 //응답-데이터 선언
+/*
 data class SignInResponse(
     val status: Int,
     val message: String,
-    val data: ArrayList<signInData>
+    val data: signInData
 )
 data class signInData(
     val token : String
+)*/
+
+data class SignInResponse(
+    val status: Int,
+    val message: String,
+    val data: Object
 )
 
 //요청
