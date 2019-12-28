@@ -3,7 +3,7 @@ package com.project.mobo
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.widget.Toast
+import com.project.mobo.chat.ChattingActivity
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
@@ -13,6 +13,10 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
         btnLogin.setOnClickListener {
+            val intent: Intent = Intent(this, ChattingActivity::class.java)
+            startActivity(intent)
+            finish()
+            /*
             val UserId_1 = edtUserId_1.text.toString()
             val UserId_2 = edtUserId_2.text.toString()
             if (UserId_1 == "" || UserId_2 == "") {
@@ -27,6 +31,7 @@ class MainActivity : AppCompatActivity() {
                 startActivity(intent)
                 finish()
             }
+             */
         }
     }
 
