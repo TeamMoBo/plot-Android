@@ -8,7 +8,7 @@
 
 
 
-#### **Project Period**
+## **Project Period**
 
 Start : Dec 22, 2019  
 
@@ -16,7 +16,7 @@ End : Jan 4, 2020
 
 
 
-#### **Project Member**
+## **Project Member**
 
 - [김민진](https://github.com/G-hyeon)
 - [강수빈](https://github.com/ksb0511)
@@ -25,7 +25,7 @@ End : Jan 4, 2020
 
 
 
-#### **Project Environment**
+## **Project Environment**
 
 Android Studio (Sdk Version : 29)
 
