@@ -13,7 +13,7 @@ import com.project.mobo.R
 import kotlinx.android.synthetic.main.activity_my_page_new.*
 
 class MyPage_new : AppCompatActivity() {
-
+//
     @SuppressLint("ObsoleteSdkInt")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
