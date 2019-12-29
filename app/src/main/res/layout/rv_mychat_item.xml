@@ -24,7 +24,7 @@
         tools:text="쿼카카카카쿼쿼쿼카" />
 
     <TextView
-        android:id="@+id/edtMymessage"
+        android:id="@+id/txtMymessage"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_margin="8dp"
