@@ -90,7 +90,7 @@
             android:id="@+id/btnMainChanging"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="11dp"
+            android:layout_marginTop="5dp"
             android:layout_marginEnd="20dp"
             android:src="@drawable/btn_change"
             app:layout_constraintEnd_toEndOf="parent"
@@ -110,11 +110,12 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/third"
         android:layout_width="match_parent"
-        android:layout_height="200dp"
+        android:layout_height="0dp"
         android:layout_marginTop="1dp"
         android:background="#f6f6f6"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/second">
+        app:layout_constraintTop_toBottomOf="@id/second"
+        app:layout_constraintBottom_toBottomOf="parent">
 
         <TextView
             android:id="@+id/tvMainThirdTitle"
@@ -140,12 +141,14 @@
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/rvMainThirdDate1"
-            android:layout_width="230dp"
+            android:layout_width="0dp"
             android:layout_height="48dp"
             android:layout_marginStart="12dp"
             android:layout_marginTop="8dp"
             app:layout_constraintStart_toEndOf="@id/btnMainThirdDay1"
-            app:layout_constraintTop_toBottomOf="@id/tvMainThirdTitle" />
+            app:layout_constraintTop_toBottomOf="@id/tvMainThirdTitle"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginEnd="16dp"/>
 
         <Button
             android:id="@+id/btnMainThirdDay2"
@@ -159,12 +162,14 @@
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/rvMainThirdDate2"
-            android:layout_width="230dp"
+            android:layout_width="0dp"
             android:layout_height="48dp"
             android:layout_marginStart="12dp"
             android:layout_marginTop="8dp"
             app:layout_constraintStart_toEndOf="@id/btnMainThirdDay2"
-            app:layout_constraintTop_toBottomOf="@id/btnMainThirdDay1" />
+            app:layout_constraintTop_toBottomOf="@id/btnMainThirdDay1"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginEnd="16dp"/>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

@@ -27,6 +27,7 @@ data class SignInRequest(
 )
 
 //응답-데이터 선언
+/*
 data class SignInResponse(
     val status: Int,
     val message: String,
@@ -35,6 +36,16 @@ data class SignInResponse(
 data class signInData(
     val token : String
 )
+*/
+data class SignInResponse(
+    val status: Int,
+    val message: String,
+    val data: signInData
+)
+data class signInData(
+    val token : String
+)
+
 
 //요청
 data class SignUpRequest(
