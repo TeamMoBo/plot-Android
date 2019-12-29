@@ -50,7 +50,7 @@
 
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="328dp"
-                android:layout_height="829dp"
+                android:layout_height="772dp"
                 android:layout_marginTop="147dp"
                 android:background="@drawable/sign_up_box"
                 app:layout_constraintStart_toStartOf="parent"
@@ -98,8 +98,7 @@
                     android:hint="최대 10글자"
                     android:textSize="14sp"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="@+id/tvSignupPoint"
-                    android:singleLine="true"/>
+                    app:layout_constraintTop_toTopOf="@+id/tvSignupPoint" />
 
                 <TextView
                     android:id="@+id/tvSignupPoint"
@@ -131,8 +130,7 @@
                     android:hint="안형민"
                     android:textSize="14sp"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="@id/tvSignupName"
-                    android:singleLine="true"/>
+                    app:layout_constraintTop_toTopOf="@id/tvSignupName" />
 
                 <TextView
                     android:id="@+id/tvSignupName"
@@ -164,9 +162,7 @@
                     android:hint="숫자로만 입력하세요"
                     android:textSize="14sp"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="@id/tvSignupAge"
-                    android:singleLine="true"
-                    android:inputType="number"/>
+                    app:layout_constraintTop_toTopOf="@id/tvSignupAge" />
 
                 <TextView
                     android:id="@+id/tvSignupAge"
@@ -198,8 +194,7 @@
                     android:hint="5~15 사이의 영문 아이디"
                     android:textSize="14sp"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="@id/tvSignupID"
-                    android:singleLine="true"/>
+                    app:layout_constraintTop_toTopOf="@id/tvSignupID" />
 
                 <TextView
                     android:id="@+id/tvSignupID"
@@ -232,8 +227,7 @@
                     android:inputType="textPassword"
                     android:textSize="14sp"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="@id/tvSignupPW"
-                    android:singleLine="true"/>
+                    app:layout_constraintTop_toTopOf="@id/tvSignupPW" />
 
                 <TextView
                     android:id="@+id/tvSignupPW"
@@ -265,8 +259,7 @@
                     android:hint="홍익대학교"
                     android:textSize="14sp"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="@id/tvSignupUniv"
-                    android:singleLine="true"/>
+                    app:layout_constraintTop_toTopOf="@id/tvSignupUniv" />
 
                 <TextView
                     android:id="@+id/tvSignupUniv"
@@ -298,8 +291,7 @@
                     android:hint="산업디자인학과"
                     android:textSize="14sp"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="@id/tvSignupMajor"
-                    android:singleLine="true"/>
+                    app:layout_constraintTop_toTopOf="@id/tvSignupMajor" />
 
                 <TextView
                     android:id="@+id/tvSignupMajor"
@@ -331,8 +323,7 @@
                     android:hint="brothermin"
                     android:textSize="14sp"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="@id/tvSignupKakao"
-                    android:singleLine="true"/>
+                    app:layout_constraintTop_toTopOf="@id/tvSignupKakao" />
 
                 <TextView
                     android:id="@+id/tvSignupKakao"
@@ -365,8 +356,7 @@
                     android:hint="강남구"
                     android:textSize="14sp"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="@id/tvSignupLocation"
-                    android:singleLine="true"/>
+                    app:layout_constraintTop_toTopOf="@id/tvSignupLocation" />
 
                 <TextView
                     android:id="@+id/tvSignupLocation"
@@ -389,6 +379,7 @@
                     android:background="#f2f2f2"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@id/edtSignupLocation" />
+
 
                 <Button
                     android:id="@+id/btnSignupNext"

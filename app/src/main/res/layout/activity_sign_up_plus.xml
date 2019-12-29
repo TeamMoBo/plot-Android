@@ -12,425 +12,421 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:background="@drawable/an_background"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
-
-
-        <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="4dp"
-            android:src="@drawable/an_ic_left"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-
-        <TextView
-            android:id="@+id/tvSignup_Title"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="40dp"
-            android:layout_marginTop="14dp"
-            android:lineSpacingExtra="9sp"
-            android:text="회원 가입"
-            android:textColor="#ffffff"
-            android:textSize="20sp"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-
-
-        <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="103dp"
-            android:src="@drawable/ic_progressbar_second"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-
         <androidx.constraintlayout.widget.ConstraintLayout
-            android:layout_width="328dp"
-            android:layout_height="610dp"
-            android:layout_marginTop="144dp"
-            android:background="@drawable/sign_up_box"
-            android:scaleType="fitXY"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/an_background"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent">
 
-            <TextView
-                android:id="@+id/tvSignupTitle"
+
+            <ImageView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="16dp"
-                android:layout_marginTop="16dp"
-                android:text="추가 정보 입력"
-                android:textColor="#000000"
+                android:layout_marginTop="4dp"
+                android:src="@drawable/an_ic_left"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/tvSignup_Title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="40dp"
+                android:layout_marginTop="14dp"
+                android:lineSpacingExtra="9sp"
+                android:text="회원 가입"
+                android:textColor="#ffffff"
                 android:textSize="20sp"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
 
-            <EditText
-                android:id="@+id/edtSignupGenre"
-                android:layout_width="215dp"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="16dp"
-                android:background="@null"
-                android:hint="#공포 #공포 #공포"
-                android:textSize="14sp"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="@id/tvSignupGenre"
-                android:singleLine="true"/>
-
-            <TextView
-                android:id="@+id/tvSignupGenre"
+            <ImageView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="83dp"
-                android:layout_marginEnd="18dp"
-                android:text="선호 영화 장르"
-                android:textColor="#000000"
-                android:textSize="12sp"
+                android:layout_marginTop="103dp"
+                android:src="@drawable/ic_progressbar_second"
                 app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
-            <View
-                android:id="@+id/view"
-                android:layout_width="313dp"
-                android:layout_height="1dp"
-                android:layout_marginTop="9dp"
-                android:background="#f2f2f2"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/edtSignupGenre" />
-
-            <EditText
-                android:id="@+id/edtSignupPoint"
-                android:layout_width="223dp"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="16dp"
-                android:background="@null"
-                android:hint="#멋짐 #멋짐 #멋짐"
-                android:textSize="14sp"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="@id/tvSignupPoint"
-                android:singleLine="true"/>
-
-            <TextView
-                android:id="@+id/tvSignupPoint"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="65dp"
-                android:layout_marginEnd="18dp"
-                android:text="매력 포인트"
-                android:textColor="#000000"
-                android:textSize="12sp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/tvSignupGenre" />
-
-            <View
-                android:layout_width="313dp"
-                android:layout_height="1dp"
-                android:layout_marginTop="9dp"
-                android:background="#f2f2f2"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/edtSignupPoint" />
-
-            <EditText
-                android:id="@+id/edtSignupInterest"
-                android:layout_width="255dp"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="16dp"
-                android:layout_marginTop="238dp"
-                android:background="@null"
-                android:hint="#영화 #연애 #앱잼"
-                android:textSize="14sp"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                android:singleLine="true"/>
-
-            <TextView
-                android:id="@+id/tvSignupInterest"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="239dp"
-                android:layout_marginEnd="18dp"
-                android:inputType="number"
-                android:text="관심사"
-                android:textColor="#000000"
-                android:textSize="12sp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
-
-            <View
-                android:id="@+id/view2"
-                android:layout_width="313dp"
-                android:layout_height="1dp"
-                android:layout_marginTop="9dp"
-                android:background="#f2f2f2"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/edtSignupInterest" />
-
-            <EditText
-                android:id="@+id/edtSignupSay"
-                android:layout_width="230dp"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="16dp"
-                android:background="@null"
-                android:hint="화이팅"
-                android:textSize="14sp"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="@id/tvSignupSay"
-                android:singleLine="true"/>
-
-            <TextView
-                android:id="@+id/tvSignupSay"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="47dp"
-                android:layout_marginEnd="18dp"
-                android:inputType="number"
-                android:text="나의 한마디"
-                android:textColor="#000000"
-                android:textSize="12sp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/tvSignupInterest" />
-
-            <View
-                android:id="@+id/last_line"
-                android:layout_width="313dp"
-                android:layout_height="1dp"
-                android:layout_marginTop="9dp"
-                android:background="#f2f2f2"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/edtSignupSay" />
-
-            <TextView
-                android:id="@+id/textview_matching_gender"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="16dp"
-                android:layout_marginTop="8dp"
-                android:text="@string/matching_gender"
-                android:textColor="#a7a2a2"
-                android:textSize="10sp"
-                android:textStyle="bold"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/last_line" />
-
             <androidx.constraintlayout.widget.ConstraintLayout
-                android:id="@+id/genderChoice"
-                android:layout_width="match_parent"
-                android:layout_height="15dp"
-                android:layout_marginTop="10dp"
-                app:layout_constraintTop_toBottomOf="@id/textview_matching_gender">
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="88dp"
-                    android:text="여성"
-                    android:textColor="#000000"
-                    android:textSize="10sp"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="176dp"
-                    android:text="남성"
-                    android:textColor="#000000"
-                    android:textSize="10sp"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="255dp"
-                    android:text="상관없음"
-                    android:textColor="#000000"
-                    android:textSize="10sp"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent" />
-
-            </androidx.constraintlayout.widget.ConstraintLayout>
-
-
-            <RadioGroup
-                android:id="@+id/rg_gender"
-                android:layout_width="270dp"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="80dp"
-                android:orientation="horizontal"
-                android:weightSum="3"
-                app:layout_constraintLeft_toLeftOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/genderChoice">
-
-                <RadioButton
-                    android:id="@+id/rg_btn1"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:buttonTint="#ff6a07"
-                    android:checked="true">
-
-                </RadioButton>
-
-                <RadioButton
-                    android:id="@+id/rg_btn2"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:buttonTint="#ff6a07" />
-
-                <RadioButton
-                    android:id="@+id/rg_btn3"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:buttonTint="#ff6a07" />
-            </RadioGroup>
-
-            <View
-                android:id="@+id/last_line2"
-                android:layout_width="313dp"
-                android:layout_height="1dp"
-                android:layout_marginTop="9dp"
-                android:background="#f2f2f2"
+                android:layout_width="328dp"
+                android:layout_height="610dp"
+                android:layout_marginTop="144dp"
+                android:background="@drawable/sign_up_box"
+                android:scaleType="fitXY"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/rg_gender" />
+                app:layout_constraintTop_toTopOf="parent">
+
+                <TextView
+                    android:id="@+id/tvSignupTitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="16dp"
+                    android:text="추가 정보 입력"
+                    android:textColor="#000000"
+                    android:textSize="20sp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
 
 
-            <TextView
-                android:id="@+id/textview_matching_age"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="17dp"
-                android:layout_marginTop="8dp"
-                android:text="@string/matching_age"
-                android:textSize="10sp"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/last_line2" />
+                <EditText
+                    android:id="@+id/edtSignupGenre"
+                    android:layout_width="215dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:background="@null"
+                    android:hint="#공포 #공포 #공포"
+                    android:textSize="14sp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="@id/tvSignupGenre" />
 
-            <androidx.constraintlayout.widget.ConstraintLayout
-                android:id="@+id/layout_layout_age"
-                android:layout_width="240dp"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
-                app:layout_constraintLeft_toLeftOf="parent"
-                android:layout_marginStart="70dp"
-                app:layout_constraintTop_toBottomOf="@+id/textview_matching_age">
+                <TextView
+                    android:id="@+id/tvSignupGenre"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="83dp"
+                    android:layout_marginEnd="18dp"
+                    android:text="선호 영화 장르"
+                    android:textColor="#000000"
+                    android:textSize="12sp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <View
+                    android:id="@+id/view"
+                    android:layout_width="313dp"
+                    android:layout_height="1dp"
+                    android:layout_marginTop="9dp"
+                    android:background="#f2f2f2"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/edtSignupGenre" />
+
+                <EditText
+                    android:id="@+id/edtSignupPoint"
+                    android:layout_width="223dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:background="@null"
+                    android:hint="#섹시함 #섹시함 #섹시함"
+                    android:textSize="14sp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="@id/tvSignupPoint" />
+
+                <TextView
+                    android:id="@+id/tvSignupPoint"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="65dp"
+                    android:layout_marginEnd="18dp"
+                    android:text="매력 포인트"
+                    android:textColor="#000000"
+                    android:textSize="12sp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/tvSignupGenre" />
+
+                <View
+                    android:layout_width="313dp"
+                    android:layout_height="1dp"
+                    android:layout_marginTop="9dp"
+                    android:background="#f2f2f2"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/edtSignupPoint" />
+
+                <EditText
+                    android:id="@+id/edtSignupInterest"
+                    android:layout_width="255dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="238dp"
+                    android:background="@null"
+                    android:hint="#영화 #연애 #앱잼"
+                    android:textSize="14sp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/tvSignupInterest"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="239dp"
+                    android:layout_marginEnd="18dp"
+                    android:inputType="number"
+                    android:text="관심사"
+                    android:textColor="#000000"
+                    android:textSize="12sp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <View
+                    android:id="@+id/view2"
+                    android:layout_width="313dp"
+                    android:layout_height="1dp"
+                    android:layout_marginTop="9dp"
+                    android:background="#f2f2f2"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/edtSignupInterest" />
+
+                <EditText
+                    android:id="@+id/edtSignupSay"
+                    android:layout_width="230dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:background="@null"
+                    android:hint="화이팅"
+                    android:textSize="14sp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="@id/tvSignupSay" />
+
+                <TextView
+                    android:id="@+id/tvSignupSay"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="47dp"
+                    android:layout_marginEnd="18dp"
+                    android:inputType="number"
+                    android:text="나의 한마디"
+                    android:textColor="#000000"
+                    android:textSize="12sp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/tvSignupInterest" />
+
+                <View
+                    android:id="@+id/last_line"
+                    android:layout_width="313dp"
+                    android:layout_height="1dp"
+                    android:layout_marginTop="9dp"
+                    android:background="#f2f2f2"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/edtSignupSay" />
+
+                <TextView
+                    android:id="@+id/textview_matching_gender"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="8dp"
+                    android:text="@string/matching_gender"
+                    android:textColor="#a7a2a2"
+                    android:textSize="10sp"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/last_line" />
 
                 <androidx.constraintlayout.widget.ConstraintLayout
-                    android:id="@+id/layout_age_min"
-                    android:layout_width="wrap_content"
+                    android:id="@+id/genderChoice"
+                    android:layout_width="match_parent"
+                    android:layout_height="15dp"
+                    android:layout_marginTop="10dp"
+                    app:layout_constraintTop_toBottomOf="@id/textview_matching_gender">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="88dp"
+                        android:text="여성"
+                        android:textColor="#000000"
+                        android:textSize="10sp"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="176dp"
+                        android:text="남성"
+                        android:textColor="#000000"
+                        android:textSize="10sp"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="255dp"
+                        android:text="상관없음"
+                        android:textColor="#000000"
+                        android:textSize="10sp"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+                <RadioGroup
+                    android:id="@+id/rg_gender"
+                    android:layout_width="270dp"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="10dp"
+                    android:layout_marginStart="80dp"
+                    android:orientation="horizontal"
+                    android:weightSum="3"
                     app:layout_constraintLeft_toLeftOf="parent"
-                    app:layout_constraintRight_toLeftOf="@+id/layout_age_center"
-                    app:layout_constraintTop_toTopOf="parent">
+                    app:layout_constraintTop_toBottomOf="@+id/genderChoice">
 
-                    <TextView
-                        android:id="@+id/textview_agemin"
+                    <RadioButton
+                        android:id="@+id/rg_btn1"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="@string/age_min"
-                        android:textColor="#000000"
-                        android:textSize="10sp"
-                        app:layout_constraintLeft_toLeftOf="parent"
-                        app:layout_constraintRight_toRightOf="parent"
-                        app:layout_constraintTop_toTopOf="parent" />
+                        android:layout_weight="1"
+                        android:buttonTint="#ff6a07"
+                        android:checked="true">
 
-                    <EditText
-                        android:layout_width="84dp"
-                        android:layout_height="22dp"
-                        android:layout_marginTop="4dp"
-                        android:autofillHints="no"
-                        android:background="@drawable/edittxt_rectangle"
-                        android:gravity="center"
-                        android:hint="@string/age_min"
-                        android:inputType="number"
-                        android:maxLength="3"
-                        android:text="@string/dummy_age_min"
-                        android:textColor="#000000"
-                        android:textSize="12sp"
-                        android:theme="@android:style/Theme.Holo"
-                        app:layout_constraintLeft_toLeftOf="parent"
-                        app:layout_constraintTop_toBottomOf="@+id/textview_agemin" />
-                </androidx.constraintlayout.widget.ConstraintLayout>
+                    </RadioButton>
 
-                <ImageView
-                    android:layout_width="11dp"
-                    android:layout_height="9dp"
-                    android:layout_marginTop="22dp"
-                    android:src="@drawable/ageline"
-                    app:layout_constraintEnd_toStartOf="@id/layout_age_max"
-                    app:layout_constraintStart_toEndOf="@id/layout_age_min"
-                    app:layout_constraintTop_toTopOf="parent" />
+                    <RadioButton
+                        android:id="@+id/rg_btn2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:buttonTint="#ff6a07" />
+
+                    <RadioButton
+                        android:id="@+id/rg_btn3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:buttonTint="#ff6a07" />
+                </RadioGroup>
+
+                <View
+                    android:id="@+id/last_line2"
+                    android:layout_width="313dp"
+                    android:layout_height="1dp"
+                    android:layout_marginTop="9dp"
+                    android:background="#f2f2f2"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/rg_gender" />
 
 
-                <androidx.constraintlayout.widget.ConstraintLayout
-                    android:id="@+id/layout_age_max"
+                <TextView
+                    android:id="@+id/textview_matching_age"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="15dp"
-                    android:layout_marginEnd="10dp"
-                    app:layout_constraintLeft_toRightOf="@+id/layout_age_center"
-                    app:layout_constraintRight_toRightOf="parent"
-                    app:layout_constraintTop_toTopOf="parent">
+                    android:layout_marginStart="17dp"
+                    android:layout_marginTop="8dp"
+                    android:text="@string/matching_age"
+                    android:textSize="10sp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/last_line2" />
 
-                    <TextView
-                        android:id="@+id/textview_agemax"
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/layout_layout_age"
+                    android:layout_width="240dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    android:layout_marginStart="70dp"
+                    app:layout_constraintTop_toBottomOf="@+id/textview_matching_age">
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/layout_age_min"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="@string/age_max"
-                        android:textColor="#000000"
-                        android:textSize="10sp"
+                        android:layout_marginStart="10dp"
                         app:layout_constraintLeft_toLeftOf="parent"
-                        app:layout_constraintRight_toRightOf="parent"
+                        app:layout_constraintRight_toLeftOf="@+id/layout_age_center"
+                        app:layout_constraintTop_toTopOf="parent">
+
+                        <TextView
+                            android:id="@+id/textview_agemin"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/age_min"
+                            android:textColor="#000000"
+                            android:textSize="10sp"
+                            app:layout_constraintLeft_toLeftOf="parent"
+                            app:layout_constraintRight_toRightOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <EditText
+                            android:layout_width="84dp"
+                            android:layout_height="22dp"
+                            android:layout_marginTop="4dp"
+                            android:autofillHints="no"
+                            android:background="@drawable/edittxt_rectangle"
+                            android:gravity="center"
+                            android:hint="@string/age_min"
+                            android:inputType="number"
+                            android:maxLength="3"
+                            android:text="@string/dummy_age_min"
+                            android:textColor="#000000"
+                            android:textSize="12sp"
+                            android:theme="@android:style/Theme.Holo"
+                            app:layout_constraintLeft_toLeftOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/textview_agemin" />
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    <ImageView
+                        android:layout_width="11dp"
+                        android:layout_height="9dp"
+                        android:layout_marginTop="22dp"
+                        android:src="@drawable/ageline"
+                        app:layout_constraintEnd_toStartOf="@id/layout_age_max"
+                        app:layout_constraintStart_toEndOf="@id/layout_age_min"
                         app:layout_constraintTop_toTopOf="parent" />
 
-                    <EditText
-                        android:layout_width="84dp"
-                        android:layout_height="22dp"
-                        android:layout_marginTop="4dp"
-                        android:autofillHints="no"
-                        android:background="@drawable/edittxt_rectangle"
-                        android:gravity="center"
-                        android:hint="@string/age_max"
-                        android:importantForAutofill="no"
-                        android:inputType="number"
-                        android:maxLength="3"
-                        android:text="@string/dummy_age_max"
-                        android:textColor="#000000"
-                        android:textSize="12sp"
-                        android:theme="@android:style/Theme.Holo"
-                        app:layout_constraintLeft_toLeftOf="parent"
-                        app:layout_constraintTop_toBottomOf="@+id/textview_agemax" />
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/layout_age_max"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="15dp"
+                        android:layout_marginEnd="10dp"
+                        app:layout_constraintLeft_toRightOf="@+id/layout_age_center"
+                        app:layout_constraintRight_toRightOf="parent"
+                        app:layout_constraintTop_toTopOf="parent">
+
+                        <TextView
+                            android:id="@+id/textview_agemax"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/age_max"
+                            android:textColor="#000000"
+                            android:textSize="10sp"
+                            app:layout_constraintLeft_toLeftOf="parent"
+                            app:layout_constraintRight_toRightOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <EditText
+                            android:layout_width="84dp"
+                            android:layout_height="22dp"
+                            android:layout_marginTop="4dp"
+                            android:autofillHints="no"
+                            android:background="@drawable/edittxt_rectangle"
+                            android:gravity="center"
+                            android:hint="@string/age_max"
+                            android:importantForAutofill="no"
+                            android:inputType="number"
+                            android:maxLength="3"
+                            android:text="@string/dummy_age_max"
+                            android:textColor="#000000"
+                            android:textSize="12sp"
+                            android:theme="@android:style/Theme.Holo"
+                            app:layout_constraintLeft_toLeftOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/textview_agemax" />
+                    </androidx.constraintlayout.widget.ConstraintLayout>
                 </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+                <Button
+                    android:id="@+id/btnSignupNext"
+                    android:layout_width="78dp"
+                    android:layout_height="78dp"
+                    android:layout_marginTop="14dp"
+                    android:layout_marginBottom="16dp"
+                    android:background="@drawable/an_ic_next_btn"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/layout_layout_age" />
+
+
             </androidx.constraintlayout.widget.ConstraintLayout>
-
-
-            <Button
-                android:id="@+id/btnSignupNext"
-                android:layout_width="78dp"
-                android:layout_height="78dp"
-                android:layout_marginTop="14dp"
-                android:layout_marginBottom="16dp"
-                android:background="@drawable/an_ic_next_btn"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/layout_layout_age" />
-
 
         </androidx.constraintlayout.widget.ConstraintLayout>
-
-    </androidx.constraintlayout.widget.ConstraintLayout>
     </ScrollView>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

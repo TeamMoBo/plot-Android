@@ -43,6 +43,7 @@ data class SignInResponse(
     val data: Object
 )
 
+
 //요청
 data class SignUpRequest(
     @SerializedName("id")
