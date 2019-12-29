@@ -4,7 +4,7 @@
 
 영화 같이 볼 친구 찾기 어플리케이션
 
-<img width="609" alt="plot" src="https://user-images.githubusercontent.com/57608585/71559878-9d498400-2aa6-11ea-81d1-0f407b7bc3c6.png">
+<img width="300" alt="plot" src="https://user-images.githubusercontent.com/57608585/71559878-9d498400-2aa6-11ea-81d1-0f407b7bc3c6.png">
 
 
 
