@@ -118,7 +118,8 @@ class ChattingActivity : AppCompatActivity() {
     }
 
     private fun generateCommentId(): String {
-        return "${uid}-${getCurrentTime()}"
+        //return "${uid}-${getCurrentTime()}"
+        return "${getCurrentTime()}"
     }
 
     private fun getCurrentTime(): String {
