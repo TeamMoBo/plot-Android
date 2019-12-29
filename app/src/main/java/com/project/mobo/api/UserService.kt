@@ -3,17 +3,21 @@ package com.project.mobo.api
 import com.google.gson.annotations.SerializedName
 import retrofit2.Call
 import retrofit2.http.Body
+import retrofit2.http.Header
+import retrofit2.http.Headers
 import retrofit2.http.POST
 import java.lang.NullPointerException
 
 interface UserService {
-    @POST("user/testlogin")
+    @POST("/user/testlogin")
     fun requestSignIn(
+        @Header("Content-Type") content_type: String,
         @Body signInRequest: SignInRequest
     ): Call<SignInResponse>
 
-    @POST("user/signup")
+    @POST("/user/testsignin")
     fun requestSignUp(
+        @Header("Content-Type") content_type: String,
         @Body signUpRequest: SignUpRequest
     ):Call<SignUpResponse>
 }
@@ -27,24 +31,25 @@ data class SignInRequest(
 )
 
 //응답-데이터 선언
-/*
 data class SignInResponse(
     val status: Int,
     val message: String,
-    val data: signInData
+    val data: LoginData
 )
-data class signInData(
+
+data class LoginData(
     val token : String
-)*/
-
-data class SignInResponse(
-    val status: Int,
-    val message: String,
-    val data: Object
 )
 
+data class SignUpRequest(
+    @SerializedName("id")
+    val id: String,
+    @SerializedName("password")
+    val password: String
+)
 
 //요청
+/*
 data class SignUpRequest(
     @SerializedName("id")
     val id: String,
@@ -80,7 +85,7 @@ data class SignUpRequest(
     val major: String,
     @SerializedName("kakao")
     val kakao: String
-)
+)*/
 
 //응답
 data class SignUpResponse(

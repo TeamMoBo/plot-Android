@@ -21,5 +21,8 @@ class SignUpSuccessActivity : AppCompatActivity() {
             val login = Intent(this, SignInActivity::class.java)
             startActivity(login)
         }
+        btnBack.setOnClickListener {
+            finish()
+        }
     }
 }

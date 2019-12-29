@@ -26,7 +26,8 @@
             android:layout_height="match_parent"
             android:background="#E20F0F"
             tools:layout_editor_absoluteX="-28dp"
-            tools:layout_editor_absoluteY="0dp" />
+            tools:layout_editor_absoluteY="0dp"
+            android:scaleType="centerCrop"/>
 
         <TextView
             android:id="@+id/tvMainFirstTitle"

@@ -18,6 +18,7 @@
             app:layout_constraintTop_toTopOf="parent">
 
             <ImageView
+                android:id="@+id/btnBack"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="4dp"
@@ -49,12 +50,14 @@
                 app:layout_constraintTop_toTopOf="parent" />
 
             <androidx.constraintlayout.widget.ConstraintLayout
-                android:layout_width="328dp"
-                android:layout_height="772dp"
+                android:layout_width="0dp"
+                android:layout_height="829dp"
                 android:layout_marginTop="147dp"
                 android:background="@drawable/sign_up_box"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent">
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginEnd="32dp">
 
                 <TextView
                     android:id="@+id/tvSignupTitle"
@@ -123,12 +126,14 @@
 
                 <EditText
                     android:id="@+id/edtSignupName"
-                    android:layout_width="260dp"
+                    android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="16dp"
+                    android:layout_marginEnd="4dp"
                     android:background="@null"
                     android:hint="안형민"
                     android:textSize="14sp"
+                    app:layout_constraintEnd_toStartOf="@+id/tvSignupName"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="@id/tvSignupName" />
 
@@ -145,22 +150,26 @@
                     android:textColor="#000000"/>
 
                 <View
-                    android:layout_width="313dp"
+                    android:layout_width="0dp"
                     android:layout_height="1dp"
                     android:layout_marginTop="9dp"
                     android:background="#f2f2f2"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@id/edtSignupName" />
+                    app:layout_constraintTop_toBottomOf="@id/edtSignupName"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    android:layout_marginEnd="18dp"/>
 
 
                 <EditText
                     android:id="@+id/edtSignupAge"
-                    android:layout_width="260dp"
+                    android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="16dp"
+                    android:layout_marginEnd="4dp"
                     android:background="@null"
                     android:hint="숫자로만 입력하세요"
                     android:textSize="14sp"
+                    app:layout_constraintEnd_toStartOf="@+id/tvSignupAge"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="@id/tvSignupAge" />
 
@@ -178,21 +187,25 @@
                     android:textColor="#000000"/>
 
                 <View
-                    android:layout_width="313dp"
+                    android:layout_width="0dp"
                     android:layout_height="1dp"
                     android:layout_marginTop="9dp"
                     android:background="#f2f2f2"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@id/edtSignupAge" />
+                    app:layout_constraintTop_toBottomOf="@id/edtSignupAge"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    android:layout_marginEnd="18dp"/>
 
                 <EditText
                     android:id="@+id/edtSignupID"
-                    android:layout_width="250dp"
+                    android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="16dp"
+                    android:layout_marginEnd="4dp"
                     android:background="@null"
                     android:hint="5~15 사이의 영문 아이디"
                     android:textSize="14sp"
+                    app:layout_constraintEnd_toStartOf="@+id/tvSignupID"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="@id/tvSignupID" />
 
@@ -210,22 +223,26 @@
                     android:textColor="#000000"/>
 
                 <View
-                    android:layout_width="313dp"
+                    android:layout_width="0dp"
                     android:layout_height="1dp"
                     android:layout_marginTop="9dp"
                     android:background="#f2f2f2"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@id/edtSignupID" />
+                    app:layout_constraintTop_toBottomOf="@id/edtSignupID"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    android:layout_marginEnd="18dp"/>
 
                 <EditText
                     android:id="@+id/edtSignupPW"
-                    android:layout_width="240dp"
+                    android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="16dp"
+                    android:layout_marginEnd="4dp"
                     android:background="@null"
                     android:hint="●●●●●●●"
                     android:inputType="textPassword"
                     android:textSize="14sp"
+                    app:layout_constraintEnd_toStartOf="@+id/tvSignupPW"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="@id/tvSignupPW" />
 
@@ -243,21 +260,25 @@
                     android:textColor="#000000"/>
 
                 <View
-                    android:layout_width="313dp"
+                    android:layout_width="0dp"
                     android:layout_height="1dp"
                     android:layout_marginTop="9dp"
                     android:background="#f2f2f2"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@id/edtSignupPW" />
+                    app:layout_constraintTop_toBottomOf="@id/edtSignupPW"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    android:layout_marginEnd="18dp"/>
 
                 <EditText
                     android:id="@+id/edtSignupUniv"
-                    android:layout_width="240dp"
+                    android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="16dp"
+                    android:layout_marginEnd="4dp"
                     android:background="@null"
                     android:hint="홍익대학교"
                     android:textSize="14sp"
+                    app:layout_constraintEnd_toStartOf="@+id/tvSignupUniv"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="@id/tvSignupUniv" />
 
@@ -275,21 +296,25 @@
                     android:textColor="#000000"/>
 
                 <View
-                    android:layout_width="313dp"
+                    android:layout_width="0dp"
                     android:layout_height="1dp"
                     android:layout_marginTop="9dp"
                     android:background="#f2f2f2"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@id/edtSignupUniv" />
+                    app:layout_constraintTop_toBottomOf="@id/edtSignupUniv"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    android:layout_marginEnd="18dp"/>
 
                 <EditText
                     android:id="@+id/edtSignupMajor"
-                    android:layout_width="240dp"
+                    android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="16dp"
+                    android:layout_marginEnd="4dp"
                     android:background="@null"
                     android:hint="산업디자인학과"
                     android:textSize="14sp"
+                    app:layout_constraintEnd_toStartOf="@+id/tvSignupMajor"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="@id/tvSignupMajor" />
 
@@ -307,21 +332,25 @@
                     android:textColor="#000000"/>
 
                 <View
-                    android:layout_width="313dp"
+                    android:layout_width="0dp"
                     android:layout_height="1dp"
                     android:layout_marginTop="9dp"
                     android:background="#f2f2f2"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@id/edtSignupMajor" />
+                    app:layout_constraintTop_toBottomOf="@id/edtSignupMajor"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    android:layout_marginEnd="18dp"/>
 
                 <EditText
                     android:id="@+id/edtSignupKakao"
-                    android:layout_width="240dp"
+                    android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="16dp"
+                    android:layout_marginEnd="4dp"
                     android:background="@null"
                     android:hint="brothermin"
                     android:textSize="14sp"
+                    app:layout_constraintEnd_toStartOf="@+id/tvSignupKakao"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="@id/tvSignupKakao" />
 
@@ -339,24 +368,28 @@
                     android:textColor="#000000"/>
 
                 <View
-                    android:layout_width="313dp"
+                    android:layout_width="0dp"
                     android:layout_height="1dp"
                     android:layout_marginTop="9dp"
                     android:background="#f2f2f2"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@id/edtSignupKakao" />
+                    app:layout_constraintTop_toBottomOf="@id/edtSignupKakao"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    android:layout_marginEnd="18dp"/>
 
 
                 <EditText
                     android:id="@+id/edtSignupLocation"
-                    android:layout_width="240dp"
+                    android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="16dp"
                     android:background="@null"
                     android:hint="강남구"
                     android:textSize="14sp"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="@id/tvSignupLocation" />
+                    app:layout_constraintTop_toTopOf="@id/tvSignupLocation"
+                    app:layout_constraintEnd_toStartOf="@id/tvSignupLocation"
+                    android:layout_marginEnd="4dp"/>
 
                 <TextView
                     android:id="@+id/tvSignupLocation"
@@ -378,7 +411,9 @@
                     android:layout_marginTop="9dp"
                     android:background="#f2f2f2"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@id/edtSignupLocation" />
+                    app:layout_constraintTop_toBottomOf="@id/edtSignupLocation"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    android:layout_marginEnd="18dp"/>
 
 
                 <Button

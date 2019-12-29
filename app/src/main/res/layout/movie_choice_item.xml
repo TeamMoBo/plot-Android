@@ -26,20 +26,22 @@
         android:id="@+id/tvMainItemTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="5dp"
         android:text="Meditation"
         android:textColor="#ffffff"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintBottom_toTopOf="@id/tvMainItemStar"/>
+        app:layout_constraintBottom_toTopOf="@id/tvMainItemStar"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
         android:id="@+id/tvMainItemStar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginStart="5dp"
         android:layout_marginBottom="10dp"
+        android:text="4.6"
         android:textColor="#ffffff"
-        android:text="4.6"/>
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 
 
 

@@ -23,6 +23,7 @@ class SignInActivity : AppCompatActivity() {
         setContentView(R.layout.activity_sign_in)
 
         initialUI()
+        //login()
     }
 
     private fun initialUI(){
@@ -39,12 +40,20 @@ class SignInActivity : AppCompatActivity() {
     }
 
     private fun login(){
-        btnSigninLogin.setOnClickListener {
-            val id = edtSigninID.text.toString()
-            val password = edtSigninPW.text.toString()
+        btnSigninLogin?.setOnClickListener {
+            val id = edtSigninID?.text.toString()
+            val password = edtSigninPW?.text.toString()
 
-            val call: Call<SignInResponse> = UserServiceImpl.userService.requestSignIn(SignInRequest(id, password))
+            if (id.isEmpty() || password.isEmpty()) {
+                // 사용자에게 간단한 text 정보를 알려주기 위해 Toast를 띄워준다.
+                Toast.makeText(this, "아이디나 비밀번호를 입력해주세요.", Toast.LENGTH_SHORT).show()
+                return@setOnClickListener
+            }
+            Log.e(this::class.java.name, "실패1")
 
+            val call: Call<SignInResponse> = UserServiceImpl.userService.requestSignIn("application/json",SignInRequest(id, password))
+
+            Log.e(this::class.java.name, "실패2")
             call.enqueue(
                 object : Callback<SignInResponse> {
                     override fun onFailure(call: Call<SignInResponse>, t: Throwable) {

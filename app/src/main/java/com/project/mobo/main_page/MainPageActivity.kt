@@ -14,8 +14,6 @@ import com.project.mobo.main_page.top_three_viewPager.MoviePagerAdapter
 
 import com.project.mobo.mypage.MyPage_new
 import kotlinx.android.synthetic.main.activity_main_page.*
-import android.util.TypedValue
-import android.content.Context
 import com.project.mobo.R
 
 
@@ -37,17 +35,36 @@ class MainPageActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main_page)
 
-        movePage() //뷰 이동
+        movePage() //intent
+
         topThree() // 뷰페이저
         choiceMovie() // 선택한 영화 창
         choiceDate() // 선택한 날짜 창
     }
 
     private fun movePage() {
+        //마이페이지로 이동
         btnMyPG.setOnClickListener(){
 
-            val intent = Intent(this, MyPage_new::class.java)
-            startActivity(intent)
+            val intent1 = Intent(this, MyPage_new::class.java)
+            startActivity(intent1)
+        }
+        //시간수정창으로 이동
+        btnTimeChanging.setOnClickListener(){
+            //val intent2 = Intent(this, TimeChoiceActivity::class.java)
+            //startActivity(intent2)
+        }
+
+        //영화수정창으로 이동
+        btnMovieChanging.setOnClickListener(){
+            //val intent3 = Intent(this, MovieSelectActivity::class.java)
+            //startActivity(intent3)
+        }
+
+        //영화/시간 선택 시작
+        btnMovieChoiceStart.setOnClickListener(){
+            //val intent4 = Intent(this, MovieSelectActivity::class.java)
+            //startActivity(intent4)
         }
     }
 
