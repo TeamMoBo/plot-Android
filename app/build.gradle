@@ -23,6 +23,10 @@ android {
     }
 }
 
+repositories {
+    maven { url "https://raw.githubusercontent.com/sendbird/SendBird-SDK-Android/master/" }
+}
+
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
@@ -204,4 +208,13 @@ dependencies {
     //------------------------------------------------//
     //------------------------------------------------//
     implementation 'com.github.hotchemi:khronos:0.9.0'
+    // add the Firebase SDK for Google Analytics
+    implementation 'com.google.firebase:firebase-analytics:17.2.0'
+    implementation 'com.google.firebase:firebase-database:19.2.0'
+
+    //FCM관련 SDK설정
+    implementation 'com.google.firebase:firebase-messaging:20.0.0'
+
+    implementation 'com.sendbird.sdk:sendbird-android-sdk:3.0.112'
 }
+apply plugin: 'com.google.gms.google-services'
