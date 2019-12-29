@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/an_background"
-    tools:context=".TimeChoiceActivity">
+    tools:context=".time_choice.TimeChoiceActivity">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/cl1"

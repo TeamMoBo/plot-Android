@@ -8,6 +8,7 @@
     android:background="@drawable/an_background">
 
     <ImageView
+        android:id="@+id/btnBack"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="4dp"
@@ -38,21 +39,23 @@
         android:layout_marginTop="103dp"/>
 
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:layout_width="328dp"
+        android:layout_width="0dp"
         android:layout_height="match_parent"
         android:background="@drawable/sign_up_box"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        android:layout_marginTop="147dp"/>
+        android:layout_marginTop="147dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginEnd="32dp">
 
-    <ImageView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:src="@drawable/an_ic_signup_completed"
-        app:layout_constraintTop_toTopOf="parent"
-        android:layout_marginTop="318dp"
-        app:layout_constraintStart_toStartOf="parent"
-        android:layout_marginStart="118dp"/>
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="171dp"
+            android:src="@drawable/an_ic_signup_completed"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
     <Button
         android:id="@+id/btnSignupNext"
@@ -63,5 +66,6 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

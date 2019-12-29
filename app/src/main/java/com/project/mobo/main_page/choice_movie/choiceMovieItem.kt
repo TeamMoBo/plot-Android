@@ -1,9 +1,7 @@
-package com.project.mobo.Main.Choice_Movie
-
-import android.widget.ImageView
+package com.project.mobo.main_page.choice_movie
 
 data class choiceMovieItem(
-    val poster:Int,
+    val poster:String,
     val title:String,
     val star:String
 )

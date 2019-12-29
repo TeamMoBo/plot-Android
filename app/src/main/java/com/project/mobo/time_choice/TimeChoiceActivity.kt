@@ -1,9 +1,10 @@
-package com.project.mobo
+package com.project.mobo.time_choice
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.*
+import com.project.mobo.*
 import khronos.Dates
 import khronos.days
 import khronos.plus
@@ -13,6 +14,7 @@ import java.util.*
 typealias ChooseDate = Pair<Date, MutableSet<String>>
 
 class TimeChoiceActivity : AppCompatActivity() {
+
     private val chooseDates = List<ChooseDate>(7) {
         Pair(Dates.today + (2+it).days, mutableSetOf())
     }
@@ -76,8 +78,11 @@ class TimeChoiceActivity : AppCompatActivity() {
         btnTimeChoiceGo.setOnClickListener {
             if (isValidTimeChoice()) {
                 //선택한 데이터를 서버에 보내줘야함. chooseDates
-                SharedPreferenceController.setTimeTable(this@TimeChoiceActivity,
-                    chooseDates[currentSelectedDatePosition].first, chooseDates[currentSelectedDatePosition].second)
+                SharedPreferenceController.setTimeTable(
+                    this@TimeChoiceActivity,
+                    chooseDates[currentSelectedDatePosition].first,
+                    chooseDates[currentSelectedDatePosition].second
+                )
                 startActivity(Intent(this, MainActivity::class.java))
             } else {
                 Toast.makeText(this, "시간은 최소한 3개는 골라야돼!", Toast.LENGTH_SHORT).show()

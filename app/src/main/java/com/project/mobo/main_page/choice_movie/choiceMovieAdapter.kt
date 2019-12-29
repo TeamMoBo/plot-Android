@@ -1,4 +1,4 @@
-package com.project.mobo.Main.Choice_Movie
+package com.project.mobo.main_page.choice_movie
 
 import android.content.Context
 import android.view.LayoutInflater

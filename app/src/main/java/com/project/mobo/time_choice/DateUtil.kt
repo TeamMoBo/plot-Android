@@ -1,9 +1,8 @@
-package com.project.mobo
+package com.project.mobo.time_choice
 
 import khronos.toDate
 import khronos.toString
 import java.util.*
-
 private val englishMonths = listOf(
     "January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"
 )

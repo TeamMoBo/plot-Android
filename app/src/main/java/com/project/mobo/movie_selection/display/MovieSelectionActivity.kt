@@ -8,6 +8,7 @@ import com.project.mobo.R
 import com.project.mobo.movie_selection.feature.SectionPageAdapter
 import com.project.mobo.movie_selection.fragment.FragmentOne
 import com.project.mobo.movie_selection.fragment.FragmentTwo
+import kotlinx.android.synthetic.main.activity_movie_selection.*
 import kotlinx.android.synthetic.main.activity_my_page_new.*
 
 class MovieSelectionActivity : AppCompatActivity() {
@@ -26,7 +27,7 @@ class MovieSelectionActivity : AppCompatActivity() {
         var tabLayout: TabLayout = findViewById(R.id.tabs)
         tabLayout.setupWithViewPager(mViewPager)
 
-        backBtn.setOnClickListener {
+        backBtn_movie_selection.setOnClickListener {
             finish()
         }
     }
