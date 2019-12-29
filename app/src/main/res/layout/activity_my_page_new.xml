@@ -77,7 +77,7 @@
                 android:layout_width="125dp"
                 android:layout_height="125dp"
                 android:layout_marginTop="20dp"
-                android:src="@mipmap/ic_launcher_round"
+                android:src="@drawable/img_basicprofile"
                 app:civ_border_color="#FFFFFF"
                 app:civ_border_width="2dp"
                 app:layout_constraintLeft_toLeftOf="parent"

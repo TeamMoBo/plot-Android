@@ -32,6 +32,11 @@ class MyPage_new : AppCompatActivity() {
                 }
             }
         }
+
+        //Back button
+        backBtn.setOnClickListener {
+            finish()
+        }
     }
 
     //Change profile image
