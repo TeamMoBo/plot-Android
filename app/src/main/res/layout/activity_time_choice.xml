@@ -158,14 +158,19 @@
                 android:layout_weight="1"
                 android:background="@drawable/shape_time_choice_txtday"
                 android:button="@null"
+                android:checked="true"
                 android:gravity="center"
                 android:lineSpacingExtra="7sp"
+                tools:text="30"
+                android:textColor="@drawable/shape_time_choice_text"
                 android:textSize="15sp"
                 app:layout_constraintEnd_toEndOf="@+id/txtDay1"
                 app:layout_constraintLeft_toLeftOf="parent"
                 app:layout_constraintStart_toStartOf="@+id/txtDay1"
                 app:layout_constraintTop_toBottomOf="@id/txtDay1"
-                tools:text="30"/>
+                 />
+                <!--"@drawable/shape_time_choice_text"-->
+
 
             <RadioButton
                 android:id="@+id/txtDay2_num"

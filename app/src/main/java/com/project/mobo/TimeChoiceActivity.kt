@@ -76,6 +76,8 @@ class TimeChoiceActivity : AppCompatActivity() {
         btnTimeChoiceGo.setOnClickListener {
             if (isValidTimeChoice()) {
                 //TODO: 선택한 데이터를 서버에 보내줘야함. chooseDates
+                SharedPreferenceController.setTimeTable(this@TimeChoiceActivity,
+                    chooseDates[currentSelectedDatePosition].first, chooseDates[currentSelectedDatePosition].second)
                 startActivity(Intent(this, MainActivity::class.java))
             } else {
                 Toast.makeText(this, "시간은 최소한 3개는 골라야돼!", Toast.LENGTH_SHORT).show()
