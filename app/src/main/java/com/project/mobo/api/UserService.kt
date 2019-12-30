@@ -11,13 +11,13 @@ import java.lang.NullPointerException
 interface UserService {
     @POST("/user/testlogin")
     fun requestSignIn(
-        @Header("Content-Type") content_type: String,
+        //@Header("Content-Type") content_type: String,
         @Body signInRequest: SignInRequest
     ): Call<SignInResponse>
 
     @POST("/user/testsignin")
     fun requestSignUp(
-        @Header("Content-Type") content_type: String,
+        //@Header("Content-Type") content_type: String,
         @Body signUpRequest: SignUpRequest
     ):Call<SignUpResponse>
 }

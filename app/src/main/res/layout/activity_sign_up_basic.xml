@@ -96,12 +96,13 @@
                     android:id="@+id/edtSignupPoint"
                     android:layout_width="130dp"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="78dp"
                     android:background="@null"
                     android:hint="최대 10글자"
                     android:textSize="14sp"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="@+id/tvSignupPoint" />
+                    app:layout_constraintStart_toStartOf="@+id/nickname_view"
+                    app:layout_constraintTop_toTopOf="@+id/tvSignupPoint"
+                    android:singleLine="true"
+                    android:maxLength="10"/>
 
                 <TextView
                     android:id="@+id/tvSignupPoint"
@@ -116,6 +117,7 @@
                     app:layout_constraintTop_toTopOf="parent" />
 
                 <View
+                    android:id="@+id/nickname_view"
                     android:layout_width="176dp"
                     android:layout_height="1dp"
                     android:layout_marginTop="9dp"
@@ -135,7 +137,8 @@
                     android:textSize="14sp"
                     app:layout_constraintEnd_toStartOf="@+id/tvSignupName"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="@id/tvSignupName" />
+                    app:layout_constraintTop_toTopOf="@id/tvSignupName"
+                    android:singleLine="true"/>
 
                 <TextView
                     android:id="@+id/tvSignupName"
@@ -171,7 +174,9 @@
                     android:textSize="14sp"
                     app:layout_constraintEnd_toStartOf="@+id/tvSignupAge"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="@id/tvSignupAge" />
+                    app:layout_constraintTop_toTopOf="@id/tvSignupAge"
+                    android:singleLine="true"
+                    android:inputType="number"/>
 
                 <TextView
                     android:id="@+id/tvSignupAge"
@@ -207,7 +212,10 @@
                     android:textSize="14sp"
                     app:layout_constraintEnd_toStartOf="@+id/tvSignupID"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="@id/tvSignupID" />
+                    app:layout_constraintTop_toTopOf="@id/tvSignupID"
+                    android:singleLine="true"
+                    android:maxLength="15"
+                    android:inputType="text"/>
 
                 <TextView
                     android:id="@+id/tvSignupID"
@@ -244,7 +252,8 @@
                     android:textSize="14sp"
                     app:layout_constraintEnd_toStartOf="@+id/tvSignupPW"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="@id/tvSignupPW" />
+                    app:layout_constraintTop_toTopOf="@id/tvSignupPW"
+                    android:singleLine="true"/>
 
                 <TextView
                     android:id="@+id/tvSignupPW"
@@ -280,7 +289,9 @@
                     android:textSize="14sp"
                     app:layout_constraintEnd_toStartOf="@+id/tvSignupUniv"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="@id/tvSignupUniv" />
+                    app:layout_constraintTop_toTopOf="@id/tvSignupUniv"
+                    android:singleLine="true"
+                    android:inputType="text"/>
 
                 <TextView
                     android:id="@+id/tvSignupUniv"
@@ -316,7 +327,9 @@
                     android:textSize="14sp"
                     app:layout_constraintEnd_toStartOf="@+id/tvSignupMajor"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="@id/tvSignupMajor" />
+                    app:layout_constraintTop_toTopOf="@id/tvSignupMajor"
+                    android:singleLine="true"
+                    android:inputType="text"/>
 
                 <TextView
                     android:id="@+id/tvSignupMajor"
@@ -352,7 +365,9 @@
                     android:textSize="14sp"
                     app:layout_constraintEnd_toStartOf="@+id/tvSignupKakao"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="@id/tvSignupKakao" />
+                    app:layout_constraintTop_toTopOf="@id/tvSignupKakao"
+                    android:singleLine="true"
+                    android:inputType="text"/>
 
                 <TextView
                     android:id="@+id/tvSignupKakao"
@@ -389,7 +404,9 @@
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="@id/tvSignupLocation"
                     app:layout_constraintEnd_toStartOf="@id/tvSignupLocation"
-                    android:layout_marginEnd="4dp"/>
+                    android:layout_marginEnd="4dp"
+                    android:singleLine="true"
+                    android:inputType="text"/>
 
                 <TextView
                     android:id="@+id/tvSignupLocation"

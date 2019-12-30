@@ -31,6 +31,7 @@ class SignUpBasicActivity : AppCompatActivity() {
         //login()
         initialUI()
         picture()
+        condition()
     }
 
     private fun picture() {
@@ -103,6 +104,10 @@ class SignUpBasicActivity : AppCompatActivity() {
         }
     }
 
+    private fun condition(){
+        edtSignupID.text.toString()
+    }
+
 
     private fun login() {
         btnSignupNext?.setOnClickListener {
@@ -117,7 +122,6 @@ class SignUpBasicActivity : AppCompatActivity() {
             Log.e(this::class.java.name, "실패1")
 
             val call: Call<SignUpResponse> = UserServiceImpl.userService.requestSignUp(
-                "application/json",
                 SignUpRequest(id, password)
             )
 

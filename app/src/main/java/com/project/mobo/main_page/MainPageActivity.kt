@@ -1,36 +1,39 @@
 package com.project.mobo.main_page
 
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.project.mobo.main_page.choice_date.choiceDateAdapter
-import com.project.mobo.main_page.choice_date.choiceDateRepository
-import com.project.mobo.main_page.choice_movie.choiceMovieAdapter
-import com.project.mobo.main_page.choice_movie.choiceMovieRepository
+import com.project.mobo.R
+import com.project.mobo.main_page.choice_movie.ChoiceMovieAdapter
+import com.project.mobo.main_page.choice_movie.ChoiceMovieRepository
+import com.project.mobo.main_page.choice_time.DataVerticalAdapter
+import com.project.mobo.main_page.choice_time.data.MainData
+import com.project.mobo.main_page.choice_time.data.MainReserveDate
+import com.project.mobo.main_page.choice_time.innerData.ChoiceDateAdapter
+import com.project.mobo.main_page.choice_time.innerData.ChoiceDateRepository
 import com.project.mobo.main_page.top_three_viewPager.MovieData
 import com.project.mobo.main_page.top_three_viewPager.MoviePagerAdapter
-
-import com.project.mobo.mypage.MyPage_new
-import kotlinx.android.synthetic.main.activity_main_page.*
-import com.project.mobo.R
-import com.project.mobo.time_choice.TimeChoiceActivity
 import com.project.mobo.movie_selection.display.MovieSelectionActivity
+import com.project.mobo.mypage.MyPage_new
+import com.project.mobo.time_choice.TimeChoiceActivity
+import kotlinx.android.synthetic.main.activity_main_page.*
 
 
 class MainPageActivity : AppCompatActivity() {
     private lateinit var rvmovieChoice: RecyclerView
-    private lateinit var movieChoiceAdapter: choiceMovieAdapter
-    private val movieRepository= choiceMovieRepository()
+    private lateinit var movieChoiceAdapter: ChoiceMovieAdapter
+    private val movieRepository= ChoiceMovieRepository()
 
     private lateinit var rvdateChoice: RecyclerView
-    private lateinit var dateChoiceAdapter: choiceDateAdapter
-    private val dateRepository= choiceDateRepository()
+    private lateinit var dateChoiceAdapter: ChoiceDateAdapter
+    private val dateRepository=
+        ChoiceDateRepository()
 
-    private lateinit var rvdateChoice2: RecyclerView
-    private lateinit var dateChoiceAdapter2: choiceDateAdapter
-    private val dateRepository2= choiceDateRepository()
+    private lateinit var mainData: MainData
+
+    private lateinit var verticalAdapter : DataVerticalAdapter
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -39,10 +42,25 @@ class MainPageActivity : AppCompatActivity() {
 
         movePage() //intent
 
+        dummy()
+
         topThree() // 뷰페이저
         choiceMovie() // 선택한 영화 창
         choiceDate() // 선택한 날짜 창
     }
+
+    private fun dummy(){
+        mainData = MainData(ArrayList(), ArrayList(), ArrayList())
+        mainData.reserveDate.add(MainReserveDate("14", arrayListOf<String>("12", "13", "14", "15")))
+        mainData.reserveDate.add(MainReserveDate("15", arrayListOf<String>("12", "13")))
+        mainData.reserveDate.add(MainReserveDate("16", arrayListOf<String>("12", "13", "14")))
+        mainData.reserveDate.add(MainReserveDate("17", arrayListOf<String>("12", "13", "14", "15", "16")))
+        mainData.reserveDate.add(MainReserveDate("18", arrayListOf<String>("12", "13", "14")))
+        mainData.reserveDate.add(MainReserveDate("19", arrayListOf<String>("12")))
+        mainData.reserveDate.add(MainReserveDate("20", arrayListOf<String>("12", "13", "14", "15")))
+
+    }
+
 
     private fun movePage() {
         //마이페이지로 이동
@@ -106,7 +124,7 @@ class MainPageActivity : AppCompatActivity() {
 
     private fun choiceMovie(){
         rvmovieChoice=findViewById(R.id.rvMovieChoice)
-        movieChoiceAdapter= choiceMovieAdapter(this)
+        movieChoiceAdapter= ChoiceMovieAdapter(this)
 
         rvmovieChoice.adapter=movieChoiceAdapter
 
@@ -123,29 +141,25 @@ class MainPageActivity : AppCompatActivity() {
 
 
     private fun choiceDate(){
-        rvdateChoice=findViewById(R.id.rvMainThirdDate1)
-        rvdateChoice2=findViewById(R.id.rvMainThirdDate2)
-        dateChoiceAdapter= choiceDateAdapter(this)
-        dateChoiceAdapter2=choiceDateAdapter(this)
+        //지금부터 얘는 큰 거
+        rvdateChoice=findViewById(R.id.rvMainDate)
 
-        rvdateChoice.adapter=dateChoiceAdapter
-        rvdateChoice2.adapter=dateChoiceAdapter2
+        //TODO : 서버 통신 이후, 반드시 reserveDate만 넘겨줄 것.
+        verticalAdapter = DataVerticalAdapter(this, mainData.reserveDate)
+//        dateChoiceAdapter= choiceDateAdapter(this)
 
-        val llm = LinearLayoutManager(this)
-        llm.orientation = LinearLayoutManager.HORIZONTAL
-        rvdateChoice.setLayoutManager(llm)
-        rvdateChoice.setAdapter(dateChoiceAdapter)
+        rvdateChoice.layoutManager = LinearLayoutManager(this)
+        rvdateChoice.adapter=verticalAdapter
 
-        val llm2=LinearLayoutManager(this)
-        llm2.orientation=LinearLayoutManager.HORIZONTAL
-        rvdateChoice2.setLayoutManager(llm2)
-        rvdateChoice2.setAdapter(dateChoiceAdapter2)
-
-        dateChoiceAdapter.data=dateRepository.getRepoList()
-        dateChoiceAdapter2.data=dateRepository2.getRepoList()
-
-        dateChoiceAdapter.notifyDataSetChanged()
-        dateChoiceAdapter2.notifyDataSetChanged()
+//        val llm = LinearLayoutManager(this)
+//        llm.orientation = LinearLayoutManager.HORIZONTAL
+//        rvdateChoice.setLayoutManager(llm)
+//        rvdateChoice.setAdapter(dateChoiceAdapter)
+//
+//
+//        dateChoiceAdapter.data=dateRepository.getRepoList()
+//
+//        dateChoiceAdapter.notifyDataSetChanged()
 
     }
 

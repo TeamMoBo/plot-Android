@@ -3,7 +3,8 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="282dp"
-    android:layout_height="188dp">
+    android:layout_height="188dp"
+    android:background="@drawable/main_viewpager_corner">
 
     <TextView
         android:id="@+id/tvItemTitle"
@@ -18,16 +19,17 @@
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:background="@drawable/main_viewpager_corner">
 
         <ImageView
             android:id="@+id/imgMainFirstPoster"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:background="#E20F0F"
+            android:scaleType="centerCrop"
             tools:layout_editor_absoluteX="-28dp"
             tools:layout_editor_absoluteY="0dp"
-            android:scaleType="centerCrop"/>
+            android:background="@drawable/main_viewpager_corner"/>
 
         <TextView
             android:id="@+id/tvMainFirstTitle"

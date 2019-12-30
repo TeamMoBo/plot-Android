@@ -137,47 +137,19 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
-        <Button
-            android:id="@+id/btnMainThirdDay1"
-            android:layout_width="48dp"
-            android:layout_height="48dp"
-            android:layout_marginStart="16dp"
-            android:layout_marginTop="8dp"
-            android:background="#f3f3f3"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/tvMainThirdTitle" />
-
         <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/rvMainThirdDate1"
+            android:id="@+id/rvMainDate"
             android:layout_width="0dp"
-            android:layout_height="48dp"
-            android:layout_marginStart="12dp"
+            android:layout_height="0dp"
             android:layout_marginTop="8dp"
-            app:layout_constraintStart_toEndOf="@id/btnMainThirdDay1"
-            app:layout_constraintTop_toBottomOf="@id/tvMainThirdTitle"
             app:layout_constraintEnd_toEndOf="parent"
-            android:layout_marginEnd="16dp"/>
-
-        <Button
-            android:id="@+id/btnMainThirdDay2"
-            android:layout_width="48dp"
-            android:layout_height="48dp"
-            android:layout_marginStart="16dp"
-            android:layout_marginTop="8dp"
-            android:background="#f3f3f3"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/btnMainThirdDay1" />
+            app:layout_constraintTop_toBottomOf="@+id/tvMainThirdTitle"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:layout_marginBottom="5dp"/>
 
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/rvMainThirdDate2"
-            android:layout_width="0dp"
-            android:layout_height="48dp"
-            android:layout_marginStart="12dp"
-            android:layout_marginTop="8dp"
-            app:layout_constraintStart_toEndOf="@id/btnMainThirdDay2"
-            app:layout_constraintTop_toBottomOf="@id/btnMainThirdDay1"
-            app:layout_constraintEnd_toEndOf="parent"
-            android:layout_marginEnd="16dp"/>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

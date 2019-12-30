@@ -27,6 +27,15 @@ class SignInActivity : AppCompatActivity() {
 
     private fun initialUI(){
         btnSigninLogin.setOnClickListener {
+            val id = edtSigninID?.text.toString()
+            val password = edtSigninPW?.text.toString()
+
+            if (id.isEmpty() || password.isEmpty()) {
+                // 사용자에게 간단한 text 정보를 알려주기 위해 Toast를 띄워준다.
+                Toast.makeText(this, "아이디나 비밀번호를 입력해주세요.", Toast.LENGTH_SHORT).show()
+                return@setOnClickListener
+            }
+
             val login = Intent(this, MainPageActivity::class.java)
             startActivity(login)
         }
@@ -50,7 +59,7 @@ class SignInActivity : AppCompatActivity() {
             }
             Log.e(this::class.java.name, "실패1")
 
-            val call: Call<SignInResponse> = UserServiceImpl.userService.requestSignIn("application/json",SignInRequest(id, password))
+            val call: Call<SignInResponse> = UserServiceImpl.userService.requestSignIn(SignInRequest(id, password))
 
             Log.e(this::class.java.name, "실패2")
             call.enqueue(
