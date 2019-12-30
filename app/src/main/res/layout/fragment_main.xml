@@ -29,7 +29,7 @@
             android:scaleType="centerCrop"
             tools:layout_editor_absoluteX="-28dp"
             tools:layout_editor_absoluteY="0dp"
-            android:background="@drawable/main_viewpager_corner"/>
+            android:background="#8A7171"/>
 
         <TextView
             android:id="@+id/tvMainFirstTitle"
