@@ -86,6 +86,23 @@ Android Studio (Sdk Version : 29)
   implementation 'com.github.hotchemi:khronos:0.9.0'
   ```
 
+- firebase 
+
+  ```kotlin
+  implementation 'com.google.firebase:firebase-analytics:17.2.0'
+  implementation 'com.google.firebase:firebase-database:19.2.0'
+  ```
+
+  
+
+- firebase plugin
+
+  ```kotlin
+  apply plugin: 'com.google.gms.google-services'
+  ```
+
+  
+
 
 
 ## Program Structure
@@ -97,7 +114,7 @@ Android Studio (Sdk Version : 29)
 |         `SplashActivity`         |        First run of the app using the Lottie Library         |
 | `SignInActivity, SignUpActivity` | 1. If ID exists, Login successful & Move to MainActivity<br />2.Move to membership activity if ID does not exist |
 |          `MainActivity`          | 1. Show Recommendation Movie, Selected Movie, Selected Time<br />2.Move to MyPageActivity, ModifyMovieActivity, ModifyTimeActivity, MovieSelectionActivity |
-|    `MovieSelectionActivity`     |                                                              |
+|     `MovieSelectionActivity`     |                                                              |
 |       `TimeChoiceActivity`       |                                                              |
 |      `ModifyMovieActivity`       |                                                              |
 |         `MyPageActivity`         |                                                              |
@@ -122,6 +139,8 @@ Android Studio (Sdk Version : 29)
 - connect Hyperlink
 - Pop-up
 - load Photo from Gallery
+
+
 
 
 
