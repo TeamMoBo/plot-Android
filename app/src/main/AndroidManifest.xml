@@ -27,14 +27,15 @@
         <activity android:name=".sign.SignInActivity">
         </activity>
         <activity android:name=".PayChoiceActivity" >
+
+        </activity>
+        <activity android:name=".time_choice.TimeChoiceActivity" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <action android:name="android.intent.action.VIEW" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-        </activity>
-        <activity android:name=".time_choice.TimeChoiceActivity" >
         </activity>
         <activity android:name=".MainActivity" />
     </application>

@@ -20,6 +20,8 @@ interface UserService {
         @Header("Content-Type") content_type: String,
         @Body signUpRequest: SignUpRequest
     ):Call<SignUpResponse>
+
+    //
 }
 
 //요청-데이터 선언

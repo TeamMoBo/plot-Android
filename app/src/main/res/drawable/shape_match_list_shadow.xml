@@ -1,19 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <selector xmlns:android="http://schemas.android.com/apk/res/android">
     <item>
-        <shape android:shape="rectangle">
-            <solid android:color="#ffffff"/>
-            <corners android:radius="10dp" />
-            <stroke
-                android:color="#EBE8E8"
-                android:width="1dp"/>
-        </shape>
-    </item>
-    <item>
         <shape>
             <padding
-                android:bottom="2dp"
-                android:right="2dp"
+                android:bottom="1dp"
+                android:right="1dp"
                 />
 
             <solid android:color="#00CCCCCC" />
@@ -24,8 +15,8 @@
     <item>
         <shape>
             <padding
-                android:bottom="2dp"
-                android:right="2dp"/>
+                android:bottom="1dp"
+                android:right="1dp" />
 
             <solid android:color="#10CCCCCC" />
 
@@ -35,8 +26,8 @@
     <item>
         <shape>
             <padding
-                android:bottom="2dp"
-                android:right="2dp"/>
+                android:bottom="1dp"
+                android:right="1dp" />
 
             <solid android:color="#20CCCCCC" />
 
@@ -46,8 +37,8 @@
     <item>
         <shape>
             <padding
-                android:bottom="2dp"
-                android:right="2dp"/>
+                android:bottom="1dp"
+                android:right="1dp" />
 
             <solid android:color="#30CCCCCC" />
 
@@ -57,12 +48,21 @@
     <item>
         <shape>
             <padding
-                android:bottom="2dp"
-                android:right="2dp"/>
+                android:bottom="1dp"
+                android:right="1dp"/>
 
             <solid android:color="#50CCCCCC" />
 
             <corners android:radius="10dp" />
+        </shape>
+    </item>
+
+    <!-- Background -->
+    <item>
+        <shape>
+            <solid android:color="#ffffff" />
+
+            <corners android:radius="3dp" />
         </shape>
     </item>
 </selector>

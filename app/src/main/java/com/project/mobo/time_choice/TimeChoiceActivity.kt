@@ -20,7 +20,6 @@ class TimeChoiceActivity : AppCompatActivity() {
         Pair(Dates.today + (2 + it).days, mutableSetOf())
     }
 
-
     var checked_three: Boolean = false
 
     private var currentSelectedDatePosition = 0
@@ -85,18 +84,6 @@ class TimeChoiceActivity : AppCompatActivity() {
         txtDayNums.forEachIndexed { index, view ->
             view.setOnClickListener {
                 currentSelectedDatePosition = index
-                if (isValidTimeChoice()) {
-                    Toast.makeText(this, "성공", Toast.LENGTH_SHORT).show()
-                    //선택한 데이터를 서버에 보내줘야함. chooseDates
-                    SharedPreferenceController.setTimeTable(
-                        this@TimeChoiceActivity,
-                        chooseDates[currentSelectedDatePosition].first,
-                        chooseDates[currentSelectedDatePosition].second
-                    )
-                    //startActivity(Intent(this, MainActivity::class.java))
-                } else {
-                    Toast.makeText(this, "시간은 최소한 3개는 골라야돼!", Toast.LENGTH_SHORT).show()
-                }
             }
         }
     }
@@ -117,14 +104,14 @@ class TimeChoiceActivity : AppCompatActivity() {
         btnTimeChoiceGo.setOnClickListener {
             if (isValidTimeChoice()) {
                 //선택한 데이터를 서버에 보내줘야함. chooseDates
-                SharedPreferenceController.setTimeTable(
-                    this@TimeChoiceActivity,
-                    chooseDates[currentSelectedDatePosition].first,
-                    chooseDates[currentSelectedDatePosition].second
-                )
-                startActivity(Intent(this, MainActivity::class.java))
+//                SharedPreferenceController.setTimeTable(
+//                    this@TimeChoiceActivity,
+//                    chooseDates[currentSelectedDatePosition].first,
+//                    chooseDates[currentSelectedDatePosition].second
+//                )
+                finish()
             } else {
-                Toast.makeText(this, "시간은 최소한 3개는 골라야돼!", Toast.LENGTH_SHORT).show()
+                Toast.makeText(this, "시간을 선택하세요!", Toast.LENGTH_SHORT).show()
             }
         }
     }
@@ -140,6 +127,7 @@ class TimeChoiceActivity : AppCompatActivity() {
     }
 
     private fun isValidTimeChoice(): Boolean {
+        return chooseDates.map { it.second.size }.sum() >= MININUM_CHOOSEN_DATE
 //        for (i in 0 until chooseDates.size) {
 //            if ((chooseDates[i].second.size) >= MININUM_CHOOSEN_ONE) {
 //                if ((chooseDates[i].second.size) < MININUM_CHOOSEN_DATE) {
@@ -149,7 +137,7 @@ class TimeChoiceActivity : AppCompatActivity() {
 //                checked_three = true
 //        }
 //        return checked_three
-        return chooseDates.map { it.second.size }.sum() >= MININUM_CHOOSEN_DATE
+
 //        if(chooseDates.size < MININUM_CHOOSEN_DATE){
 //            Log.v("Tiem", chooseDates[currentSelectedDatePosition].size.toString())
 //            return checked_three
@@ -161,7 +149,7 @@ class TimeChoiceActivity : AppCompatActivity() {
     }
 
     private companion object {
-        const val MININUM_CHOOSEN_DATE = 3
+        const val MININUM_CHOOSEN_DATE = 1
         const val MININUM_CHOOSEN_ONE = 1
     }
 }

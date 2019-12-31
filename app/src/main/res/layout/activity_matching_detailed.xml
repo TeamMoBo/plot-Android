@@ -15,6 +15,16 @@
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent">
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="262dp"
+            android:src="@drawable/matchhistory_blackbackground"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:scaleType="fitXY">
+        </ImageView>
 
         <ImageView
             android:id="@+id/btnMatchingDetailedBack"
@@ -57,11 +67,53 @@
             android:layout_marginRight="20dp"
             android:gravity="end"
             android:lineSpacingExtra="2sp"
-            android:text="영화 소울메이트 찾아요! "
+            android:text="영화 소울메이트 찾아요!"
             android:textColor="#ffffff"
             android:textSize="14sp"
             app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintTop_toBottomOf="@id/txtMatchingDetailedName" />
+        <TextView
+            android:id="@+id/tag1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="11sp"
+            android:textColor="#ffffff"
+            android:lineSpacingExtra="6sp"
+            android:gravity="center_horizontal"
+            android:text="#겁많은"
+            app:layout_constraintTop_toBottomOf="@+id/txtMatchingDetailedMessage"
+            app:layout_constraintRight_toLeftOf="@id/tag2"
+            android:layout_marginTop="1dp"
+            android:layout_marginRight="4dp"
+            />
+        <TextView
+            android:id="@+id/tag2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="11sp"
+            android:textColor="#ffffff"
+            android:lineSpacingExtra="6sp"
+            android:gravity="center_horizontal"
+            android:text="#낯가리는"
+            app:layout_constraintTop_toBottomOf="@+id/txtMatchingDetailedMessage"
+            app:layout_constraintRight_toLeftOf="@id/tag3"
+            android:layout_marginRight="4dp"
+            android:layout_marginTop="1dp"
+            />
+        <TextView
+            android:id="@+id/tag3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="11sp"
+            android:textColor="#ffffff"
+            android:lineSpacingExtra="6sp"
+            android:gravity="center_horizontal"
+            android:text="#성실한"
+            app:layout_constraintTop_toBottomOf="@+id/txtMatchingDetailedMessage"
+            app:layout_constraintRight_toRightOf="parent"
+            android:layout_marginRight="20dp"
+            android:layout_marginTop="1dp"
+            />
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <androidx.constraintlayout.widget.ConstraintLayout
