@@ -167,7 +167,6 @@
                 android:id="@+id/layout_ticketandpopcorn"
                 android:layout_width="330dp"
                 android:layout_height="90dp"
-                android:layout_marginTop="40dp"
                 android:background="@drawable/layout_shadow"
                 app:layout_constraintLeft_toLeftOf="parent"
                 app:layout_constraintRight_toRightOf="parent"
