@@ -11,109 +11,69 @@ import androidx.recyclerview.widget.RecyclerView
 
 import com.project.mobo.R
 import com.project.mobo.movie_selection.data.MovieItem
-import com.project.mobo.movie_selection.feature.MovieAdapter
+import com.project.mobo.movie_selection.feature.*
 
 /**
  * A simple [Fragment] subclass.
  */
-class FragmentTwo : Fragment() {
-    private lateinit var rv_movie: RecyclerView
-    private lateinit var rv_movie2: RecyclerView
-    private lateinit var movieAdapter: MovieAdapter
-    private lateinit var movieAdapter2: MovieAdapter
+class FragmentTwo : Fragment(), View.OnClickListener {
+    private lateinit var rv_movie3: RecyclerView
+    private lateinit var rv_movie4: RecyclerView
+    public var movieAdapter3 = MovieAdapter(R.layout.rv_item_movie3)
+    public var movieAdapter4 = MovieAdapter(R.layout.rv_item_movie4)
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        val v: View = inflater.inflate(R.layout.fragment_fragment_one, container, false)
+        val v: View = inflater.inflate(R.layout.fragment_fragment_two, container, false)
         //rv1
-        rv_movie = v.findViewById(R.id.rv_movie)
-        rv_movie.setHasFixedSize(true)
+        rv_movie3 = v.findViewById(R.id.rv_movie3)
+        rv_movie3.setHasFixedSize(true)
 
-        movieAdapter = MovieAdapter()
+        movieAdapter3.onItemClick(this)
 
-        rv_movie.adapter = movieAdapter
+        rv_movie3.adapter = movieAdapter3
 
-        rv_movie.layoutManager = GridLayoutManager(activity,2)
+        rv_movie3.layoutManager = GridLayoutManager(activity,2)
 
-        movieAdapter.data = listOf(
-            MovieItem(
-                img_movie = R.drawable.a,
-                name = "타짜 2",
-                rating_star = R.drawable.img_star_5
-            ),
-            MovieItem(
-                img_movie = R.drawable.b,
-                name = "신세계",
-                rating_star = R.drawable.img_star_4
-            )
-        )
-
-        movieAdapter.isTop = true
-
-        movieAdapter.notifyDataSetChanged()
+        movieAdapter3.notifyDataSetChanged()
 
         //rv2
-        rv_movie2 = v.findViewById(R.id.rv_movie2)
-        rv_movie2.setHasFixedSize(true)
+        rv_movie4 = v.findViewById(R.id.rv_movie4)
+        rv_movie4.setHasFixedSize(true)
 
-        movieAdapter2 = MovieAdapter()
+        movieAdapter4.onItemClick(this)
 
-        rv_movie2.adapter = movieAdapter2
+        rv_movie4.adapter = movieAdapter4
 
-        rv_movie2.layoutManager = GridLayoutManager(activity,4)
+        rv_movie4.layoutManager = GridLayoutManager(activity,4)
 
-        movieAdapter2.data = listOf(
-            MovieItem(
-                img_movie = R.drawable.ae9656be06b91fd2d661a7091934cb3e,
-                name = "안녕 나의 소녀",
-                rating_star = R.drawable.img_star_3
-            ),
-            MovieItem(
-                img_movie = R.drawable.m,
-                name = "외주의 신",
-                rating_star = R.drawable.img_star_4
-            ),
-            MovieItem(
-                img_movie = R.drawable.df88cf9a3f4e7f39da97901dbbc39af,
-                name = "극한 직업",
-                rating_star = R.drawable.img_star_5
-            ),
-            MovieItem(
-                img_movie = R.drawable.dec29208cda7bd05deca3cdc91f88a0fb871ee54c5ffb40a797909e3427f701_v1,
-                name = "마녀",
-                rating_star = R.drawable.img_star_3
-            ),
-            MovieItem(
-                img_movie = R.drawable.ae9656be06b91fd2d661a7091934cb3e,
-                name = "타짜 2",
-                rating_star = R.drawable.img_star_5
-
-            ),
-            MovieItem(
-                img_movie = R.drawable.a14cbb522349487544b0191aeb9cc156,
-                name = "타짜 2",
-                rating_star = R.drawable.img_star_4
-            ),
-            MovieItem(
-                img_movie = R.drawable.ae9656be06b91fd2d661a7091934cb3e,
-                name = "Plot",
-                rating_star = R.drawable.img_star_5
-            ),
-            MovieItem(
-                img_movie = R.drawable.m,
-                name = "SOPT",
-                rating_star = R.drawable.img_star_5
-            )
-        )
-
-        movieAdapter2.notifyDataSetChanged()
+        movieAdapter4.notifyDataSetChanged()
 
         // Inflate the layout for this fragment
         return v
     }
 
+    override fun onClick(v: View) {
+        if(v.parent == rv_movie3) {
+            val item = movieAdapter3.data[rv_movie3.getChildAdapterPosition(v)]
+            click_event(item, movieAdapter3)
+        }
+        else if(v.parent == rv_movie4){
+            val item2 = movieAdapter4.data[rv_movie4.getChildAdapterPosition(v)]
+            click_event(item2, movieAdapter4)
+        }
+    }
 
+    fun click_event(item: MovieItem, adapter: RecyclerView.Adapter<MovieViewHolder>){
+        if(item.isSelected){
+            item.isSelected = false
+        }
+        else if(!item.isSelected){
+            item.isSelected = true
+        }
+        adapter.notifyDataSetChanged()
+    }
 }
