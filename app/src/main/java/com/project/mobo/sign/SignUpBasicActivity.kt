@@ -13,7 +13,6 @@ import android.widget.Toast
 import com.project.mobo.R
 import com.project.mobo.api.SignUpRequest
 import com.project.mobo.api.SignUpResponse
-import com.project.mobo.api.UserServiceImpl
 import kotlinx.android.synthetic.main.activity_my_page_new.*
 import kotlinx.android.synthetic.main.activity_sign_up_basic.*
 import kotlinx.android.synthetic.main.activity_sign_up_basic.profile_image
@@ -104,54 +103,54 @@ class SignUpBasicActivity : AppCompatActivity() {
     }
 
 
-    private fun login() {
-        btnSignupNext?.setOnClickListener {
-            val id = edtSignupID?.text.toString()
-            val password = edtSignupPW?.text.toString()
-
-            if (id.isEmpty() || password.isEmpty()) {
-                // 사용자에게 간단한 text 정보를 알려주기 위해 Toast를 띄워준다.
-                Toast.makeText(this, "아이디나 비밀번호를 입력해주세요.", Toast.LENGTH_SHORT).show()
-                return@setOnClickListener
-            }
-            Log.e(this::class.java.name, "실패1")
-
-            val call: Call<SignUpResponse> = UserServiceImpl.userService.requestSignUp(
-                "application/json",
-                SignUpRequest(id, password)
-            )
-
-            Log.e(this::class.java.name, "실패2")
-            call.enqueue(
-                object : Callback<SignUpResponse> {
-                    override fun onFailure(call: Call<SignUpResponse>, t: Throwable) {
-                        Log.e(this::class.java.name, "network error : $t")
-                    }
-
-                    override fun onResponse(
-                        call: Call<SignUpResponse>,
-                        response: Response<SignUpResponse>
-                    ) {
-                        if (response.isSuccessful) {
-                            val signInResponse = response.body()!!
-
-                            Toast.makeText(
-                                this@SignUpBasicActivity,
-                                "$signInResponse",
-                                Toast.LENGTH_LONG
-                            ).show()
-                        } else {
-                            Toast.makeText(
-                                this@SignUpBasicActivity,
-                                "Login Failed",
-                                Toast.LENGTH_LONG
-                            ).show()
-                        }
-                    }
-                }
-            )
-        }
-
-    }
+//    private fun login() {
+//        btnSignupNext?.setOnClickListener {
+//            val id = edtSignupID?.text.toString()
+//            val password = edtSignupPW?.text.toString()
+//
+//            if (id.isEmpty() || password.isEmpty()) {
+//                // 사용자에게 간단한 text 정보를 알려주기 위해 Toast를 띄워준다.
+//                Toast.makeText(this, "아이디나 비밀번호를 입력해주세요.", Toast.LENGTH_SHORT).show()
+//                return@setOnClickListener
+//            }
+//            Log.e(this::class.java.name, "실패1")
+//
+//            val call: Call<SignUpResponse> = `class RequestManager`.userService.requestSignUp(
+//                "application/json",
+//                SignUpRequest(id, password)
+//            )
+//
+//            Log.e(this::class.java.name, "실패2")
+//            call.enqueue(
+//                object : Callback<SignUpResponse> {
+//                    override fun onFailure(call: Call<SignUpResponse>, t: Throwable) {
+//                        Log.e(this::class.java.name, "network error : $t")
+//                    }
+//
+//                    override fun onResponse(
+//                        call: Call<SignUpResponse>,
+//                        response: Response<SignUpResponse>
+//                    ) {
+//                        if (response.isSuccessful) {
+//                            val signInResponse = response.body()!!
+//
+//                            Toast.makeText(
+//                                this@SignUpBasicActivity,
+//                                "$signInResponse",
+//                                Toast.LENGTH_LONG
+//                            ).show()
+//                        } else {
+//                            Toast.makeText(
+//                                this@SignUpBasicActivity,
+//                                "Login Failed",
+//                                Toast.LENGTH_LONG
+//                            ).show()
+//                        }
+//                    }
+//                }
+//            )
+//        }
+//
+//    }
 
 }
