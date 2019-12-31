@@ -4,7 +4,6 @@
 
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.INTERNET" />
-
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
@@ -18,20 +17,28 @@
         android:theme="@style/AppTheme">
         <activity android:name=".movie_selection.display.MovieSelectionActivity"/>
         <activity android:name=".mypage.MyPage_new"/>
+        <activity android:name=".MatchingDetailedActivity"/>
+        <activity android:name=".MatchingHistory.MatchingHistoryActivity" >
+        </activity>
         <activity android:name=".main_page.MainPageActivity" />
         <activity android:name=".sign.SignUpSuccessActivity" />
         <activity android:name=".sign.SignUpPlusActivity" />
         <activity android:name=".sign.SignUpBasicActivity" />
         <activity android:name=".sign.SignInActivity">
+        </activity>
+        <activity android:name=".PayChoiceActivity" >
+
+        </activity>
+        <activity android:name=".time_choice.TimeChoiceActivity" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <action android:name="android.intent.action.VIEW" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
         <activity android:name=".chat.ChattingActivity"/>
-        <activity android:name=".PayChoiceActivity"/>
-        <activity android:name=".time_choice.TimeChoiceActivity"/>
         <activity android:name=".MainActivity" />
     </application>
+
 </manifest>
