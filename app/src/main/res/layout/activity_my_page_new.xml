@@ -477,7 +477,7 @@
                     app:layout_constraintTop_toBottomOf="@+id/edittxt_pass" />
 
                 <RadioGroup
-                    android:id="@+id/rg_gender"
+                    android:id="@+id/rg_gender_plus"
                     android:layout_width="300dp"
                     android:layout_height="match_parent"
                     android:layout_marginTop="18dp"
@@ -531,8 +531,8 @@
                     android:textColor="#a7a2a2"
                     android:textSize="17sp"
                     android:textStyle="bold"
-                    app:layout_constraintLeft_toLeftOf="@id/rg_gender"
-                    app:layout_constraintTop_toBottomOf="@+id/rg_gender" />
+                    app:layout_constraintLeft_toLeftOf="@id/rg_gender_plus"
+                    app:layout_constraintTop_toBottomOf="@+id/rg_gender_plus" />
 
                 <androidx.constraintlayout.widget.ConstraintLayout
                     android:id="@+id/layout_layout_age"

@@ -9,18 +9,15 @@ import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
+import android.widget.RadioButton
 import android.widget.Toast
 import com.project.mobo.R
-import com.project.mobo.api.SignUpRequest
-import com.project.mobo.api.SignUpResponse
-import com.project.mobo.api.UserServiceImpl
 import kotlinx.android.synthetic.main.activity_my_page_new.*
 import kotlinx.android.synthetic.main.activity_sign_in.view.*
 import kotlinx.android.synthetic.main.activity_sign_up_basic.*
+import kotlinx.android.synthetic.main.activity_sign_up_basic.btnBack
+import kotlinx.android.synthetic.main.activity_sign_up_basic.btnSignupNext
 import kotlinx.android.synthetic.main.activity_sign_up_basic.profile_image
-import retrofit2.Call
-import retrofit2.Callback
-import retrofit2.Response
 
 class SignUpBasicActivity : AppCompatActivity() {
 
@@ -114,18 +111,36 @@ class SignUpBasicActivity : AppCompatActivity() {
             val kakaoID = edtSignupKakao.text.toString()
             val location = edtSignupLocation.text.toString()
 
-            intent.putExtra("nickname", nickname )
-            intent.putExtra("name", name)
-            intent.putExtra("age", age)
-            intent.putExtra("id", id)
-            intent.putExtra("password", password)
-            intent.putExtra("school", school)
-            intent.putExtra("major", major)
-            intent.putExtra("kakaoID", kakaoID)
-            intent.putExtra("location", location)
-            setResult(Activity.RESULT_OK, intent) // StartActivityForResult
+            var gender: Int = 1
 
-            startActivity(login)
+            rg_gender_basic.setOnCheckedChangeListener { group, checkedId ->
+                val checkedRadioButton =
+                    group?.findViewById(group.checkedRadioButtonId) as RadioButton
+                checkedRadioButton?.let {
+                    if (checkedRadioButton.isChecked) {
+                        gender = checkedRadioButton.tag as Int
+                    }
+                }
+            }
+
+            if (nickname.isEmpty() || name.isEmpty() || age.isEmpty() || id.isEmpty() || password.isEmpty()
+                || school.isEmpty() || major.isEmpty() || kakaoID.isEmpty() || location.isEmpty()
+            ) {
+                Toast.makeText(this, "빈칸을 입력하세요", Toast.LENGTH_SHORT).show()
+            } else {
+                intent.putExtra("nickname", nickname)
+                intent.putExtra("name", name)
+                intent.putExtra("age", age)
+                intent.putExtra("id", id)
+                intent.putExtra("password", password)
+                intent.putExtra("school", school)
+                intent.putExtra("major", major)
+                intent.putExtra("kakaoID", kakaoID)
+                intent.putExtra("location", location)
+                setResult(Activity.RESULT_OK, intent) // StartActivityForResult
+
+                startActivity(login)
+            }
         }
         btnBack.setOnClickListener {
             finish()

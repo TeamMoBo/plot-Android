@@ -2,6 +2,7 @@ package com.project.mobo.chat
 
 import android.os.Bundle
 import android.widget.Toast
+import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.google.firebase.database.*
@@ -10,6 +11,8 @@ import com.project.mobo.common.FirebaseChatConstant
 import com.project.mobo.common.addChildEventListener
 import com.project.mobo.util.registerEvent
 import kotlinx.android.synthetic.main.activity_chatting.*
+import kotlinx.android.synthetic.main.date_choice_item.*
+import java.text.SimpleDateFormat
 import java.util.*
 import kotlin.collections.HashMap
 import kotlin.concurrent.schedule
@@ -71,14 +74,14 @@ class ChattingActivity : AppCompatActivity() {
         rvChatList.scrollToPosition(rvChatList.adapter!!.itemCount - 1) // 첫 접속시 리싸이클러뷰가 상단에 올라가기 때문.
 
         //타이머 기능
-        //timer()
+        timer()
     }
 
     //TODO: 특정 시간이 지났는지 파악
     //TODO: 일정 시간마다, 화면을 갱신해줘얗 함
     //TODO: 특정 시간 ~ 특정 시간 사이의 시간을, 받아올 수 있어야함. (분 단위) v
     //TODO: 특정 시간으로 부터, 특정 분이 지났을 때, 이벤트를 등록 할 수 있으면 v
-    private fun timer(){
+    private fun timer() {
 //        val timer= Timer("schdule", true)
 //
 //        timer.schedule(10000, 60000){
@@ -89,22 +92,31 @@ class ChattingActivity : AppCompatActivity() {
 
         //액티비티가 만들어진 시간
         createdTime = Date()
-        registerEvent(createdTime, 0.5f){
-
-        }
-        registerEvent(createdTime, 0.12f) {
+//        registerEvent(createdTime, 0.5f){
+//            txtQuiz.text=uid+"에 대한 첫인상은 어때?"
+//        }
+        registerEvent(createdTime, 0.1f) {
             //Toast.makeText(this, "1단계", Toast.LENGTH_SHORT).show()
-            txtQuiz.text=""
+            txtQuiz.text = "우리 영화 보기 몇 분전에 만날까?"
             imgProcess.setImageDrawable(getDrawable(R.drawable.processbar_second))
         }
-        registerEvent(createdTime, 0.25f) {
-            //Toast.makeText(this, "2단계", Toast.LENGTH_SHORT).show()
-            imgProcess.setImageDrawable(getDrawable(R.drawable.processbar_third))
+//        registerEvent(createdTime, 0.25f) {
+//            //Toast.makeText(this, "2단계", Toast.LENGTH_SHORT).show()
+//            txtQuiz.text=uid+"이 영화는 왜 보고 싶어?"
+//            imgProcess.setImageDrawable(getDrawable(R.drawable.processbar_third))
+//        }
+//        registerEvent(createdTime, 0.36f) {
+//            //Toast.makeText(this, "3단계", Toast.LENGTH_SHORT).show()
+//            txtQuiz.text="영화 보고 나서 밥 한끼 어때?"
+//            imgProcess.setImageDrawable(getDrawable(R.drawable.processbar_complete))
+//        }
+        registerEvent(createdTime, 0.5f) {
+            val dialogView = layoutInflater.inflate(R.layout.popup_matching_choice, null)
+            val dialog = AlertDialog.Builder(this)
+                .setView(dialogView)
+                .show()
         }
-        registerEvent(createdTime, 0.36f) {
-            //Toast.makeText(this, "3단계", Toast.LENGTH_SHORT).show()
-            imgProcess.setImageDrawable(getDrawable(R.drawable.processbar_complete))
-        }
+
     }
 
     private fun init() {
@@ -112,6 +124,10 @@ class ChattingActivity : AppCompatActivity() {
         adapter = ChatRoomAdapter(uid)
         rvChatList.layoutManager = lm
         rvChatList.adapter = adapter
+
+//        val now = Calendar.getInstance().time
+//        val pattern = SimpleDateFormat("yyyy년 MM월 dd일 HH:mm")
+//        val nowDate = pattern.format(now)
 
         rvChatList.addOnLayoutChangeListener { _, _, _, _, _, _, _, _, _ ->
             rvChatList.scrollToPosition(rvChatList.adapter!!.itemCount - 1)
