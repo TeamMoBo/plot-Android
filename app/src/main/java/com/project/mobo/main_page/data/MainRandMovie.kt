@@ -1,4 +1,4 @@
-package com.project.mobo.main_page.choice_time.data
+package com.project.mobo.main_page.data
 
 data class MainRandMovie (
     var movieIdx : Int,

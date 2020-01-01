@@ -20,6 +20,14 @@
             tools:layout_editor_absoluteX="0dp"
             tools:layout_editor_absoluteY="-31dp" />
 
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="fitXY"
+            android:src="@drawable/img_movie_gradation"
+            tools:layout_editor_absoluteX="0dp"
+            tools:layout_editor_absoluteY="0dp" />
+
 
         <TextView
             android:id="@+id/tvMainFirstStar"
@@ -40,7 +48,9 @@
             android:layout_marginTop="130dp"
             android:src="@drawable/img_star"
             app:layout_constraintStart_toEndOf="@id/tvMainFirstStar"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toTopOf="parent"
+            android:scaleX="2"
+            android:scaleY="2"/>
 
         <TextView
             android:id="@+id/tvMainFirstHour"
@@ -54,11 +64,6 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
-        <ImageView
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:src="@drawable/img_movie_gradation"
-            android:scaleType="fitXY"/>
 
         <TextView
             android:id="@+id/tvItemTitle"
@@ -71,7 +76,6 @@
             android:textSize="16sp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintBottom_toBottomOf="parent"/>
-
 
         <ImageView
             android:id="@+id/btnMainFirstPlay"

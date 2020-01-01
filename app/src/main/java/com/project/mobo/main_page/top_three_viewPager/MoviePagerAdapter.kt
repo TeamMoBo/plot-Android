@@ -1,17 +1,19 @@
 package com.project.mobo.main_page.top_three_viewPager
 
 import android.graphics.drawable.GradientDrawable
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.viewpager.widget.PagerAdapter
 import com.bumptech.glide.Glide
 import com.project.mobo.R
+import com.project.mobo.temp.RandMovie
 import kotlinx.android.synthetic.main.fragment_main.view.*
 import kotlinx.android.synthetic.main.movie_choice_item.view.*
 import kotlinx.android.synthetic.main.time_choice_item.view.*
 
-class MoviePagerAdapter(private val list: ArrayList<MovieData>): PagerAdapter() {
+class MoviePagerAdapter(private val list: ArrayList<RandMovie>): PagerAdapter() {
 
     var data = listOf<MovieData>()
 
@@ -20,20 +22,19 @@ class MoviePagerAdapter(private val list: ArrayList<MovieData>): PagerAdapter() 
         //val view = inflater.inflate(R.layout.tab_main_page, container, false)
         val view = inflater.inflate(R.layout.fragment_main, container, false)
 
-        //GradientDrawable drawable = (GradientDrawable) context.getDrawable(R.drawable.main_viewpager_corner)
-
-        //view.setBackground(drawable);
-        //view.setClipToOutline(true);
-
         //view.imgMainFirstPoster.text=list[position].photo
         Glide.with(view)
-            .load(list[position].photo)
+            .load(list[position].movieImg)
             .into(view.imgMainFirstPoster)
-        view.tvItemTitle.text = list[position].title
-        //view.tvMainItemStar.text=list[position].star
-        //view.tvMainItemTime.text=list[position].hour
+        view.tvItemTitle.text = list[position].movieName
+
+        Log.v("moviscore", list[position].movieScore.toString())
+        Log.v("Position", position.toString())
+
+        view.tvMainFirstStar.text=list[position].movieScore.toString()
+        view.tvMainFirstHour.text=list[position].movieRuntime
         //view.ivItem.setImageResource(list[position].getImageId(container.context))
-        //view.tvItemContent.text = list[position].content
+        //iew.tvItemContent.text = list[position].content
 
         container.addView(view)
         return view

@@ -1,4 +1,4 @@
-package com.project.mobo.main_page.choice_time.data
+package com.project.mobo.main_page.data
 
 data class MainReserveDate (
     var reservationDate : String,
