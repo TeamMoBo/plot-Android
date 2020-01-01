@@ -31,7 +31,6 @@ class MovieSelectionActivity : AppCompatActivity() {
 //        arrayListOf(fragOne.movieAdapter1.data, fragOne.movieAdapter2.data, fragTwo.movieAdapter3.data, fragTwo.movieAdapter4.data)
 
     var list_selected_current = ArrayList<Int>()
-    var list_selected_expected = ArrayList<Int>()
 
     private lateinit var mViewPager: ViewPager
     val adapter: SectionPageAdapter =
@@ -65,10 +64,11 @@ class MovieSelectionActivity : AppCompatActivity() {
 
         nextBtn_movieseletion.setOnClickListener{
             selectedDataCal()
-            if (list_selected_current.size + list_selected_expected.size == 0){
+            if (list_selected_current.size == 0){
                 Toast.makeText(this, "영화를 하나 이상 선택해주세요", Toast.LENGTH_SHORT).show()
             }
             else {
+                intent.putExtra("movieArray",list_selected_current)
                 startActivityForResult(intent, 1000)
             }
         }
@@ -84,7 +84,6 @@ class MovieSelectionActivity : AppCompatActivity() {
 
     fun selectedDataCal(){
         list_selected_current.clear()
-        list_selected_expected.clear()
         rv_dataList.forEach{
             for(i in 0 until it.count()){
                 if (it[i].isSelected){
@@ -92,17 +91,12 @@ class MovieSelectionActivity : AppCompatActivity() {
                 }
             }
         }
-        Log.d("test", "$list_selected_current and $list_selected_expected")
+        Log.d("test", "$list_selected_current")
     }
 
     fun addList(list: ArrayList<MovieItem>, int: Int){
-        var idx: Int = int
-        if (list == rv_dataList[0] || list == rv_dataList[1]){
-            list_selected_current.add(idx)
-        }
-        else if(list == rv_dataList[2] || list == rv_dataList[3]){
-            list_selected_expected.add(idx)
-        }
+        val idx: Int = int
+        list_selected_current.add(idx)
     }
 
     @SuppressLint("MissingSuperCall")
