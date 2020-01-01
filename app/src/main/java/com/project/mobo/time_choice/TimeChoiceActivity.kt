@@ -1,6 +1,5 @@
 package com.project.mobo.time_choice
 
-import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
@@ -10,6 +9,7 @@ import khronos.Dates
 import khronos.days
 import khronos.plus
 import kotlinx.android.synthetic.main.activity_time_choice.*
+import kotlinx.android.synthetic.main.toolbar_timechoice.*
 import java.util.*
 
 typealias ChooseDate = Pair<Date, MutableSet<String>>
@@ -18,6 +18,24 @@ class TimeChoiceActivity : AppCompatActivity() {
 
     private val chooseDates = List<ChooseDate>(7) {
         Pair(Dates.today + (2 + it).days, mutableSetOf())
+    }
+
+    fun makeReserveDates(): List<ReserveDate> {
+        val ret = mutableListOf<ReserveDate>()
+        for (dates in chooseDates) {
+            val date = dates.first
+            val set = dates.second
+
+            val reservationDate = date.toPlotString()
+            val reservationTime = mutableListOf<Int>()
+            for (value in set) {
+                reservationTime.add(value.toInt())
+            }
+            ret.add(
+                ReserveDate(reservationDate, reservationTime)
+            )
+        }
+        return ret
     }
 
     var checked_three: Boolean = false
@@ -86,6 +104,10 @@ class TimeChoiceActivity : AppCompatActivity() {
                 currentSelectedDatePosition = index
             }
         }
+
+        btnTimeChoiceBack.setOnClickListener{
+            finish()
+        }
     }
 
     private fun initChoiceTime() {
@@ -103,7 +125,7 @@ class TimeChoiceActivity : AppCompatActivity() {
 
         btnTimeChoiceGo.setOnClickListener {
             if (isValidTimeChoice()) {
-                //선택한 데이터를 서버에 보내줘야함. chooseDates
+                //TODO: 선택한 데이터를 서버에 보내줘야함. chooseDates
 //                SharedPreferenceController.setTimeTable(
 //                    this@TimeChoiceActivity,
 //                    chooseDates[currentSelectedDatePosition].first,
@@ -149,8 +171,42 @@ class TimeChoiceActivity : AppCompatActivity() {
     }
 
     private companion object {
-        const val MININUM_CHOOSEN_DATE = 1
+        const val MININUM_CHOOSEN_DATE = 0
         const val MININUM_CHOOSEN_ONE = 1
     }
 }
 
+//data class SomeResponse(
+//    val status: Int,
+//    val message: String,
+//    val data: SomeData
+//)
+//
+//data class SomeData(
+//    val userIdx: Int,
+//    val matchingState: Int,
+//    val randMovie: List<RandMovie>,
+//    val reserveMovie: List<ReserveMovie>,
+//    val reserveDate: List<ReserveDate>
+//)
+//
+//data class RandMovie(
+//    val movieIdx: Int,
+//    val movieImg: String,
+//    val movieName: String,
+//    val movieScore: Float,
+//    val movieRuntime: String,
+//    val movieGenre: String
+//)
+//
+//data class ReserveMovie(
+//    val movieIdx: Int,
+//    val movieImg: String,
+//    val movieName: String,
+//    val movieScore: Float
+//)
+//
+data class ReserveDate(
+    val reservationDate: String,
+    val reservationTime: List<Int>
+)

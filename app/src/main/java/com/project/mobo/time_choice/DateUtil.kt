@@ -38,6 +38,6 @@ fun String.toFlotDate(): Date {
     return this.toDate(FLOT_DATE_FORMAT)
 }
 
-fun Date.toFlotString(): String {
+fun Date.toPlotString(): String {
     return this.toString(FLOT_DATE_FORMAT)
 }
