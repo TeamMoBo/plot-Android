@@ -71,7 +71,7 @@ class ChattingActivity : AppCompatActivity() {
         rvChatList.scrollToPosition(rvChatList.adapter!!.itemCount - 1) // 첫 접속시 리싸이클러뷰가 상단에 올라가기 때문.
 
         //타이머 기능
-        timer()
+        //timer()
     }
 
     //TODO: 특정 시간이 지났는지 파악
@@ -79,24 +79,31 @@ class ChattingActivity : AppCompatActivity() {
     //TODO: 특정 시간 ~ 특정 시간 사이의 시간을, 받아올 수 있어야함. (분 단위) v
     //TODO: 특정 시간으로 부터, 특정 분이 지났을 때, 이벤트를 등록 할 수 있으면 v
     private fun timer(){
-        val timer= Timer("schdule", true)
-
-        timer.schedule(10000, 60000){
-            //if(delay)
-            txtQuiz.text = "이걸로 바뀌지롱ㅎ"
-            imgProcess.setImageDrawable(getDrawable(R.drawable.processbar_second))
-        }
+//        val timer= Timer("schdule", true)
+//
+//        timer.schedule(10000, 60000){
+//            //if(delay)
+//            txtQuiz.text = "이걸로 바뀌지롱ㅎ"
+//            imgProcess.setImageDrawable(getDrawable(R.drawable.processbar_second))
+//        }
 
         //액티비티가 만들어진 시간
         createdTime = Date()
+        registerEvent(createdTime, 0.5f){
+
+        }
         registerEvent(createdTime, 0.12f) {
-            Toast.makeText(this, "1단계", Toast.LENGTH_SHORT).show()
+            //Toast.makeText(this, "1단계", Toast.LENGTH_SHORT).show()
+            txtQuiz.text=""
+            imgProcess.setImageDrawable(getDrawable(R.drawable.processbar_second))
         }
         registerEvent(createdTime, 0.25f) {
-            Toast.makeText(this, "2단계", Toast.LENGTH_SHORT).show()
+            //Toast.makeText(this, "2단계", Toast.LENGTH_SHORT).show()
+            imgProcess.setImageDrawable(getDrawable(R.drawable.processbar_third))
         }
         registerEvent(createdTime, 0.36f) {
-            Toast.makeText(this, "3단계", Toast.LENGTH_SHORT).show()
+            //Toast.makeText(this, "3단계", Toast.LENGTH_SHORT).show()
+            imgProcess.setImageDrawable(getDrawable(R.drawable.processbar_complete))
         }
     }
 
