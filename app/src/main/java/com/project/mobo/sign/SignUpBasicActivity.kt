@@ -15,6 +15,7 @@ import com.project.mobo.api.SignUpRequest
 import com.project.mobo.api.SignUpResponse
 import com.project.mobo.api.UserServiceImpl
 import kotlinx.android.synthetic.main.activity_my_page_new.*
+import kotlinx.android.synthetic.main.activity_sign_in.view.*
 import kotlinx.android.synthetic.main.activity_sign_up_basic.*
 import kotlinx.android.synthetic.main.activity_sign_up_basic.profile_image
 import retrofit2.Call
@@ -23,19 +24,22 @@ import retrofit2.Response
 
 class SignUpBasicActivity : AppCompatActivity() {
 
+    //정보 9개 (사진 제외) - 넣지 않을 것
+    /*
+    */
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_sign_up_basic)
 
-
-        //login()
         initialUI()
         picture()
         condition()
+
     }
 
     private fun picture() {
-        //Change profile Image
+        //Change profile Image000000000
         profile_image.setOnClickListener {
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
                 if (checkSelfPermission(Manifest.permission.READ_EXTERNAL_STORAGE) ==
@@ -55,6 +59,7 @@ class SignUpBasicActivity : AppCompatActivity() {
     private fun pickImageFromGallery() {
         val intent = Intent(Intent.ACTION_PICK)
         intent.type = "image/*"
+
         startActivityForResult(intent, IMAGE_PICK_CODE)
     }
 
@@ -97,6 +102,31 @@ class SignUpBasicActivity : AppCompatActivity() {
     private fun initialUI() {
         btnSignupNext.setOnClickListener {
             val login = Intent(this, SignUpPlusActivity::class.java)
+
+            //일단 넣지 않을 것.
+
+            val photo = profile_image.imageView
+            val nickname = edtSignupNickname.text.toString()
+            val name = edtSignupName.text.toString()
+            val age = edtSignupAge.text.toString()
+            val id = edtSignupID.text.toString()
+            val password = edtSignupPW.text.toString()
+            val school = edtSignupUniv.text.toString()
+            val major = edtSignupMajor.text.toString()
+            val kakaoID = edtSignupKakao.text.toString()
+            val location = edtSignupLocation.text.toString()
+
+            intent.putExtra("nickname", nickname )
+            intent.putExtra("name", name)
+            intent.putExtra("age", age)
+            intent.putExtra("id", id)
+            intent.putExtra("password", password)
+            intent.putExtra("school", school)
+            intent.putExtra("major", major)
+            intent.putExtra("kakaoID", kakaoID)
+            intent.putExtra("location", location)
+            setResult(Activity.RESULT_OK, intent) // StartActivityForResult
+
             startActivity(login)
         }
         btnBack.setOnClickListener {
@@ -106,56 +136,6 @@ class SignUpBasicActivity : AppCompatActivity() {
 
     private fun condition(){
         edtSignupID.text.toString()
-    }
-
-
-    private fun login() {
-        btnSignupNext?.setOnClickListener {
-            val id = edtSignupID?.text.toString()
-            val password = edtSignupPW?.text.toString()
-
-            if (id.isEmpty() || password.isEmpty()) {
-                // 사용자에게 간단한 text 정보를 알려주기 위해 Toast를 띄워준다.
-                Toast.makeText(this, "아이디나 비밀번호를 입력해주세요.", Toast.LENGTH_SHORT).show()
-                return@setOnClickListener
-            }
-            Log.e(this::class.java.name, "실패1")
-
-            val call: Call<SignUpResponse> = UserServiceImpl.userService.requestSignUp(
-                SignUpRequest(id, password)
-            )
-
-            Log.e(this::class.java.name, "실패2")
-            call.enqueue(
-                object : Callback<SignUpResponse> {
-                    override fun onFailure(call: Call<SignUpResponse>, t: Throwable) {
-                        Log.e(this::class.java.name, "network error : $t")
-                    }
-
-                    override fun onResponse(
-                        call: Call<SignUpResponse>,
-                        response: Response<SignUpResponse>
-                    ) {
-                        if (response.isSuccessful) {
-                            val signInResponse = response.body()!!
-
-                            Toast.makeText(
-                                this@SignUpBasicActivity,
-                                "$signInResponse",
-                                Toast.LENGTH_LONG
-                            ).show()
-                        } else {
-                            Toast.makeText(
-                                this@SignUpBasicActivity,
-                                "Login Failed",
-                                Toast.LENGTH_LONG
-                            ).show()
-                        }
-                    }
-                }
-            )
-        }
-
     }
 
 }

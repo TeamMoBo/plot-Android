@@ -5,7 +5,6 @@ import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.project.mobo.R
 import com.project.mobo.main_page.choice_movie.ChoiceMovieAdapter
 import com.project.mobo.main_page.choice_movie.ChoiceMovieRepository
 import com.project.mobo.main_page.choice_time.DataVerticalAdapter
@@ -19,6 +18,11 @@ import com.project.mobo.movie_selection.display.MovieSelectionActivity
 import com.project.mobo.mypage.MyPage_new
 import com.project.mobo.time_choice.TimeChoiceActivity
 import kotlinx.android.synthetic.main.activity_main_page.*
+import kotlinx.android.synthetic.main.fragment_main.*
+import android.net.Uri
+import com.project.mobo.R
+import com.project.mobo.dialog.FailDialog
+import com.project.mobo.dialog.SuccessDialog
 
 
 class MainPageActivity : AppCompatActivity() {
@@ -35,11 +39,22 @@ class MainPageActivity : AppCompatActivity() {
 
     private lateinit var verticalAdapter : DataVerticalAdapter
 
-
+    var state = 1
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main_page)
 
+        //여기서부터 지울 영역
+        button_check.setOnClickListener {
+            if(state == 0){
+                val failDialog = FailDialog()
+                failDialog.show(supportFragmentManager, "fail")
+            }else{
+                val successDialog = SuccessDialog()
+                successDialog.show(supportFragmentManager, "success")
+            }
+        }
+        ///여기까지
         movePage() //intent
 
         dummy()
@@ -47,6 +62,8 @@ class MainPageActivity : AppCompatActivity() {
         topThree() // 뷰페이저
         choiceMovie() // 선택한 영화 창
         choiceDate() // 선택한 날짜 창
+
+        //setOnClickListener()
     }
 
     private fun dummy(){
@@ -97,26 +114,30 @@ class MainPageActivity : AppCompatActivity() {
         vpMain.pageMargin=8
         vpMain.adapter = adapter
 
+        //btnMainFirstPlay.setOnClickListener(){
+        //    val i = Intent(Intent.ACTION_VIEW, Uri.parse("https://youtu.be/li4jOV5j7SI"))
+        //startActivity(i)
+        //}
     }
 
     companion object {
         val movieList = arrayListOf(
             MovieData(
-                "https://t1.daumcdn.net/cfile/tistory/236A5E4D52D6B15B03",
-                "aboutTime"
-                //"4.5",
-                //"1h 40m"
+                "https://t1.daumcdn.net/thumb/R720x0/?fname=http://t1.daumcdn.net/brunch/service/user/6atO/image/nDpOWQrYaI2MQ514GXPpCOFkJUU",
+                "엑시트"
+                //"4.5"
+                //"1h 40m"i
             ),
             MovieData(
                 "https://t1.daumcdn.net/cfile/tistory/236A5E4D52D6B15B03",
-                "aboutTime"
-                //"4.5",
+                "어바웃 타임"
+                //"4"
                 //"1h 40m"
             ),
             MovieData(
-                "https://t1.daumcdn.net/cfile/tistory/236A5E4D52D6B15B03",
-                "aboutTime"
-                //"4.5",
+                "https://cools.co/wp-content/uploads/2019/12/80218028_3472865946120662_576660455397785600_n.jpg",
+                "천문"
+                //"3.5"
                 //"1h 40m"
             )
         )
@@ -161,6 +182,13 @@ class MainPageActivity : AppCompatActivity() {
 //
 //        dateChoiceAdapter.notifyDataSetChanged()
 
+    }
+
+    private fun setOnClickListener(){
+        btnMainFirstPlay.setOnClickListener(){
+            val i = Intent(Intent.ACTION_VIEW, Uri.parse("https://youtu.be/li4jOV5j7SI"))
+            startActivity(i)
+        }
     }
 
 }

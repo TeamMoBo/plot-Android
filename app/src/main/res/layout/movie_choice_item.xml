@@ -31,7 +31,8 @@
         android:text="Meditation"
         android:textColor="#ffffff"
         app:layout_constraintBottom_toTopOf="@id/tvMainItemStar"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        android:textSize="13sp"/>
 
     <TextView
         android:id="@+id/tvMainItemStar"
@@ -48,7 +49,7 @@
     <ImageView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="1dp"
+        android:layout_marginStart="5dp"
         android:layout_marginBottom="3dp"
         android:src="@drawable/img_star"
         app:layout_constraintBottom_toBottomOf="@+id/tvMainItemStar"

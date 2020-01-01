@@ -12,7 +12,7 @@
         android:layout_height="48dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        android:background="@drawable/time_choice_corner_box">
+        android:background="@drawable/date_choice_corner_box">
 
         <TextView
             android:id="@+id/tvMainDay"
@@ -21,17 +21,10 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            android:layout_marginTop="10dp"
-            android:text="Thu"
-            />
-        <TextView
-            android:id="@+id/tvMainDayNum"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="@id/tvMainDay"/>
-
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:text="14"
+            android:textSize="18sp"
+            android:textColor="#ff7e27" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 

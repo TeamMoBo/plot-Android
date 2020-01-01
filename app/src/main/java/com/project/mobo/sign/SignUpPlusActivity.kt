@@ -12,6 +12,17 @@ class SignUpPlusActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_sign_up_plus)
 
+
+        val nickname = intent.getStringExtra("nickname")
+        val name = intent.getStringExtra("name")
+        val age = intent.getStringExtra("age")
+        val id = intent.getStringExtra("id")
+        val password = intent.getStringExtra("password")
+        val school = intent.getStringExtra("school")
+        val major = intent.getStringExtra("major")
+        val kakaoID = intent.getStringExtra("kakaoID")
+        val location = intent.getStringExtra("location")
+
         initialUI()
     }
 

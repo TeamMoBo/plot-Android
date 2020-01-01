@@ -12,7 +12,7 @@
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
-            android:layout_height="1034dp"
+            android:layout_height="1100dp"
             android:background="@drawable/an_background"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent">
@@ -93,7 +93,7 @@
                     app:layout_constraintEnd_toEndOf="@id/profile_image" />
 
                 <EditText
-                    android:id="@+id/edtSignupPoint"
+                    android:id="@+id/edtSignupNickname"
                     android:layout_width="130dp"
                     android:layout_height="wrap_content"
                     android:background="@null"
@@ -124,7 +124,7 @@
                     android:background="#f2f2f2"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@id/edtSignupPoint" />
+                    app:layout_constraintTop_toBottomOf="@id/edtSignupNickname" />
 
                 <EditText
                     android:id="@+id/edtSignupName"
@@ -414,7 +414,6 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="42dp"
                     android:layout_marginEnd="18dp"
-                    android:inputType="number"
                     android:text="생활지역"
                     android:textSize="12sp"
                     app:layout_constraintEnd_toEndOf="parent"
@@ -422,7 +421,6 @@
                     android:textColor="#000000"/>
 
                 <View
-                    android:id="@+id/last_line"
                     android:layout_width="313dp"
                     android:layout_height="1dp"
                     android:layout_marginTop="9dp"
@@ -431,6 +429,75 @@
                     app:layout_constraintTop_toBottomOf="@id/edtSignupLocation"
                     app:layout_constraintEnd_toEndOf="parent"
                     android:layout_marginEnd="18dp"/>
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/genderChoice"
+                    android:layout_width="match_parent"
+                    android:layout_height="15dp"
+                    android:layout_marginTop="20dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/edtSignupLocation">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="88dp"
+                        android:text="여성"
+                        android:textColor="#000000"
+                        android:textSize="10sp"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="186dp"
+                        android:text="남성"
+                        android:textColor="#000000"
+                        android:textSize="10sp"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <RadioGroup
+                    android:id="@+id/rg_gender"
+                    android:layout_width="270dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="80dp"
+                    android:orientation="horizontal"
+                    android:weightSum="3"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/genderChoice">
+
+                    <RadioButton
+                        android:id="@+id/rg_btn1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:buttonTint="#ff6a07"
+                        android:checked="true">
+
+                    </RadioButton>
+
+                    <RadioButton
+                        android:id="@+id/rg_btn2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:buttonTint="#ff6a07" />
+
+                </RadioGroup>
+
+                <View
+                    android:id="@+id/last_line"
+                    android:layout_width="313dp"
+                    android:layout_height="1dp"
+                    android:layout_marginTop="9dp"
+                    android:background="#f2f2f2"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/rg_gender" />
+
 
 
                 <Button
@@ -442,6 +509,18 @@
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintTop_toBottomOf="@id/last_line"
                     android:layout_marginTop="10dp"/>
+
+                <TextView
+                    android:id="@+id/tvSignupGender"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="42dp"
+                    android:layout_marginEnd="18dp"
+                    android:text="성별"
+                    android:textSize="12sp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/tvSignupLocation"
+                    android:textColor="#000000"/>
 
 
             </androidx.constraintlayout.widget.ConstraintLayout>
