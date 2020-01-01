@@ -308,6 +308,7 @@
                 android:gravity="center"
                 android:tag="12"
                 android:text="12PM"
+                android:textColor="@color/txt_color_btn"
                 android:textAlignment="center" />
 
             <CheckedTextView
@@ -320,6 +321,7 @@
                 android:gravity="center"
                 android:tag="13"
                 android:text="1PM"
+                android:textColor="@color/txt_color_btn"
                 android:textAlignment="center" />
 
             <CheckedTextView
@@ -332,6 +334,7 @@
                 android:gravity="center"
                 android:tag="14"
                 android:text="2PM"
+                android:textColor="@color/txt_color_btn"
                 android:textAlignment="center" />
 
             <CheckedTextView
@@ -343,6 +346,7 @@
                 android:gravity="center"
                 android:tag="15"
                 android:text="3PM"
+                android:textColor="@color/txt_color_btn"
                 android:textAlignment="center" />
 
             <CheckedTextView
@@ -354,6 +358,7 @@
                 android:gravity="center"
                 android:tag="16"
                 android:text="4PM"
+                android:textColor="@color/txt_color_btn"
                 android:textAlignment="center" />
 
             <CheckedTextView
@@ -366,6 +371,7 @@
                 android:gravity="center"
                 android:tag="17"
                 android:text="5PM"
+                android:textColor="@color/txt_color_btn"
                 android:textAlignment="center" />
 
             <CheckedTextView
@@ -378,6 +384,7 @@
                 android:gravity="center"
                 android:tag="18"
                 android:text="6PM"
+                android:textColor="@color/txt_color_btn"
                 android:textAlignment="center" />
 
             <CheckedTextView
@@ -390,6 +397,7 @@
                 android:gravity="center"
                 android:tag="19"
                 android:text="7PM"
+                android:textColor="@color/txt_color_btn"
                 android:textAlignment="center" />
 
             <CheckedTextView
@@ -401,6 +409,7 @@
                 android:gravity="center"
                 android:tag="20"
                 android:text="8PM"
+                android:textColor="@color/txt_color_btn"
                 android:textAlignment="center" />
 
             <CheckedTextView
@@ -413,6 +422,7 @@
                 android:gravity="center"
                 android:tag="21"
                 android:text="9PM"
+                android:textColor="@color/txt_color_btn"
                 android:textAlignment="center" />
 
             <CheckedTextView
@@ -425,6 +435,7 @@
                 android:gravity="center"
                 android:tag="22"
                 android:text="10PM"
+                android:textColor="@color/txt_color_btn"
                 android:textAlignment="center" />
 
             <CheckedTextView
@@ -437,6 +448,7 @@
                 android:gravity="center"
                 android:tag="23"
                 android:text="11PM"
+                android:textColor="@color/txt_color_btn"
                 android:textAlignment="center" />
 
             <CheckedTextView
@@ -448,6 +460,7 @@
                 android:gravity="center"
                 android:tag="24"
                 android:text="12AM"
+                android:textColor="@color/txt_color_btn"
                 android:textAlignment="center" />
 
             <CheckedTextView
@@ -460,6 +473,7 @@
                 android:gravity="center"
                 android:tag="25"
                 android:text="1AM"
+                android:textColor="@color/txt_color_btn"
                 android:textAlignment="center" />
 
             <CheckedTextView
@@ -472,6 +486,7 @@
                 android:gravity="center"
                 android:tag="26"
                 android:text="2AM"
+                android:textColor="@color/txt_color_btn"
                 android:textAlignment="center" />
         </GridLayout>
 
