@@ -4,6 +4,7 @@
     android:layout_height="wrap_content"
     xmlns:app="http://schemas.android.com/apk/res-auto">
     <ImageView
+        android:id="@+id/imgback"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:background="@drawable/img_success_pop"
@@ -21,9 +22,9 @@
         android:lineSpacingExtra="9sp"
         android:gravity="center_horizontal"
         android:text="매칭완료"
-        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintStart_toStartOf="@id/imgback"
+        app:layout_constraintEnd_toEndOf="@id/imgback"
         app:layout_constraintTop_toTopOf="parent"
-        android:layout_marginLeft="55dp"
         android:layout_marginTop="64dp"
         />
     <TextView
@@ -35,11 +36,13 @@
         android:lineSpacingExtra="6sp"
         android:gravity="center_horizontal"
         android:text="12월 25일"
-        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintStart_toStartOf="@id/imgback"
+        app:layout_constraintEnd_toStartOf="@+id/txtSuccess"
         app:layout_constraintTop_toBottomOf="@id/txtMatchingSuccess"
         android:layout_marginLeft="23dp"
         android:layout_marginTop="24dp"/>
     <TextView
+        android:id="@+id/txtSuccess"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textSize="12sp"
@@ -48,7 +51,7 @@
         android:gravity="center_horizontal"
         android:text=" 매칭을 성공했어!"
         app:layout_constraintTop_toBottomOf="@id/txtMatchingSuccess"
-        app:layout_constraintLeft_toRightOf="@+id/txtMatchingSuccessDate"
+        app:layout_constraintStart_toEndOf="@id/txtMatchingSuccessDate"
         android:layout_marginTop="24dp"/>
     <TextView
         android:layout_width="wrap_content"
@@ -59,19 +62,20 @@
         android:gravity="center_horizontal"
         android:text="30분 내로 수락해야 채팅을\n
 시작할 수 있어! 서둘러!"
-        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintStart_toStartOf="@id/imgback"
+        app:layout_constraintEnd_toEndOf="@id/imgback"
         app:layout_constraintTop_toBottomOf="@id/txtMatchingSuccessDate"
-        android:layout_marginLeft="36dp"
         android:layout_marginTop="12dp"
         />
     <Button
         android:id="@+id/btnSuccessOk"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:background="@drawable/btn_okay"
+        android:layout_width="96dp"
+        android:layout_height="28dp"
+        android:background="@drawable/shape_btn_popup_final"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        android:layout_marginLeft="35dp"
+        app:layout_constraintStart_toStartOf="@id/imgback"
+        app:layout_constraintEnd_toEndOf="@id/imgback"
+        android:text="확인하기"
         android:layout_marginBottom="25dp">
     </Button>
 </androidx.constraintlayout.widget.ConstraintLayout>

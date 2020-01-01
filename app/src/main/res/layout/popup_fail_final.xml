@@ -4,6 +4,7 @@
     android:layout_height="wrap_content"
     xmlns:app="http://schemas.android.com/apk/res-auto">
     <ImageView
+        android:id="@+id/imgback"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:background="@drawable/img_fail_popup_final"
@@ -20,9 +21,9 @@
         android:lineSpacingExtra="9sp"
         android:gravity="center_horizontal"
         android:text="매칭실패"
-        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintStart_toStartOf="@id/imgback"
+        app:layout_constraintEnd_toEndOf="@id/imgback"
         app:layout_constraintTop_toTopOf="parent"
-        android:layout_marginLeft="76dp"
         android:layout_marginTop="56dp"
         />
     <TextView
@@ -34,7 +35,7 @@
         android:lineSpacingExtra="6sp"
         android:gravity="center_horizontal"
         android:text="정현강"
-        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintStart_toStartOf="@id/imgback"
         app:layout_constraintTop_toBottomOf="@id/txtPopupFail"
         android:layout_marginLeft="75dp"
         android:layout_marginTop="40dp"
@@ -47,11 +48,12 @@
         android:lineSpacingExtra="6sp"
         android:gravity="center_horizontal"
         android:text="님과의"
-        app:layout_constraintLeft_toRightOf="@id/txtPopupFinalPerson"
+        app:layout_constraintStart_toEndOf="@id/txtPopupFinalPerson"
         app:layout_constraintTop_toBottomOf="@id/txtPopupFail"
         android:layout_marginTop="40dp"/>
     <TextView
-        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintStart_toStartOf="@id/imgback"
+        app:layout_constraintEnd_toEndOf="@id/imgback"
         app:layout_constraintTop_toBottomOf="@id/txtPopupFinalPerson"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -60,7 +62,6 @@
         android:lineSpacingExtra="6sp"
         android:gravity="center_horizontal"
         android:text="매칭에 실패했어"
-        android:layout_marginLeft="66dp"
         />
     <TextView
         android:layout_width="wrap_content"
@@ -71,19 +72,19 @@
         android:gravity="center_horizontal"
         android:text="갑자기 약속이 생겼다\n
 다시 한번 시도해봐!"
-        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintStart_toStartOf="@id/imgback"
+        app:layout_constraintEnd_toEndOf="@id/imgback"
         app:layout_constraintTop_toBottomOf="@id/txtPopupFinalPerson"
-        android:layout_marginLeft="52dp"
         android:layout_marginTop="24dp"
         />
     <Button
         android:id="@+id/btnFailOk"
-        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintStart_toStartOf="@id/imgback"
+        app:layout_constraintEnd_toEndOf="@id/imgback"
         app:layout_constraintBottom_toBottomOf="parent"
         android:layout_width="96dp"
         android:layout_height="28dp"
         android:background="@drawable/shape_btn_popup_fail"
         android:text="확인하기"
-        android:layout_marginLeft="66dp"
         android:layout_marginBottom="39dp"/>
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -11,8 +11,8 @@
         android:background="@drawable/img_fail_popup_first"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="1.0" />
 
@@ -26,8 +26,8 @@
         android:text="매칭실패"
         android:textColor="#000000"
         android:textSize="20sp"
-        app:layout_constraintLeft_toLeftOf="@id/img_popup_fail"
-        app:layout_constraintRight_toRightOf="@id/img_popup_fail"
+        app:layout_constraintStart_toStartOf="@+id/img_popup_fail"
+        app:layout_constraintEnd_toEndOf="@+id/img_popup_fail"
         app:layout_constraintTop_toTopOf="@id/img_popup_fail" />
 
     <TextView
@@ -41,10 +41,12 @@
         android:text="12월 25일"
         android:textColor="#d9564c"
         android:textSize="12sp"
-        app:layout_constraintLeft_toLeftOf="@id/img_popup_fail"
+        app:layout_constraintStart_toStartOf="@+id/img_popup_fail"
+        app:layout_constraintEnd_toStartOf="@+id/txtFail"
         app:layout_constraintTop_toBottomOf="@+id/txtPopupFail" />
 
     <TextView
+        android:id="@+id/txtFail"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="25dp"
@@ -53,7 +55,7 @@
         android:text=" 매칭을 실패했어"
         android:textColor="#d9564c"
         android:textSize="12sp"
-        app:layout_constraintLeft_toRightOf="@id/txtPopupFailDate"
+        app:layout_constraintStart_toEndOf="@+id/txtPopupFailDate"
         app:layout_constraintTop_toBottomOf="@id/txtPopupFail" />
 
     <TextView
@@ -65,19 +67,19 @@
 다음 기회를 노려봐!"
         android:textColor="#000000"
         android:textSize="12sp"
-        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintStart_toStartOf="@id/img_popup_fail"
+        app:layout_constraintEnd_toEndOf="@id/img_popup_fail"
         app:layout_constraintTop_toBottomOf="@id/txtPopupFailDate"
-        android:layout_marginLeft="40dp"
         android:layout_marginTop="12dp"/>
     <Button
         android:id="@+id/btnGoMain"
         android:layout_width="96dp"
         android:layout_height="28dp"
-        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintStart_toStartOf="@id/img_popup_fail"
+        app:layout_constraintEnd_toEndOf="@id/img_popup_fail"
         app:layout_constraintBottom_toBottomOf="parent"
         android:background="@drawable/shape_btn_popup_fail"
         android:text="매칭실패"
-        android:layout_marginLeft="44dp"
         android:layout_marginBottom="25dp"
         />
 </androidx.constraintlayout.widget.ConstraintLayout>

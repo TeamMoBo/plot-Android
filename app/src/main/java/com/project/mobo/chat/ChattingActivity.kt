@@ -193,5 +193,3 @@ class ChattingActivity : AppCompatActivity() {
         return System.currentTimeMillis().toString()
     }
 }
-
-
