@@ -1,10 +1,12 @@
 package com.project.mobo.movie_selection.display
 
+import android.annotation.SuppressLint
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.view.View
+import android.widget.Toast
 import androidx.viewpager.widget.ViewPager
 import com.google.android.material.tabs.TabLayout
 import com.project.mobo.R
@@ -63,7 +65,12 @@ class MovieSelectionActivity : AppCompatActivity() {
 
         nextBtn_movieseletion.setOnClickListener{
             selectedDataCal()
-            startActivity(intent)
+            if (list_selected_current.size + list_selected_expected.size == 0){
+                Toast.makeText(this, "영화를 하나 이상 선택해주세요", Toast.LENGTH_SHORT).show()
+            }
+            else {
+                startActivityForResult(intent, 1000)
+            }
         }
 
 
@@ -97,4 +104,12 @@ class MovieSelectionActivity : AppCompatActivity() {
             list_selected_expected.add(idx)
         }
     }
+
+    @SuppressLint("MissingSuperCall")
+    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+        if (requestCode == 1000){
+            finish()
+        }
+    }
+
 }

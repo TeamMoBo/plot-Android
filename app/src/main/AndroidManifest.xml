@@ -17,22 +17,21 @@
         android:usesCleartextTraffic="true"
         android:theme="@style/AppTheme">
         <activity android:name=".movie_selection.display.MovieSelectionActivity"/>
-        <activity android:name=".mypage.MyPage_new"/>
+        <activity android:name=".mypage.MyPage_new"></activity>
         <activity android:name=".MatchingDetailedActivity"/>
-        <activity android:name=".MatchingHistory.MatchingHistoryActivity" >
-        </activity>
-        <activity android:name=".MainActivity">
+        <activity android:name=".MatchingHistory.MatchingHistoryActivity" ></activity>
+        <activity android:name=".MainActivity"></activity>
+        <activity android:name=".main_page.MainPageActivity" />
+        <activity android:name=".sign.SignUpSuccessActivity" />
+        <activity android:name=".sign.SignUpPlusActivity" />
+        <activity android:name=".sign.SignUpBasicActivity" />
+        <activity android:name=".sign.SignInActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <action android:name="android.intent.action.VIEW" />
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".main_page.MainPageActivity" />
-        <activity android:name=".sign.SignUpSuccessActivity" />
-        <activity android:name=".sign.SignUpPlusActivity" />
-        <activity android:name=".sign.SignUpBasicActivity" />
-        <activity android:name=".sign.SignInActivity"></activity>
         <activity android:name=".chat.ChattingActivity" />
         <activity android:name=".PayChoiceActivity" />
         <activity android:name=".time_choice.TimeChoiceActivity" />
