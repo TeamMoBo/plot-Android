@@ -38,7 +38,7 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:srcCompat="@drawable/processbar_complete" />
+            app:srcCompat="@drawable/process_first" />
 
         <TextView
             android:id="@+id/txtName"
@@ -67,7 +67,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="4dp"
             android:alpha="0.7"
-            android:text="서로 사진 보고 첫인상은 어때요?"
+            android:text="10분동안 당신들의 줄거리를 만들어보세요."
             android:textAlignment="center"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"

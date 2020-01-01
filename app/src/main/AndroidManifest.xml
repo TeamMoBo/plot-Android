@@ -16,18 +16,19 @@
         android:supportsRtl="true"
         android:usesCleartextTraffic="true"
         android:theme="@style/AppTheme">
+        <activity android:name=".splash.Splash"></activity>
         <activity android:name=".MatchingWaitingActivity">
-
         </activity>
         <activity android:name=".movie_selection.display.MovieSelectionActivity" />
         <activity android:name=".mypage.MyPage_new" />
         <activity android:name=".MatchingDetailedActivity"/>
-        <activity android:name=".MatchingHistory.MatchingHistoryActivity" ></activity>
-        <activity android:name=".MainActivity"></activity>
+        <activity android:name=".MatchingHistory.MatchingHistoryActivity" />
+        <activity android:name=".MainActivity"/>
         <activity android:name=".main_page.MainPageActivity" />
         <activity android:name=".sign.SignUpSuccessActivity" />
         <activity android:name=".sign.SignUpPlusActivity" />
         <activity android:name=".sign.SignUpBasicActivity" />
+
         <activity android:name=".sign.SignInActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -42,5 +43,4 @@
         </activity>
 
     </application>
-
 </manifest>
