@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content">
+
+    <ImageView
+        android:id="@+id/imgback"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/img_finalchoose_popup_bg"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/txtFinal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="42dp"
+        android:layout_marginTop="43dp"
+        android:gravity="center_horizontal"
+        android:lineSpacingExtra="9sp"
+        android:text="매칭 최종선택"
+        android:textColor="#ffffff"
+        android:textSize="20sp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/txtMeet"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="38dp"
+        android:layout_marginTop="40dp"
+        android:gravity="center_horizontal"
+        android:lineSpacingExtra="6sp"
+        android:text="나랑 같이 영화보러 갈래?"
+        android:textColor="#f96b0b"
+        android:textSize="12sp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/txtFinal" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="34dp"
+        android:layout_marginTop="8dp"
+        android:gravity="center_horizontal"
+        android:lineSpacingExtra="6sp"
+        android:text="60초 내로 수락하지 않으면\n
+ 매칭이 취소돼!\n
+ 서둘러!"
+        android:textColor="#000000"
+        android:textSize="12sp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/txtMeet" />
+
+    <ImageView
+        android:id="@+id/btnChoiceYes"
+        android:layout_width="36dp"
+        android:layout_height="36dp"
+        android:layout_marginLeft="54dp"
+        android:layout_marginBottom="35dp"
+        android:background="@drawable/btn_yes"
+        android:scaleX="1.1"
+        android:scaleY="1.1"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent" />
+
+    <ImageView
+        android:id="@+id/btnChoiceNo"
+        android:layout_width="36dp"
+        android:layout_height="36dp"
+        android:layout_marginRight="62dp"
+        android:layout_marginBottom="35dp"
+        android:background="@drawable/btn_no"
+        android:scaleX="1.1"
+        android:scaleY="1.1"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintRight_toRightOf="parent" />
+</androidx.constraintlayout.widget.ConstraintLayout>
