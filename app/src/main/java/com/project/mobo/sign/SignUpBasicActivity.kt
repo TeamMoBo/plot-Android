@@ -13,7 +13,9 @@ import android.widget.Toast
 import com.project.mobo.R
 import com.project.mobo.api.SignUpRequest
 import com.project.mobo.api.SignUpResponse
+import com.project.mobo.api.UserServiceImpl
 import kotlinx.android.synthetic.main.activity_my_page_new.*
+import kotlinx.android.synthetic.main.activity_sign_in.view.*
 import kotlinx.android.synthetic.main.activity_sign_up_basic.*
 import kotlinx.android.synthetic.main.activity_sign_up_basic.profile_image
 import retrofit2.Call
@@ -30,6 +32,8 @@ class SignUpBasicActivity : AppCompatActivity() {
         //login()
         initialUI()
         picture()
+        condition()
+
     }
 
     private fun picture() {
@@ -53,6 +57,7 @@ class SignUpBasicActivity : AppCompatActivity() {
     private fun pickImageFromGallery() {
         val intent = Intent(Intent.ACTION_PICK)
         intent.type = "image/*"
+
         startActivityForResult(intent, IMAGE_PICK_CODE)
     }
 
@@ -95,6 +100,31 @@ class SignUpBasicActivity : AppCompatActivity() {
     private fun initialUI() {
         btnSignupNext.setOnClickListener {
             val login = Intent(this, SignUpPlusActivity::class.java)
+
+            //일단 넣지 않을 것.
+
+            val photo = profile_image.imageView
+            val nickname = edtSignupNickname.text.toString()
+            val name = edtSignupName.text.toString()
+            val age = edtSignupAge.text.toString()
+            val id = edtSignupID.text.toString()
+            val password = edtSignupPW.text.toString()
+            val school = edtSignupUniv.text.toString()
+            val major = edtSignupMajor.text.toString()
+            val kakaoID = edtSignupKakao.text.toString()
+            val location = edtSignupLocation.text.toString()
+
+            intent.putExtra("nickname", nickname )
+            intent.putExtra("name", name)
+            intent.putExtra("age", age)
+            intent.putExtra("id", id)
+            intent.putExtra("password", password)
+            intent.putExtra("school", school)
+            intent.putExtra("major", major)
+            intent.putExtra("kakaoID", kakaoID)
+            intent.putExtra("location", location)
+            setResult(Activity.RESULT_OK, intent) // StartActivityForResult
+
             startActivity(login)
         }
         btnBack.setOnClickListener {
@@ -102,55 +132,8 @@ class SignUpBasicActivity : AppCompatActivity() {
         }
     }
 
-
-//    private fun login() {
-//        btnSignupNext?.setOnClickListener {
-//            val id = edtSignupID?.text.toString()
-//            val password = edtSignupPW?.text.toString()
-//
-//            if (id.isEmpty() || password.isEmpty()) {
-//                // 사용자에게 간단한 text 정보를 알려주기 위해 Toast를 띄워준다.
-//                Toast.makeText(this, "아이디나 비밀번호를 입력해주세요.", Toast.LENGTH_SHORT).show()
-//                return@setOnClickListener
-//            }
-//            Log.e(this::class.java.name, "실패1")
-//
-//            val call: Call<SignUpResponse> = `class RequestManager`.userService.requestSignUp(
-//                "application/json",
-//                SignUpRequest(id, password)
-//            )
-//
-//            Log.e(this::class.java.name, "실패2")
-//            call.enqueue(
-//                object : Callback<SignUpResponse> {
-//                    override fun onFailure(call: Call<SignUpResponse>, t: Throwable) {
-//                        Log.e(this::class.java.name, "network error : $t")
-//                    }
-//
-//                    override fun onResponse(
-//                        call: Call<SignUpResponse>,
-//                        response: Response<SignUpResponse>
-//                    ) {
-//                        if (response.isSuccessful) {
-//                            val signInResponse = response.body()!!
-//
-//                            Toast.makeText(
-//                                this@SignUpBasicActivity,
-//                                "$signInResponse",
-//                                Toast.LENGTH_LONG
-//                            ).show()
-//                        } else {
-//                            Toast.makeText(
-//                                this@SignUpBasicActivity,
-//                                "Login Failed",
-//                                Toast.LENGTH_LONG
-//                            ).show()
-//                        }
-//                    }
-//                }
-//            )
-//        }
-//
-//    }
+    private fun condition(){
+        edtSignupID.text.toString()
+    }
 
 }

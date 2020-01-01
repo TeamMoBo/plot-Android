@@ -11,7 +11,9 @@ object SharedPreferenceController {
 
     private val USER_ID = "userid"
     private val TIME_DATE = "timedate"
+    private val TOKEN = "token"
     //private val TIME_DATE_DATA : Pair<Date, MutableSet<String>>
+
 
     fun setUserId(context: Context, id : String){
         val pref = context.getSharedPreferences(USER_ID, Context.MODE_PRIVATE)
@@ -38,6 +40,18 @@ object SharedPreferenceController {
         val pref = context.getSharedPreferences(TIME_DATE, Context.MODE_PRIVATE)
         var set : MutableSet<String>? = pref.getStringSet(date.toString(), HashSet<String>());
         return Pair(date, set)
+    }
+
+    fun setUserToken(context: Context, token : String){
+        val pref = context.getSharedPreferences(TOKEN, Context.MODE_PRIVATE)
+        val editor = pref.edit()
+        editor.putString(TOKEN, token)
+        editor.apply()
+    }
+
+    fun getUserToken(context: Context) : String{
+        val pref = context.getSharedPreferences(TOKEN, Context.MODE_PRIVATE)
+        return pref.getString(TOKEN, "")?:""
     }
 
 //    fun clearUserSharedPreferences(ctx: Context){

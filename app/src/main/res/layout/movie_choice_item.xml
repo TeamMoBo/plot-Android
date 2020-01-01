@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="101dp"
     android:layout_height="146dp"
     xmlns:app="http://schemas.android.com/apk/res-auto"
@@ -30,7 +31,8 @@
         android:text="Meditation"
         android:textColor="#ffffff"
         app:layout_constraintBottom_toTopOf="@id/tvMainItemStar"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        android:textSize="13sp"/>
 
     <TextView
         android:id="@+id/tvMainItemStar"
@@ -41,9 +43,17 @@
         android:text="4.6"
         android:textColor="#ffffff"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        android:textSize="9sp"/>
 
-
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="5dp"
+        android:layout_marginBottom="3dp"
+        android:src="@drawable/img_star"
+        app:layout_constraintBottom_toBottomOf="@+id/tvMainItemStar"
+        app:layout_constraintStart_toEndOf="@id/tvMainItemStar" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

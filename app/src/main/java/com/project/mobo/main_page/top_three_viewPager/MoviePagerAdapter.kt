@@ -1,5 +1,6 @@
 package com.project.mobo.main_page.top_three_viewPager
 
+import android.graphics.drawable.GradientDrawable
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -18,6 +19,11 @@ class MoviePagerAdapter(private val list: ArrayList<MovieData>): PagerAdapter() 
         val inflater = LayoutInflater.from(container.context)
         //val view = inflater.inflate(R.layout.tab_main_page, container, false)
         val view = inflater.inflate(R.layout.fragment_main, container, false)
+
+        //GradientDrawable drawable = (GradientDrawable) context.getDrawable(R.drawable.main_viewpager_corner)
+
+        //view.setBackground(drawable);
+        //view.setClipToOutline(true);
 
         //view.imgMainFirstPoster.text=list[position].photo
         Glide.with(view)
