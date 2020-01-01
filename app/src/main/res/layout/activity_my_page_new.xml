@@ -4,8 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".mypage.MyPage_new"
-    android:background="@drawable/an_background">
+    tools:context=".mypage.MyPage_new">
 
     <ScrollView
         android:layout_width="match_parent"
@@ -21,486 +20,620 @@
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@drawable/halfcircle"
-            android:orientation="vertical">
-
-            <ImageButton
-                android:id="@+id/backBtn"
-                android:layout_width="40dp"
-                android:layout_height="40dp"
-                android:layout_marginStart="10dp"
-                android:layout_marginTop="10dp"
-                android:background="#00ff0000"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+            <ImageView
                 android:contentDescription="@string/todo"
-                android:src="@drawable/btn_back"
-                app:layout_constraintLeft_toLeftOf="parent"
-                app:layout_constraintTop_toTopOf="parent"/>
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="40dp"
-                android:layout_marginTop="10dp"
-                android:gravity="center"
-                android:text="@string/mypage"
-                android:textColor="#FFFFFF"
-                android:textSize="16sp"
-                android:textStyle=""
-                app:layout_constraintLeft_toRightOf="@id/backBtn"
-                app:layout_constraintTop_toTopOf="parent"/>
-
-            <TextView
-                android:id="@+id/profiletxt"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="15dp"
-                android:gravity="center"
-                android:text="@string/profiletxt"
-                android:textColor="#FFFFFF"
-                android:textSize="24sp"
-                android:textStyle="bold"
+                android:layout_width="match_parent"
+                android:layout_height="450dp"
+                android:scaleType="fitXY"
+                app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintLeft_toLeftOf="parent"
                 app:layout_constraintRight_toRightOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/backBtn"/>
-
-            <ImageButton
-                android:id="@+id/chanetxteBtn"
-                android:layout_width="35dp"
-                android:layout_height="35dp"
-                android:background="#00ff0000"
-                android:contentDescription="@string/todo"
-                android:src="@drawable/btn_sentencechange"
-                app:layout_constraintLeft_toRightOf="@+id/profiletxt"
-                app:layout_constraintTop_toTopOf="@+id/profiletxt"/>
-
-            <de.hdodenhof.circleimageview.CircleImageView
                 android:id="@+id/profile_image"
-                android:layout_width="125dp"
-                android:layout_height="125dp"
-                android:layout_marginTop="20dp"
-                android:src="@drawable/img_basicprofile"
-                app:civ_border_color="#FFFFFF"
-                app:civ_border_width="2dp"
-                app:layout_constraintLeft_toLeftOf="parent"
-                app:layout_constraintRight_toRightOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/profiletxt"/>
+                android:src="@drawable/img_mypage_model"/>
 
             <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="100dp"
-                android:layout_marginTop="90dp"
-                android:contentDescription="@string/todo"
-                android:src="@drawable/btn_camera"
+                android:layout_width="match_parent"
+                android:layout_height="450dp"
+                android:scaleType="fitXY"
+                android:src="@drawable/mypage_upperbackground"
                 app:layout_constraintLeft_toLeftOf="@+id/profile_image"
-                app:layout_constraintTop_toTopOf="@+id/profile_image"/>
+                app:layout_constraintRight_toRightOf="@+id/profile_image"
+                app:layout_constraintTop_toTopOf="@+id/profile_image"
+                app:layout_constraintBottom_toBottomOf="@id/profile_image"/>
+
 
             <androidx.constraintlayout.widget.ConstraintLayout
-                android:id="@+id/nameLayout"
-                android:layout_width="wrap_content"
+                android:id="@+id/layout_info"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="15dp"
+                android:background="@drawable/halfcircle"
+                android:orientation="vertical"
                 app:layout_constraintLeft_toLeftOf="parent"
                 app:layout_constraintRight_toRightOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/profile_image">
-
-                <TextView
-                    android:id="@+id/profile_name"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/dummyname"
-                    android:textColor="#FFFFFF"
-                    android:textSize="24sp"
-                    android:textStyle="normal|bold"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintLeft_toLeftOf="parent"
-                    app:layout_constraintRight_toRightOf="parent"
-                    app:layout_constraintTop_toTopOf="parent"/>
+                app:layout_constraintTop_toTopOf="parent">
 
                 <ImageButton
-                    android:id="@+id/chaneNameBtn"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:background="#00ff0000"
-                    android:contentDescription="@string/todo"
-                    android:src="@drawable/btn_sentencechange"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintLeft_toRightOf="@+id/profile_name"
-                    app:layout_constraintRight_toRightOf="parent"
-                    app:layout_constraintTop_toTopOf="parent"/>
-            </androidx.constraintlayout.widget.ConstraintLayout>
-
-            <androidx.constraintlayout.widget.ConstraintLayout
-                android:id="@+id/layout_introOneLine"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                app:layout_constraintLeft_toLeftOf="parent"
-                app:layout_constraintRight_toRightOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/nameLayout">
-
-                <TextView
-                    android:id="@+id/profile_introOneLine"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/dummyoneline"
-                    android:textColor="#FFFFFF"
-                    android:textSize="15sp"
-                    android:textStyle="normal"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintLeft_toLeftOf="parent"
-                    app:layout_constraintRight_toRightOf="parent"
-                    app:layout_constraintTop_toTopOf="parent"/>
-
-                <ImageButton
-                    android:id="@+id/chaneBtn_introOneLine"
-                    android:layout_width="30dp"
-                    android:layout_height="30dp"
-                    android:background="#00ff0000"
-                    android:contentDescription="@string/todo"
-                    android:src="@drawable/btn_sentencechange"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintLeft_toRightOf="@+id/profile_introOneLine"
-                    app:layout_constraintRight_toRightOf="parent"
-                    app:layout_constraintTop_toTopOf="parent"/>
-            </androidx.constraintlayout.widget.ConstraintLayout>
-
-            <androidx.constraintlayout.widget.ConstraintLayout
-                android:id="@+id/layout_ticketandpopcorn"
-                android:layout_width="330dp"
-                android:layout_height="90dp"
-                android:layout_marginTop="40dp"
-                android:background="@drawable/layout_shadow"
-                app:layout_constraintLeft_toLeftOf="parent"
-                app:layout_constraintRight_toRightOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/layout_introOneLine">
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="10dp"
-                    android:text="@string/myticketandpopcorn"
-                    android:textColor="#707070"
-                    android:textSize="15sp"
-                    app:layout_constraintLeft_toLeftOf="parent"
-                    app:layout_constraintRight_toRightOf="parent"
-                    app:layout_constraintTop_toTopOf="parent"/>
-
-                <ImageView
-                    android:id="@+id/img_ticket"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="20dp"
-                    android:contentDescription="@string/todo"
-                    android:src="@drawable/img_ticket"
-                    app:layout_constraintLeft_toLeftOf="parent"
-                    app:layout_constraintRight_toLeftOf="@+id/txt_ticket"
-                    app:layout_constraintTop_toTopOf="parent"/>
-
-                <TextView
-                    android:id="@+id/txt_ticket"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="30dp"
-                    android:text="@string/x_2"
-                    android:textColor="#5a5858"
-                    android:textSize="20sp"
-                    app:layout_constraintLeft_toRightOf="@+id/img_ticket"
-                    app:layout_constraintTop_toTopOf="parent"/>
-
-                <ImageView
-                    android:id="@+id/img_popcorn"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="70dp"
-                    android:layout_marginTop="16dp"
-                    android:contentDescription="@string/todo"
-                    android:src="@drawable/img_popcorn"
-                    app:layout_constraintLeft_toRightOf="@id/txt_ticket"
-                    app:layout_constraintTop_toTopOf="parent"/>
-
-                <TextView
-                    android:id="@+id/txt_popcorn"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="30dp"
-                    android:text="@string/x_2"
-                    android:textColor="#5a5858"
-                    android:textSize="20sp"
-                    app:layout_constraintLeft_toRightOf="@+id/img_popcorn"
-                    app:layout_constraintTop_toTopOf="parent"/>
-            </androidx.constraintlayout.widget.ConstraintLayout>
-
-            <Button
-                android:layout_width="120dp"
-                android:layout_height="50dp"
-                android:layout_marginTop="65dp"
-                android:background="@drawable/rectangle_gradation"
-                android:text="@string/ticket_btn"
-                android:textColor="#FFFFFF"
-                app:layout_constraintLeft_toLeftOf="parent"
-                app:layout_constraintRight_toRightOf="parent"
-                app:layout_constraintTop_toTopOf="@id/layout_ticketandpopcorn"/>
-
-            <ImageButton
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                app:layout_constraintTop_toBottomOf="@+id/layout_ticketandpopcorn"
-                app:layout_constraintRight_toRightOf="parent"
-                android:layout_marginEnd="30dp"
-                android:layout_marginTop="22dp"
-                android:src="@drawable/btn_change"
-                android:contentDescription="@string/todo"
-                android:background="#00ff0000"/>
-
-            <EditText
-                android:id="@+id/edittxt_age"
-                android:layout_width="300dp"
-                android:layout_height="50dp"
-                android:layout_marginTop="60dp"
-                android:hint="@string/dummy_age"
-                android:importantForAutofill="no"
-                android:inputType="text"
-                app:layout_constraintLeft_toLeftOf="parent"
-                app:layout_constraintRight_toRightOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/layout_ticketandpopcorn"/>
-
-            <EditText
-                android:id="@+id/edittxt_school"
-                android:layout_width="300dp"
-                android:layout_height="50dp"
-                android:layout_marginTop="40dp"
-                android:hint="@string/dummy_school"
-                android:importantForAutofill="no"
-                android:inputType="text"
-                app:layout_constraintLeft_toLeftOf="parent"
-                app:layout_constraintRight_toRightOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/edittxt_age"/>
-
-            <EditText
-                android:id="@+id/edittxt_department"
-                android:layout_width="300dp"
-                android:layout_height="50dp"
-                android:layout_marginTop="40dp"
-                android:hint="@string/dummy_department"
-                android:importantForAutofill="no"
-                android:inputType="text"
-                app:layout_constraintLeft_toLeftOf="parent"
-                app:layout_constraintRight_toRightOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/edittxt_school"/>
-
-            <EditText
-                android:id="@+id/edittxt_livingarea"
-                android:layout_width="300dp"
-                android:layout_height="50dp"
-                android:layout_marginTop="40dp"
-                android:hint="@string/dummy_livingarea"
-                android:importantForAutofill="no"
-                android:inputType="text"
-                app:layout_constraintLeft_toLeftOf="parent"
-                app:layout_constraintRight_toRightOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/edittxt_department"/>
-
-            <TextView
-                android:id="@+id/textview_information"
-                android:layout_width="wrap_content"
-                android:layout_height="20dp"
-                android:layout_marginTop="18dp"
-                android:text="@string/textview_information"
-                android:textColor="#a7a2a2"
-                android:textSize="17sp"
-                android:textStyle="bold"
-                app:layout_constraintLeft_toLeftOf="@id/edittxt_livingarea"
-                app:layout_constraintTop_toBottomOf="@+id/edittxt_livingarea"/>
-
-            <EditText
-                android:id="@+id/edittxt_name"
-                android:layout_width="300dp"
-                android:layout_height="50dp"
-                android:layout_marginTop="18dp"
-                android:hint="@string/dummy_name"
-                android:importantForAutofill="no"
-                android:inputType="text"
-                app:layout_constraintLeft_toLeftOf="parent"
-                app:layout_constraintRight_toRightOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/textview_information"/>
-
-            <EditText
-                android:id="@+id/edittxt_id"
-                android:layout_width="300dp"
-                android:layout_height="50dp"
-                android:layout_marginTop="40dp"
-                android:hint="@string/dummy_id"
-                android:importantForAutofill="no"
-                android:inputType="text"
-                app:layout_constraintLeft_toLeftOf="parent"
-                app:layout_constraintRight_toRightOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/edittxt_name"/>
-
-            <EditText
-                android:id="@+id/edittxt_pass"
-                android:layout_width="300dp"
-                android:layout_height="50dp"
-                android:layout_marginTop="40dp"
-                android:hint="@string/dummy_password"
-                android:importantForAutofill="no"
-                android:inputType="text"
-                app:layout_constraintLeft_toLeftOf="parent"
-                app:layout_constraintRight_toRightOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/edittxt_id"/>
-
-            <TextView
-                android:id="@+id/textview_matching_gender"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="18dp"
-                android:text="@string/matching_gender"
-                android:textColor="#a7a2a2"
-                android:textSize="17sp"
-                android:textStyle="bold"
-                app:layout_constraintLeft_toLeftOf="@id/edittxt_pass"
-                app:layout_constraintTop_toBottomOf="@+id/edittxt_pass"/>
-
-            <RadioGroup
-                android:id="@+id/rg_gender"
-                android:layout_width="300dp"
-                android:layout_height="match_parent"
-                android:layout_marginTop="18dp"
-                android:orientation="horizontal"
-                android:weightSum="3"
-                app:layout_constraintLeft_toLeftOf="parent"
-                app:layout_constraintRight_toRightOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/textview_matching_gender">
-
-                <RadioButton
-                    android:id="@+id/rg_btn1"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:buttonTint="#ff6a07"
-                    android:checked="true"
-                    android:text="@string/gender_woman" />
-
-                <RadioButton
-                    android:id="@+id/rg_btn2"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:buttonTint="#ff6a07"
-                    android:text="@string/gender_man" />
-
-                <RadioButton
-                    android:id="@+id/rg_btn3"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:buttonTint="#ff6a07"
-                    android:text="@string/gender_no" />
-            </RadioGroup>
-
-            <TextView
-                android:id="@+id/textview_matching_age"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="18dp"
-                android:text="@string/matching_age"
-                android:textColor="#a7a2a2"
-                android:textSize="17sp"
-                android:textStyle="bold"
-                app:layout_constraintLeft_toLeftOf="@id/rg_gender"
-                app:layout_constraintTop_toBottomOf="@+id/rg_gender"/>
-
-            <androidx.constraintlayout.widget.ConstraintLayout
-                android:id="@+id/layout_layout_age"
-                android:layout_width="300dp"
-                android:layout_height="wrap_content"
-                app:layout_constraintLeft_toLeftOf="parent"
-                app:layout_constraintRight_toRightOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/textview_matching_age"
-                android:layout_marginTop="18dp">
-                <androidx.constraintlayout.widget.ConstraintLayout
-                    android:id="@+id/layout_age_min"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:id="@+id/backBtn"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
                     android:layout_marginStart="10dp"
-                    android:layout_marginTop="18dp"
+                    android:layout_marginTop="10dp"
+                    android:background="#00ff0000"
+                    android:contentDescription="@string/todo"
+                    android:src="@drawable/btn_back"
                     app:layout_constraintLeft_toLeftOf="parent"
-                    app:layout_constraintRight_toLeftOf="@+id/layout_age_center"
-                    app:layout_constraintTop_toTopOf="parent">
+                    app:layout_constraintTop_toTopOf="parent" />
 
-                    <TextView
-                        android:id="@+id/textview_agemin"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="@string/age_min"
-                        android:textColor="#000000"
-                        android:textSize="19sp"
-                        app:layout_constraintLeft_toLeftOf="parent"
-                        app:layout_constraintTop_toTopOf="parent"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="40dp"
+                    android:layout_marginTop="10dp"
+                    android:gravity="center"
+                    android:text="@string/mypage"
+                    android:textColor="#FFFFFF"
+                    android:textSize="16sp"
+                    android:textStyle=""
+                    app:layout_constraintLeft_toRightOf="@id/backBtn"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <EditText
+                    android:id="@+id/profiletxt"
+                    android:layout_width="290dp"
+                    android:layout_height="40dp"
+                    android:layout_marginTop="30dp"
+                    android:background="@null"
+                    android:focusableInTouchMode="false"
+                    android:gravity="center"
+                    android:text="@string/profiletxt"
+                    android:maxLength="15"
+                    android:textColor="#FFFFFF"
+                    android:textColorHint="#6BFFFFFF"
+                    android:textSize="24sp"
+                    android:textStyle="bold"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/backBtn" />
+
+                <ImageButton
+                    android:id="@+id/changetxteBtn"
+                    android:layout_width="35dp"
+                    android:layout_height="35dp"
+                    android:background="#00ff0000"
+                    android:contentDescription="@string/todo"
+                    android:src="@drawable/btn_sentencechange"
+                    app:layout_constraintLeft_toRightOf="@+id/profiletxt"
+                    app:layout_constraintTop_toTopOf="@+id/profiletxt"
+                    app:layout_constraintBottom_toBottomOf="@+id/profiletxt"/>
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/nameLayout"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="170dp"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/profiletxt">
 
                     <EditText
-                        android:autofillHints="no"
-                        android:hint="@string/age_min"
-                        android:layout_width="120dp"
+                        android:id="@+id/profile_name"
+                        android:layout_width="100dp"
                         android:layout_height="30dp"
-                        android:layout_marginTop="10dp"
-                        android:background="@drawable/edittxt_rectangle"
-                        android:inputType="number"
-                        android:maxLength="3"
+                        android:background="@null"
+                        android:focusableInTouchMode="false"
                         android:gravity="center"
-                        android:text="@string/dummy_age_min"
-                        android:textColor="#000000"
-                        android:theme="@android:style/Theme.Holo"
+                        android:maxLength="4"
+                        android:text="@string/dummyname"
+                        android:textColor="#FFFFFF"
+                        android:textColorHint="#6BFFFFFF"
+                        android:textSize="24sp"
+                        android:textStyle="normal|bold"
+                        app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintLeft_toLeftOf="parent"
-                        app:layout_constraintTop_toBottomOf="@+id/textview_agemin"/>
+                        app:layout_constraintRight_toRightOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <ImageButton
+                        android:id="@+id/changeNameBtn"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="#00ff0000"
+                        android:contentDescription="@string/todo"
+                        android:src="@drawable/btn_sentencechange"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintLeft_toRightOf="@+id/profile_name"
+                        app:layout_constraintRight_toRightOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
                 </androidx.constraintlayout.widget.ConstraintLayout>
 
                 <androidx.constraintlayout.widget.ConstraintLayout
-                    android:id="@+id/layout_age_center"
-                    android:layout_width="15dp"
-                    android:layout_height="3dp"
-                    app:layout_constraintTop_toTopOf="@id/layout_age_min"
-                    app:layout_constraintLeft_toRightOf="@id/layout_age_min"
-                    app:layout_constraintRight_toLeftOf="@+id/layout_age_max"
-                    android:layout_marginStart="15dp"
-                    android:layout_marginTop="50dp"
-                    android:background="#ff6a07"/>
-
-                <androidx.constraintlayout.widget.ConstraintLayout
-                    android:id="@+id/layout_age_max"
+                    android:id="@+id/layout_introOneLine"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="15dp"
-                    app:layout_constraintLeft_toRightOf="@+id/layout_age_center"
+                    app:layout_constraintLeft_toLeftOf="parent"
                     app:layout_constraintRight_toRightOf="parent"
-                    app:layout_constraintTop_toTopOf="parent"
-                    android:layout_marginEnd="10dp"
-                    android:layout_marginTop="18dp">
-
-                    <TextView
-                        android:id="@+id/textview_agemax"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="@string/age_max"
-                        android:textColor="#000000"
-                        android:textSize="19sp"
-                        app:layout_constraintLeft_toLeftOf="parent"
-                        app:layout_constraintTop_toTopOf="parent"/>
+                    app:layout_constraintTop_toBottomOf="@+id/nameLayout">
 
                     <EditText
-                        android:hint="@string/age_max"
-                        android:autofillHints="no"
-                        android:layout_width="120dp"
-                        android:layout_height="30dp"
-                        android:layout_marginTop="10dp"
-                        android:background="@drawable/edittxt_rectangle"
-                        android:inputType="number"
-                        android:maxLength="3"
+                        android:id="@+id/profile_introOneLine"
+                        android:layout_width="280dp"
+                        android:layout_height="25dp"
+                        android:background="@null"
+                        android:focusableInTouchMode="false"
                         android:gravity="center"
-                        android:text="@string/dummy_age_max"
-                        android:textColor="#000000"
-                        android:theme="@android:style/Theme.Holo"
+                        android:text="@string/dummyoneline"
+                        android:textColor="#FFFFFF"
+                        android:textColorHint="#6BFFFFFF"
+                        android:textSize="15sp"
+                        android:textStyle="normal"
+                        app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintLeft_toLeftOf="parent"
-                        app:layout_constraintTop_toBottomOf="@+id/textview_agemax"
-                        android:importantForAutofill="no" />
+                        app:layout_constraintRight_toRightOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <ImageButton
+                        android:id="@+id/changeBtn_introOneLine"
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:background="#00ff0000"
+                        android:contentDescription="@string/todo"
+                        android:src="@drawable/btn_sentencechange"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintLeft_toRightOf="@+id/profile_introOneLine"
+                        app:layout_constraintRight_toRightOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/layout_ticketandpopcorn"
+                    android:layout_width="330dp"
+                    android:layout_height="90dp"
+                    android:layout_marginTop="10dp"
+                    android:background="@drawable/layout_shadow"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/layout_introOneLine">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:text="@string/myticketandpopcorn"
+                        android:textColor="#707070"
+                        android:textSize="15sp"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintRight_toRightOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <ImageView
+                        android:id="@+id/img_ticket"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="20dp"
+                        android:contentDescription="@string/todo"
+                        android:src="@drawable/img_ticket"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintRight_toLeftOf="@+id/txt_ticket"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/txt_ticket"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="30dp"
+                        android:text="@string/x_2"
+                        android:textColor="#5a5858"
+                        android:textSize="20sp"
+                        app:layout_constraintLeft_toRightOf="@+id/img_ticket"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <ImageView
+                        android:id="@+id/img_popcorn"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="70dp"
+                        android:layout_marginTop="16dp"
+                        android:contentDescription="@string/todo"
+                        android:src="@drawable/img_popcorn"
+                        app:layout_constraintLeft_toRightOf="@id/txt_ticket"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/txt_popcorn"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="30dp"
+                        android:text="@string/x_2"
+                        android:textColor="#5a5858"
+                        android:textSize="20sp"
+                        app:layout_constraintLeft_toRightOf="@+id/img_popcorn"
+                        app:layout_constraintTop_toTopOf="parent" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <Button
+                    android:id="@+id/btn_goTicket"
+                    android:layout_width="120dp"
+                    android:layout_height="50dp"
+                    android:layout_marginTop="65dp"
+                    android:background="@drawable/rectangle_gradation"
+                    android:text="@string/ticket_btn"
+                    android:textColor="#FFFFFF"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toTopOf="@id/layout_ticketandpopcorn" />
+
+                <ImageButton
+                    android:id="@+id/btn_change_info"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="22dp"
+                    android:layout_marginEnd="30dp"
+                    android:visibility="visible"
+                    android:background="#00ff0000"
+                    android:contentDescription="@string/todo"
+                    android:src="@drawable/btn_change"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/layout_ticketandpopcorn" />
+
+                <EditText
+                    android:id="@+id/edittxt_age"
+                    android:textColor="#000000"
+                    android:layout_width="300dp"
+                    android:layout_height="50dp"
+                    android:layout_marginTop="60dp"
+                    android:hint="@string/dummy_age"
+                    android:importantForAutofill="no"
+                    android:focusableInTouchMode="false"
+                    android:enabled="false"
+                    android:inputType="text"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/layout_ticketandpopcorn" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/age"
+                    android:textColor="#95000000"
+                    app:layout_constraintBottom_toBottomOf="@+id/edittxt_age"
+                    app:layout_constraintRight_toRightOf="@+id/edittxt_age"
+                    app:layout_constraintTop_toTopOf="@+id/edittxt_age"
+                    android:layout_marginRight="10dp"/>
+
+                <EditText
+                    android:textColor="#000000"
+                    android:id="@+id/edittxt_school"
+                    android:layout_width="300dp"
+                    android:layout_height="50dp"
+                    android:layout_marginTop="40dp"
+                    android:hint="@string/dummy_school"
+                    android:importantForAutofill="no"
+                    android:focusableInTouchMode="false"
+                    android:enabled="false"
+                    android:inputType="text"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/edittxt_age" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/school"
+                    android:textColor="#95000000"
+                    app:layout_constraintBottom_toBottomOf="@+id/edittxt_school"
+                    app:layout_constraintRight_toRightOf="@+id/edittxt_school"
+                    app:layout_constraintTop_toTopOf="@+id/edittxt_school"
+                    android:layout_marginRight="10dp"/>
+
+                <EditText
+                    android:textColor="#000000"
+                    android:id="@+id/edittxt_department"
+                    android:layout_width="300dp"
+                    android:focusableInTouchMode="false"
+                    android:enabled="false"
+                    android:layout_height="50dp"
+                    android:layout_marginTop="40dp"
+                    android:hint="@string/dummy_department"
+                    android:importantForAutofill="no"
+                    android:inputType="text"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/edittxt_school" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/department"
+                    android:textColor="#95000000"
+                    app:layout_constraintBottom_toBottomOf="@+id/edittxt_department"
+                    app:layout_constraintRight_toRightOf="@+id/edittxt_department"
+                    app:layout_constraintTop_toTopOf="@+id/edittxt_department"
+                    android:layout_marginRight="10dp"/>
+
+                <EditText
+                    android:textColor="#000000"
+                    android:id="@+id/edittxt_livingarea"
+                    android:layout_width="300dp"
+                    android:layout_height="50dp"
+                    android:focusableInTouchMode="false"
+                    android:enabled="false"
+                    android:layout_marginTop="40dp"
+                    android:hint="@string/dummy_livingarea"
+                    android:importantForAutofill="no"
+                    android:inputType="text"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/edittxt_department" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/livingarea"
+                    android:textColor="#95000000"
+                    app:layout_constraintBottom_toBottomOf="@+id/edittxt_livingarea"
+                    app:layout_constraintRight_toRightOf="@+id/edittxt_livingarea"
+                    app:layout_constraintTop_toTopOf="@+id/edittxt_livingarea"
+                    android:layout_marginRight="10dp"/>
+
+                <TextView
+                    android:id="@+id/textview_information"
+                    android:layout_width="wrap_content"
+                    android:layout_height="20dp"
+                    android:layout_marginTop="18dp"
+                    android:text="@string/textview_information"
+                    android:textColor="#a7a2a2"
+                    android:textSize="17sp"
+                    android:textStyle="bold"
+                    app:layout_constraintLeft_toLeftOf="@id/edittxt_livingarea"
+                    app:layout_constraintTop_toBottomOf="@+id/edittxt_livingarea" />
+
+                <EditText
+                    android:textColor="#000000"
+                    android:id="@+id/edittxt_name"
+                    android:layout_width="300dp"
+                    android:layout_height="50dp"
+                    android:focusableInTouchMode="false"
+                    android:enabled="false"
+                    android:layout_marginTop="18dp"
+                    android:hint="@string/dummy_name"
+                    android:importantForAutofill="no"
+                    android:inputType="text"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/textview_information" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/name"
+                    android:textColor="#95000000"
+                    app:layout_constraintBottom_toBottomOf="@+id/edittxt_name"
+                    app:layout_constraintRight_toRightOf="@+id/edittxt_name"
+                    app:layout_constraintTop_toTopOf="@+id/edittxt_name"
+                    android:layout_marginRight="10dp"/>
+
+                <EditText
+                    android:textColor="#000000"
+                    android:id="@+id/edittxt_id"
+                    android:layout_width="300dp"
+                    android:layout_height="50dp"
+                    android:focusableInTouchMode="false"
+                    android:enabled="false"
+                    android:layout_marginTop="40dp"
+                    android:hint="@string/dummy_id"
+                    android:importantForAutofill="no"
+                    android:inputType="text"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/edittxt_name" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/id"
+                    android:textColor="#95000000"
+                    app:layout_constraintBottom_toBottomOf="@+id/edittxt_id"
+                    app:layout_constraintRight_toRightOf="@+id/edittxt_id"
+                    app:layout_constraintTop_toTopOf="@+id/edittxt_id"
+                    android:layout_marginRight="10dp"/>
+
+                <EditText
+                    android:textColor="#000000"
+                    android:id="@+id/edittxt_pass"
+                    android:layout_width="300dp"
+                    android:layout_height="50dp"
+                    android:layout_marginTop="40dp"
+                    android:focusableInTouchMode="false"
+                    android:enabled="false"
+                    android:hint="@string/dummy_password"
+                    android:importantForAutofill="no"
+                    android:inputType="text"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/edittxt_id" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/password"
+                    android:textColor="#95000000"
+                    app:layout_constraintBottom_toBottomOf="@+id/edittxt_pass"
+                    app:layout_constraintRight_toRightOf="@+id/edittxt_pass"
+                    app:layout_constraintTop_toTopOf="@+id/edittxt_pass"
+                    android:layout_marginRight="10dp"/>
+
+                <TextView
+                    android:id="@+id/textview_matching_gender"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="18dp"
+                    android:text="@string/matching_gender"
+                    android:textColor="#a7a2a2"
+                    android:textSize="17sp"
+                    android:textStyle="bold"
+                    app:layout_constraintLeft_toLeftOf="@id/edittxt_pass"
+                    app:layout_constraintTop_toBottomOf="@+id/edittxt_pass" />
+
+                <RadioGroup
+                    android:id="@+id/rg_gender"
+                    android:layout_width="300dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="18dp"
+                    android:orientation="horizontal"
+                    android:weightSum="3"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/textview_matching_gender">
+
+                    <RadioButton
+                        android:id="@+id/rg_btn1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:enabled="false"
+                        android:saveEnabled="false"
+                        android:focusableInTouchMode="false"
+                        android:buttonTint="#ff6a07"
+                        android:checked="true"
+                        android:text="@string/gender_woman" />
+
+                    <RadioButton
+                        android:id="@+id/rg_btn2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:focusableInTouchMode="false"
+                        android:enabled="false"
+                        android:saveEnabled="false"
+                        android:buttonTint="#ff6a07"
+                        android:text="@string/gender_man" />
+
+                    <RadioButton
+                        android:id="@+id/rg_btn3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:focusableInTouchMode="false"
+                        android:enabled="false"
+                        android:saveEnabled="false"
+                        android:buttonTint="#ff6a07"
+                        android:text="@string/gender_no" />
+                </RadioGroup>
+
+                <TextView
+                    android:id="@+id/textview_matching_age"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="18dp"
+                    android:text="@string/matching_age"
+                    android:textColor="#a7a2a2"
+                    android:textSize="17sp"
+                    android:textStyle="bold"
+                    app:layout_constraintLeft_toLeftOf="@id/rg_gender"
+                    app:layout_constraintTop_toBottomOf="@+id/rg_gender" />
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/layout_layout_age"
+                    android:layout_width="300dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="18dp"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/textview_matching_age">
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/layout_age_min"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginTop="18dp"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintRight_toLeftOf="@+id/layout_age_center"
+                        app:layout_constraintTop_toTopOf="parent">
+
+                        <TextView
+                            android:id="@+id/textview_agemin"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/age_min"
+                            android:textColor="#000000"
+                            android:textSize="19sp"
+                            app:layout_constraintLeft_toLeftOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <EditText
+                            android:id="@+id/edittxt_ageMin"
+                            android:layout_width="120dp"
+                            android:layout_height="30dp"
+                            android:layout_marginTop="10dp"
+                            android:autofillHints="no"
+                            android:background="@drawable/edittxt_rectangle"
+                            android:focusableInTouchMode="false"
+                            android:enabled="false"
+                            android:gravity="center"
+                            android:hint="@string/age_min"
+                            android:inputType="number"
+                            android:maxLength="3"
+                            android:text="@string/dummy_age_min"
+                            android:textColor="#000000"
+                            android:theme="@android:style/Theme.Holo"
+                            app:layout_constraintLeft_toLeftOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/textview_agemin" />
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/layout_age_center"
+                        android:layout_width="15dp"
+                        android:layout_height="3dp"
+                        android:layout_marginStart="15dp"
+                        android:layout_marginTop="50dp"
+                        android:background="#ff6a07"
+                        app:layout_constraintLeft_toRightOf="@id/layout_age_min"
+                        app:layout_constraintRight_toLeftOf="@+id/layout_age_max"
+                        app:layout_constraintTop_toTopOf="@id/layout_age_min" />
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/layout_age_max"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="15dp"
+                        android:layout_marginTop="18dp"
+                        android:layout_marginEnd="10dp"
+                        app:layout_constraintLeft_toRightOf="@+id/layout_age_center"
+                        app:layout_constraintRight_toRightOf="parent"
+                        app:layout_constraintTop_toTopOf="parent">
+
+                        <TextView
+                            android:id="@+id/textview_agemax"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/age_max"
+                            android:textColor="#000000"
+                            android:textSize="19sp"
+                            app:layout_constraintLeft_toLeftOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <EditText
+                            android:id="@+id/edittxt_ageMax"
+                            android:layout_width="120dp"
+                            android:layout_height="30dp"
+                            android:layout_marginTop="10dp"
+                            android:autofillHints="no"
+                            android:background="@drawable/edittxt_rectangle"
+                            android:gravity="center"
+                            android:focusableInTouchMode="false"
+                            android:enabled="false"
+                            android:hint="@string/age_max"
+                            android:inputType="number"
+                            android:maxLength="3"
+                            android:text="@string/dummy_age_max"
+                            android:textColor="#000000"
+                            android:theme="@android:style/Theme.Holo"
+                            app:layout_constraintLeft_toLeftOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/textview_agemax" />
+                    </androidx.constraintlayout.widget.ConstraintLayout>
                 </androidx.constraintlayout.widget.ConstraintLayout>
             </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -510,13 +643,14 @@
                 android:layout_height="50dp"
                 android:layout_marginTop="45dp"
                 android:background="@drawable/rectangle_gradation"
+                android:visibility="invisible"
                 android:text="@string/end_change"
                 android:textStyle="normal"
                 android:textSize="17sp"
                 android:textColor="#FFFFFF"
                 app:layout_constraintLeft_toLeftOf="parent"
                 app:layout_constraintRight_toRightOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/layout_layout_age"/>
+                app:layout_constraintTop_toBottomOf="@+id/layout_info"/>
 
             <TextView
                 android:layout_width="300dp"

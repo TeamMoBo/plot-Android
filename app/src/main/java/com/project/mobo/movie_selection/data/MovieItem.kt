@@ -1,7 +1,9 @@
 package com.project.mobo.movie_selection.data
 
 data class MovieItem(
-    val img_movie: Int,
-    val name: String,
-    val rating_star: Int
+    var img_movie: Int,
+    var name: String,
+    var rating_star: Int,
+    var isSelected: Boolean,
+    var idx: Int
 )

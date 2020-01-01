@@ -7,8 +7,12 @@ import android.content.Intent
 import android.content.pm.PackageManager
 import android.os.Build.*
 import android.os.Bundle
+import android.text.Editable
+import android.widget.EditText
+import android.widget.RadioButton
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import com.project.mobo.PayChoiceActivity
 import com.project.mobo.R
 import kotlinx.android.synthetic.main.activity_my_page_new.*
 
@@ -36,6 +40,82 @@ class MyPage_new : AppCompatActivity() {
         //Back button
         backBtn.setOnClickListener {
             finish()
+        }
+
+        btn_goTicket.setOnClickListener {
+            val intent = Intent(this, PayChoiceActivity::class.java)
+            startActivity(intent)
+        }
+
+        changetxteBtn.setOnClickListener {
+            editText(profiletxt)
+        }
+
+        changeNameBtn.setOnClickListener {
+            editText(profile_name)
+        }
+
+        changeBtn_introOneLine.setOnClickListener {
+            editText(profile_introOneLine)
+        }
+
+        val listEditText: ArrayList<EditText> = arrayListOf<EditText>(edittxt_age, edittxt_school,
+            edittxt_department, edittxt_livingarea, edittxt_name, edittxt_id,
+            edittxt_pass, edittxt_ageMin, edittxt_ageMax)
+
+        val listRadioButton: ArrayList<RadioButton> = arrayListOf(rg_btn1, rg_btn2, rg_btn3)
+
+        btn_change_info.setOnClickListener {
+            btn_change_info.visibility = EditText.INVISIBLE
+            btn_change_complete.visibility = EditText.VISIBLE
+            for (i in listEditText){
+                editText(i)
+            }
+
+            for (i in listRadioButton){
+                editRadio(i)
+            }
+
+
+        }
+
+        btn_change_complete.setOnClickListener {
+            btn_change_info.visibility = EditText.VISIBLE
+            btn_change_complete.visibility = EditText.INVISIBLE
+            for (i in listEditText){
+                editText(i)
+            }
+
+            for (i in listRadioButton){
+                editRadio(i)
+            }
+        }
+    }
+
+    private fun editText(eText: EditText){
+        if (eText.isFocusableInTouchMode){
+            eText.isFocusableInTouchMode = false
+            eText.isEnabled = false
+            if(eText.text.toString() == ""){
+                eText.setText(eText.hint.toString())
+            }
+        }
+        else if(!eText.isFocusableInTouchMode){
+            eText.isEnabled = true
+            eText.isFocusableInTouchMode = true
+            eText.hint = eText.text
+            eText.setText("")
+        }
+    }
+
+    private fun editRadio(eText: RadioButton){
+        if (eText.isFocusableInTouchMode){
+            eText.isFocusableInTouchMode = false
+            eText.isEnabled = false
+        }
+        else if(!eText.isFocusableInTouchMode){
+            eText.isEnabled = true
+            eText.isFocusableInTouchMode = true
         }
     }
 

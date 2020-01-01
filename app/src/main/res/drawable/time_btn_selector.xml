@@ -10,10 +10,11 @@
                 android:width="2dp"/>
         </shape>
     </item>
-    <item>
+    <item
+        android:color="@color/white">
         <shape android:shape="rectangle">
             <solid android:color="#ff7e27"
-                android:drawable ="@drawable/chicken"/>
+                android:drawable ="@color/chicken"/>
             <corners
                 android:radius="4dip"/>
             <stroke

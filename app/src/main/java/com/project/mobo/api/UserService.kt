@@ -28,6 +28,7 @@ interface UserService {
     fun mainResponse(
         @Header("Authorization") key: String
     ): Call<MainResponse>
+
 }
 
 //요청-데이터 선언

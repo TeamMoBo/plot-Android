@@ -4,6 +4,6 @@
     <color name="colorPrimaryDark">#00574B</color>
     <color name="colorAccent">#D81B60</color>
 
-    <drawable name="white">#ffffff</drawable>
-    <drawable name="chicken">#ff7e27</drawable>
+    <color name="white">#ffffff</color>
+    <color name="chicken">#ff7e27</color>
 </resources>
