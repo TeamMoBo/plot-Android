@@ -11,7 +11,7 @@ import kotlinx.android.synthetic.main.activity_splash.*
 class Splash : AppCompatActivity() {
 
     private var mDelayHandler: Handler? = null
-    private val SPLASH_DELAY: Long = 3000 //3 seconds
+    private val SPLASH_DELAY: Long = 4000 //3 seconds
     internal val mRunnable: Runnable = Runnable {
         if (!isFinishing) {
             val intent = Intent(applicationContext, MainPageActivity::class.java)
@@ -23,8 +23,8 @@ class Splash : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_splash)
-        splash_img.setAnimation("13352.json")
-        splash_img.loop(false)
+        splash_img.setAnimation("splash_an_changeagain.json")
+        //splash_img.loop(false)
         splash_img.playAnimation()
         mDelayHandler = Handler()
 
