@@ -23,13 +23,6 @@ class TempActivity : AppCompatActivity() {
             val postSign = UserServiceImpl.userService.requestSignIn(SignInRequest(edit_id_temp.text.toString(),
                 edit_pwd_temp.text.toString()))
 
-            postSign.safeEnqueue(onSuccess = {
-                Log.v("token", it.data.token)
-            }, onError = {
-
-            }, onFailure = {
-
-            })
         }
 
     }
