@@ -1,13 +1,13 @@
 package com.project.mobo.api
 
 import com.google.gson.annotations.SerializedName
+import com.project.mobo.temp.MainResponse
 import com.project.mobo.temp.TempResponse
 import retrofit2.Call
 import retrofit2.http.Body
+import retrofit2.http.GET
 import retrofit2.http.Header
-import retrofit2.http.Headers
 import retrofit2.http.POST
-import java.lang.NullPointerException
 
 interface UserService {
     /**
@@ -19,13 +19,16 @@ interface UserService {
         @Body signInRequest: SignInRequest
     ): Call<TempResponse>
 
-    @POST("/user/testsignin")
+    @POST("/user/signUp")
     fun requestSignUp(
-        @Header("Content-Type") content_type: String,
         @Body signUpRequest: SignUpRequest
-    ):Call<SignUpResponse>
+    ): Call<SignUpResponse>
 
-    //
+    @GET("/main")
+    fun mainResponse(
+        @Header("Authorization") key: String
+    ): Call<MainResponse>
+
 }
 
 //요청-데이터 선언
@@ -47,15 +50,7 @@ data class SignInResponse(
 //    val token : String
 //)
 
-data class SignUpRequest(
-    @SerializedName("id")
-    val id: String,
-    @SerializedName("password")
-    val password: String
-)
-
 //요청
-/*
 data class SignUpRequest(
     @SerializedName("id")
     val id: String,
@@ -65,10 +60,8 @@ data class SignUpRequest(
     val password: String,
     @SerializedName("nickname")
     val nickname: String,
-    @SerializedName("image")
-    val image: String,
     @SerializedName("age")
-    val age: String,
+    val age: Int,
     @SerializedName("comment")
     val comment: String,
     @SerializedName("location")
@@ -76,22 +69,23 @@ data class SignUpRequest(
     @SerializedName("selectGender")
     val selectGender: String,
     @SerializedName("selectMinAge")
-    val selectMinAge: String,
+    val selectMinAge: Int,
     @SerializedName("selectMaxAge")
-    val selectMaxAge: String,
+    val selectMaxAge: Int,
     @SerializedName("preferGenre")
     val preferGenre: String,
     @SerializedName("attractPoint")
     val attractPoint: String,
-    @SerializedName("myLikes")
-    val myLikes: String,
+    @SerializedName("favor")
+    val favor: String,
     @SerializedName("school")
     val school: String,
     @SerializedName("major")
     val major: String,
     @SerializedName("kakao")
     val kakao: String
-)*/
+)
+
 
 //응답
 data class SignUpResponse(

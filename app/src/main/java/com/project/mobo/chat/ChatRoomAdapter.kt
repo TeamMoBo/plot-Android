@@ -5,14 +5,14 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.project.mobo.R
 
-class ChatRoomAdapter : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
+class ChatRoomAdapter(uid: String) : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
     private var data: MutableList<ChatData> = mutableListOf()
+    private val uid: String = uid
 
     fun addItem(chatData: ChatData) {
         data.add(chatData)
         notifyDataSetChanged()
     }
-
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder {
 
@@ -53,7 +53,7 @@ class ChatRoomAdapter : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
     }
 
     override fun getItemViewType(position: Int): Int {
-        return if (data[position].uid == "jihye")
+        return if (data[position].uid == uid)
             MY_CHAT
         else OTHER_CHAT
     }

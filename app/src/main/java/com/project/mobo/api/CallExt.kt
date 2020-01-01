@@ -6,14 +6,13 @@ import retrofit2.Callback
 import retrofit2.Response
 
 
-fun abc(a : Int, b : Int, c : Int){
-
-}
+//fun abc(a : Int, b : Int, c : Int){
+//
+//}
 
 fun <T> Call<T>.safeEnqueue(
     onError: (Throwable) -> Unit = onErrorStub,
-    onSuccess: (T) -> Unit = {},
-    onFailure: (Response<T>) -> Unit = {}
+    onResponse: (res: Response<T>) -> Unit = {}
 ) {
     this.enqueue(
         object : Callback<T> {
@@ -25,18 +24,12 @@ fun <T> Call<T>.safeEnqueue(
                 call: Call<T>,
                 response: Response<T>
             ) {
-                if ( response.isSuccessful ) {
-                    response.body()?.let {
-                        onSuccess(it)
-                    } ?: onFailure(response)
-                } else {
-                    onFailure(response)
-                }
+                onResponse(response)
             }
         }
     )
 }
 
 internal val onErrorStub: (Throwable) -> Unit = {
-    Log.e("safeEnqueue","network error : $it")
+    Log.e("safeEnqueue", "network error : $it")
 }

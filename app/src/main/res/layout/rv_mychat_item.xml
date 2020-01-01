@@ -3,6 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/ctnRvYourItem"
+    android:background="#f6f6f6"
     android:layout_width="match_parent"
     android:layout_height="wrap_content">
 
@@ -14,27 +15,33 @@
         app:layout_constraintGuide_percent="0.2" />
 
     <TextView
-        android:id="@+id/txtMyname"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_margin="8dp"
-        android:textColor="#000000"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:text="쿼카카카카쿼쿼쿼카" />
-
-    <TextView
         android:id="@+id/txtMymessage"
+        android:paddingHorizontal="12dp"
+        android:paddingVertical="8dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_margin="8dp"
-        android:background="@color/colorPrimary"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="8dp"
+        android:background="@drawable/mychat_comment"
         android:textAlignment="viewStart"
         app:layout_constrainedWidth="true"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1"
         app:layout_constraintStart_toStartOf="@id/chatGuideline"
-        app:layout_constraintTop_toBottomOf="@id/txtMyname"
+        app:layout_constraintTop_toTopOf="parent"
         tools:text="동해물과 백두산이 마를르르르르 마르르르를 하라라랄 하라라랄라" />
+
+    <TextView
+        android:id="@+id/txtCurrentTime"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="6dp"
+        android:layout_marginEnd="11dp"
+        android:textSize="10sp"
+        android:text="오후 8:20"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/txtMymessage"
+        app:layout_constraintTop_toBottomOf="@+id/txtMymessage" />
 </androidx.constraintlayout.widget.ConstraintLayout>
