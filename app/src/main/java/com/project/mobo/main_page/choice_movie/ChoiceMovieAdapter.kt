@@ -6,21 +6,21 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.project.mobo.R
 
-class choiceMovieAdapter(private val context: Context) : RecyclerView.Adapter<choiceMovieViewHolder>(){
+class ChoiceMovieAdapter(private val context: Context) : RecyclerView.Adapter<ChoiceMovieViewHolder>(){
 
-    var data = listOf<choiceMovieItem>()
+    var data = listOf<ChoiceMovieItem>()
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): choiceMovieViewHolder {
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ChoiceMovieViewHolder {
         val view = LayoutInflater.from(context).inflate(R.layout.movie_choice_item, parent, false)
 
-        return choiceMovieViewHolder(view)
+        return ChoiceMovieViewHolder(view)
     }
 
     override fun getItemCount(): Int {
         return data.size
     }
 
-    override fun onBindViewHolder(holder: choiceMovieViewHolder, position: Int) {
+    override fun onBindViewHolder(holder: ChoiceMovieViewHolder, position: Int) {
         holder.bind(data[position])
     }
 }

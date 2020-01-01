@@ -5,9 +5,7 @@ import android.os.Bundle
 import android.util.Log
 import com.project.mobo.R
 import com.project.mobo.api.SignInRequest
-import com.project.mobo.api.SignInResponse
 import com.project.mobo.api.UserServiceImpl
-import com.project.mobo.api.safeEnqueue
 import kotlinx.android.synthetic.main.activity_temp.*
 import retrofit2.Response
 
@@ -20,8 +18,10 @@ class TempActivity : AppCompatActivity() {
         btn_temp.setOnClickListener {
             Log.v("token", "asas")
 
-            val postSign = UserServiceImpl.userService.requestSignIn(SignInRequest(edit_id_temp.text.toString(),
-                edit_pwd_temp.text.toString()))
+            val postSign = UserServiceImpl.userService.requestSignIn(
+                SignInRequest(edit_id_temp.text.toString(),
+                    edit_pwd_temp.text.toString()).toString()
+            )
 
         }
 
