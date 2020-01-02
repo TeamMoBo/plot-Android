@@ -109,6 +109,8 @@ class MainPageActivity : AppCompatActivity() {
         btnMovieChoiceStart.setOnClickListener(){
             val intent4 = Intent(this, MovieSelectionActivity::class.java)
             startActivity(intent4)
+            //startActivityForResult(Intent(this, MovieSelectionActivity::class.java),
+            //    2000)
         }
 
         //이력창으로 이동
