@@ -171,7 +171,7 @@ class TimeChoiceActivity : AppCompatActivity() {
     }
 
     private companion object {
-        const val MININUM_CHOOSEN_DATE = 0
+        const val MININUM_CHOOSEN_DATE = 3
         const val MININUM_CHOOSEN_ONE = 1
     }
 }

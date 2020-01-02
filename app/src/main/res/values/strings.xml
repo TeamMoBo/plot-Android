@@ -49,4 +49,5 @@
     <string name="dummy_age_max">32</string>
     <string name="end_change">수정 완료</string>
     <string name="_2">라디오 그룹 버튼2</string>
+    <string name="app_logo">PLOT</string>
 </resources>

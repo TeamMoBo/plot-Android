@@ -6,6 +6,7 @@ import android.os.Bundle
 import android.os.Handler
 import com.project.mobo.R
 import com.project.mobo.main_page.MainPageActivity
+import com.project.mobo.sign.SignInActivity
 import kotlinx.android.synthetic.main.activity_splash.*
 
 class Splash : AppCompatActivity() {

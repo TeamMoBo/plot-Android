@@ -477,7 +477,7 @@
                     app:layout_constraintTop_toBottomOf="@+id/edittxt_pass" />
 
                 <RadioGroup
-                    android:id="@+id/rg_gender_plus"
+                    android:id="@+id/rg_gender_mypage"
                     android:layout_width="300dp"
                     android:layout_height="match_parent"
                     android:layout_marginTop="18dp"
@@ -488,7 +488,7 @@
                     app:layout_constraintTop_toBottomOf="@+id/textview_matching_gender">
 
                     <RadioButton
-                        android:id="@+id/rg_btn1"
+                        android:id="@+id/rg_btn1_mypage"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
@@ -500,7 +500,7 @@
                         android:text="@string/gender_woman" />
 
                     <RadioButton
-                        android:id="@+id/rg_btn2"
+                        android:id="@+id/rg_btn2_mypage"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
@@ -511,7 +511,7 @@
                         android:text="@string/gender_man" />
 
                     <RadioButton
-                        android:id="@+id/rg_btn3"
+                        android:id="@+id/rg_btn3_mypage"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
@@ -531,8 +531,8 @@
                     android:textColor="#a7a2a2"
                     android:textSize="17sp"
                     android:textStyle="bold"
-                    app:layout_constraintLeft_toLeftOf="@id/rg_gender_plus"
-                    app:layout_constraintTop_toBottomOf="@+id/rg_gender_plus" />
+                    app:layout_constraintLeft_toLeftOf="@id/rg_gender_mypage"
+                    app:layout_constraintTop_toBottomOf="@+id/rg_gender_mypage" />
 
                 <androidx.constraintlayout.widget.ConstraintLayout
                     android:id="@+id/layout_layout_age"
