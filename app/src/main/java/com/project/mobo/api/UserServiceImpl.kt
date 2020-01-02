@@ -13,4 +13,5 @@ object UserServiceImpl {
         .build()
 
     val userService: UserService = retrofit.create(UserService::class.java)
+    val movieList: MovieList = retrofit.create(MovieList::class.java)
 }

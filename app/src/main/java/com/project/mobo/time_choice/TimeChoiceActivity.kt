@@ -133,7 +133,7 @@ class TimeChoiceActivity : AppCompatActivity() {
 //                )
                 finish()
             } else {
-                Toast.makeText(this, "시간을 선택하세요!", Toast.LENGTH_SHORT).show()
+                Toast.makeText(this, "시간을 3개 이상 선택해주세요!", Toast.LENGTH_SHORT).show()
             }
         }
     }
@@ -171,7 +171,7 @@ class TimeChoiceActivity : AppCompatActivity() {
     }
 
     private companion object {
-        const val MININUM_CHOOSEN_DATE = 0
+        const val MININUM_CHOOSEN_DATE = 3
         const val MININUM_CHOOSEN_ONE = 1
     }
 }
