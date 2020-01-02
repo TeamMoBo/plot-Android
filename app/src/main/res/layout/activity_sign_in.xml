@@ -15,8 +15,16 @@
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/img_top_bg"
         android:scaleType="fitXY"/>
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/plot_symbollogo"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/txtLogin"
+        android:layout_marginRight="41dp"/>
 
     <TextView
+        android:id="@+id/txtLogin"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textSize="30sp"
