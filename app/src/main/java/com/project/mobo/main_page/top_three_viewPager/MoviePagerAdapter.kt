@@ -1,10 +1,15 @@
 package com.project.mobo.main_page.top_three_viewPager
 
+import android.content.Context
+import android.content.Intent
 import android.graphics.drawable.GradientDrawable
+import android.net.Uri
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
+import androidx.core.content.ContextCompat.startActivity
 import androidx.viewpager.widget.PagerAdapter
 import com.bumptech.glide.Glide
 import com.project.mobo.R
@@ -33,8 +38,15 @@ class MoviePagerAdapter(private val list: ArrayList<RandMovie>): PagerAdapter() 
 
         view.tvMainFirstStar.text=list[position].movieScore.toString()
         view.tvMainFirstHour.text=list[position].movieRuntime
+        view.tvViewPagerGenre.text=list[position].movieGenre
+
+        var url : String = list[position].movieIdx.toString()
         //view.ivItem.setImageResource(list[position].getImageId(container.context))
         //iew.tvItemContent.text = list[position].content
+        view.btnMainFirstPlay.setOnClickListener(){
+            val i = Intent(Intent.ACTION_VIEW, Uri.parse(url))
+            //startActivity(i)
+        }
 
         container.addView(view)
         return view

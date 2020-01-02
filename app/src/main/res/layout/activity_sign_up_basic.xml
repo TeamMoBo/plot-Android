@@ -461,7 +461,7 @@
                 </androidx.constraintlayout.widget.ConstraintLayout>
 
                 <RadioGroup
-                    android:id="@+id/rg_gender"
+                    android:id="@+id/rg_gender_basic"
                     android:layout_width="270dp"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="80dp"

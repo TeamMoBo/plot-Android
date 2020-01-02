@@ -22,10 +22,9 @@ import android.net.Uri
 import android.view.View
 import com.project.mobo.MatchingHistory.MatchingHistoryActivity
 import com.project.mobo.R
+import com.project.mobo.SharedPreferenceController
 import com.project.mobo.api.UserServiceImpl
 import com.project.mobo.api.safeEnqueue
-import com.project.mobo.dialog.FailDialog
-import com.project.mobo.dialog.SuccessDialog
 import com.project.mobo.temp.Data
 
 
@@ -39,7 +38,7 @@ class MainPageActivity : AppCompatActivity() {
     private val dateRepository= ChoiceDateRepository()
 
     //private lateinit var timeData: TimeData - 더미데이터
-    private lateinit var data: Data
+    private lateinit var mainData: Data
     private lateinit var verticalAdapter : DataVerticalAdapter
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -50,9 +49,13 @@ class MainPageActivity : AppCompatActivity() {
             key = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZHgiOjM3LCJpYXQiOjE1Nzc3NTk2MzIsImV4cCI6MTU3ODM2NDQzMiwiaXNzIjoibW9ib21hc3RlciJ9.k30fv2OoezYTrzMJnhaFdM0suMnnoIVfjoGkOBMe-G4"
         )
 
+        //shared 아직 안 쓰는 중
+        //SharedPreferenceController.setUserToken(this, "key")
+        //SharedPreferenceController.getUserToken(this)
+
         callMain.safeEnqueue (onResponse = {
             if(it.isSuccessful){
-                data=it.body()!!.data
+                mainData=it.body()!!.data
                 topThree() // 뷰페이저
                 choiceMovie() // 선택한 영화 창
                 choiceDate() // 선택한 시간 창
@@ -64,9 +67,7 @@ class MainPageActivity : AppCompatActivity() {
 
         //dummy()
 
-        //topThree() // 뷰페이저
-        //choiceMovie() // 선택한 영화 창
-        //choiceDate() // 선택한 날짜 창
+
 
         //setOnClickListener()
     }
@@ -121,7 +122,7 @@ class MainPageActivity : AppCompatActivity() {
 
     private fun topThree() {
 
-        val adapter = MoviePagerAdapter(data.randMovie)
+        val adapter = MoviePagerAdapter(mainData.randMovie)
         vpMain.setClipToPadding(false)
         vpMain.setPadding(34,0,34,0)
 
@@ -159,13 +160,18 @@ class MainPageActivity : AppCompatActivity() {
 
     private fun choiceMovie(){
 
-        if(data.reserveMovie.size==0)
+        if(mainData.reserveMovie.size==0) {
             tvNoMovie.setVisibility(View.VISIBLE)
-        else if(data.reserveMovie.size>0) {
+            btnMovieNoChanging.setVisibility(View.VISIBLE)
+            btnMovieChanging.setVisibility(View.INVISIBLE)
+        }
+        else if(mainData.reserveMovie.size>0) {
             tvNoMovie.setVisibility(View.INVISIBLE)
+            btnMovieNoChanging.setVisibility(View.INVISIBLE)
+            btnMovieChanging.setVisibility(View.VISIBLE)
 
             rvmovieChoice = findViewById(R.id.rvMovieChoice)
-            movieChoiceAdapter = ChoiceMovieAdapter(this, data.reserveMovie)
+            movieChoiceAdapter = ChoiceMovieAdapter(this, mainData.reserveMovie)
 
             rvmovieChoice.adapter = movieChoiceAdapter
 
@@ -184,15 +190,20 @@ class MainPageActivity : AppCompatActivity() {
 
     private fun choiceDate(){
 
-        if(data.reserveDate.size==0)
+        if(mainData.reserveDate.size==0) {
             tvNoDate.setVisibility(View.VISIBLE)
-        else if(data.reserveDate.size>0) {
+            btnTimeNoChanging.setVisibility(View.VISIBLE)
+            btnTimeChanging.setVisibility(View.INVISIBLE)
+        }
+        else if(mainData.reserveDate.size>0) {
             tvNoDate.setVisibility(View.INVISIBLE)
+            btnTimeNoChanging.setVisibility(View.INVISIBLE)
+            btnTimeChanging.setVisibility(View.VISIBLE)
             //지금부터 얘는 큰 거
             rvdateChoice = findViewById(R.id.rvMainDate)
 
             //TODO : 서버 통신 이후, 반드시 reserveDate만 넘겨줄 것.
-            verticalAdapter = DataVerticalAdapter(this, data.reserveDate)
+            verticalAdapter = DataVerticalAdapter(this, mainData.reserveDate)
 //        dateChoiceAdapter= choiceDateAdapter(this)
 
             rvdateChoice.layoutManager = LinearLayoutManager(this)
@@ -210,10 +221,12 @@ class MainPageActivity : AppCompatActivity() {
         }
     }
 
-    private fun setOnClickListener(){
-        btnMainFirstPlay.setOnClickListener(){
-            val i = Intent(Intent.ACTION_VIEW, Uri.parse("https://youtu.be/li4jOV5j7SI"))
-            startActivity(i)
+
+    //requestCode 쓸 곳
+    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+        super.onActivityResult(requestCode, resultCode, data)
+        if(requestCode == 1000){
+
         }
     }
 

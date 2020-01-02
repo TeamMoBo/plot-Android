@@ -44,13 +44,13 @@
         <ImageView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="4dp"
+            android:layout_marginStart="10dp"
             android:layout_marginTop="130dp"
             android:src="@drawable/img_star"
             app:layout_constraintStart_toEndOf="@id/tvMainFirstStar"
             app:layout_constraintTop_toTopOf="parent"
-            android:scaleX="2"
-            android:scaleY="2"/>
+            android:scaleX="1.5"
+            android:scaleY="1.5"/>
 
         <TextView
             android:id="@+id/tvMainFirstHour"
@@ -86,6 +86,18 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent" />
 
+        <TextView
+            android:id="@+id/tvViewPagerGenre"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Animation"
+            app:layout_constraintTop_toBottomOf="@id/tvMainFirstStar"
+            android:layout_marginTop="7dp"
+            android:textColor="#ffffff"
+            android:background="#77969393"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginStart="10dp"
+            android:textSize="8sp"/>
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 </FrameLayout>

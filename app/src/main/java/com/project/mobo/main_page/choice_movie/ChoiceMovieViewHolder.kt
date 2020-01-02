@@ -8,6 +8,9 @@ import com.bumptech.glide.Glide
 import android.graphics.drawable.GradientDrawable
 import com.project.mobo.R
 import com.project.mobo.temp.ReserveMovie
+import android.R.drawable
+import androidx.appcompat.content.res.AppCompatResources.getDrawable
+import androidx.core.content.ContextCompat
 
 
 class ChoiceMovieViewHolder(view: View) : RecyclerView.ViewHolder(view){
@@ -23,6 +26,9 @@ class ChoiceMovieViewHolder(view: View) : RecyclerView.ViewHolder(view){
             .into(ItemImage)
         tvItemTitle.text=data.movieName
         tvItemStar.text=data.movieScore.toString()
+
+       //ItemImage.setBackground(corner)
+        //imageView.setClipToOutline(true)
 
         //val drawable = data.poster.getDrawable(R.drawable.main_viewpager_corner) as GradientDrawable
 
