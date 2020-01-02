@@ -501,6 +501,7 @@
             android:textSize="14sp"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/gl1"
             app:layout_constraintBottom_toTopOf="@+id/btnTimeChoiceGo" />
 
         <ImageView
@@ -510,7 +511,7 @@
             android:background="@drawable/an_ic_next_btn"
             app:layout_constraintLeft_toLeftOf="@id/txtFindFriend"
             app:layout_constraintRight_toRightOf="@id/txtFindFriend"
-            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/txtFindFriend"
             android:layout_marginBottom="59dp"></ImageView>
     </androidx.constraintlayout.widget.ConstraintLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
