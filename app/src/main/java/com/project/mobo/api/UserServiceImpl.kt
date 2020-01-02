@@ -17,4 +17,5 @@ object UserServiceImpl {
     val signUpService : SignUpInter = retrofit.create(SignUpInter::class.java)
     val haveTicketService : HaveTicketInter = retrofit.create(HaveTicketInter::class.java)
     val movieList: MovieList = retrofit.create(MovieList::class.java)
+    val choiceTimeService: ChoiceTimeInter = retrofit.create(ChoiceTimeInter::class.java)
 }
