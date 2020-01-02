@@ -40,12 +40,12 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginTop="70dp"
+        android:background="#ffffff"
+        app:layout_constraintEnd_toEndOf="@+id/parentLayout"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintEnd_toEndOf="@+id/parentLayout"
-        app:layout_constraintTop_toBottomOf="@+id/toolbar_paychoice"
-        android:background="#ffffff">
+        app:layout_constraintTop_toBottomOf="@+id/toolbar_paychoice">
+
         <TextView
             android:id="@+id/txtPayChoiceHaveStatus"
             android:layout_width="wrap_content"
@@ -53,11 +53,11 @@
             android:layout_marginLeft="20dp"
             android:layout_marginTop="28dp"
             android:lineSpacingExtra="6sp"
+            android:text="보유 현황"
             android:textColor="#a8adb7"
             android:textSize="12sp"
             app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            android:text="보유 현황"></TextView>
+            app:layout_constraintTop_toTopOf="parent"></TextView>
 
         <TextView
             android:id="@+id/txtPayChoiceDescription"
@@ -65,11 +65,11 @@
             android:layout_height="wrap_content"
             android:layout_marginLeft="20dp"
             android:lineSpacingExtra="5sp"
+            android:text="* 서비스 1회 이용 시, 티켓 1장 + 팝콘 1개가 소모됩니다."
             android:textColor="#afafaf"
             android:textSize="10sp"
             app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/txtPayChoiceHaveStatus"
-            android:text="* 서비스 1회 이용 시, 티켓 1장 + 팝콘 1개가 소모됩니다."></TextView>
+            app:layout_constraintTop_toBottomOf="@id/txtPayChoiceHaveStatus"></TextView>
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/clPayChoice1"
@@ -110,11 +110,11 @@
                 android:layout_marginTop="12dp"
                 android:layout_marginRight="15dp"
                 android:lineSpacingExtra="5sp"
+                android:text="￦10,000"
                 android:textColor="#b1b1b1"
                 android:textSize="10sp"
                 app:layout_constraintRight_toRightOf="@id/clPayChoice1"
-                app:layout_constraintTop_toTopOf="@id/clPayChoice1"
-                android:text="￦10,000"></TextView>
+                app:layout_constraintTop_toTopOf="@id/clPayChoice1"></TextView>
 
             <TextView
                 android:id="@+id/txtPayChoiceQuantity1"
@@ -298,10 +298,10 @@
             android:id="@+id/imgPayChoiceSelectProductticket"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginLeft="24dp"
             android:src="@drawable/and_popup_ticket_img"
             app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/txtPayChoiceSelectProduct"
-            android:layout_marginLeft="24dp"></ImageView>
+            app:layout_constraintTop_toBottomOf="@+id/txtPayChoiceSelectProduct"></ImageView>
 
         <TextView
             android:id="@+id/txtPayChoiceMovieTicket"
@@ -314,211 +314,208 @@
             android:textColor="#1d1d1d"
             android:textSize="14sp"
             app:layout_constraintLeft_toRightOf="@id/imgPayChoiceSelectProductticket"
-            app:layout_constraintTop_toBottomOf="@+id/txtPayChoiceSelectProduct">
-        </TextView>
+            app:layout_constraintTop_toBottomOf="@+id/txtPayChoiceSelectProduct"></TextView>
+
         <TextView
             android:id="@+id/txtPayChoiceProductDescription1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textSize="14sp"
-            android:textColor="#515c6f"
+            android:layout_marginLeft="16dp"
             android:lineSpacingExtra="6sp"
             android:text="서비스 1회 이용권"
-            app:layout_constraintTop_toBottomOf="@+id/txtPayChoiceMovieTicket"
+            android:textColor="#515c6f"
+            android:textSize="14sp"
             app:layout_constraintLeft_toRightOf="@+id/imgPayChoiceSelectProductticket"
-            android:layout_marginLeft="16dp">
-        </TextView>
+            app:layout_constraintTop_toBottomOf="@+id/txtPayChoiceMovieTicket"></TextView>
+
         <TextView
             android:id="@+id/txtPayChoiceTicketPrice"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textSize="14sp"
-            android:textColor="#ff6969"
+            android:layout_marginLeft="16dp"
             android:lineSpacingExtra="6sp"
             android:text="￦4,900"
+            android:textColor="#ff6969"
+            android:textSize="14sp"
             app:layout_constraintLeft_toRightOf="@id/imgPayChoiceSelectProductticket"
-            app:layout_constraintTop_toBottomOf="@+id/txtPayChoiceProductDescription1"
-            android:layout_marginLeft="16dp">
-        </TextView>
+            app:layout_constraintTop_toBottomOf="@+id/txtPayChoiceProductDescription1"></TextView>
+
         <ImageView
             android:id="@+id/imgPayChoiceSelectProductMinus"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            app:layout_constraintRight_toLeftOf="@+id/txtTicketNum"
-            app:layout_constraintTop_toBottomOf="@+id/txtPayChoiceProductDescription1"
-            android:layout_marginRight="15dp"
             android:layout_marginTop="4dp"
+            android:layout_marginRight="15dp"
             android:src="@drawable/ic_minus"
-            >
-        </ImageView>
+            app:layout_constraintRight_toLeftOf="@+id/txtTicketNum"
+            app:layout_constraintTop_toBottomOf="@+id/txtPayChoiceProductDescription1"></ImageView>
+
         <TextView
             android:id="@+id/txtTicketNum"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textSize="12sp"
-            android:textColor="#727c8e"
-            android:lineSpacingExtra="6sp"
-            android:gravity="end"
-            android:text="1"
-            app:layout_constraintRight_toLeftOf="@+id/imgPayChoiceSelectProductPlus"
-            app:layout_constraintTop_toBottomOf="@+id/txtPayChoiceProductDescription1"
-            android:layout_marginRight="15dp"
             android:layout_marginTop="4dp"
-            />
+            android:layout_marginRight="15dp"
+            android:gravity="end"
+            android:lineSpacingExtra="6sp"
+            android:text="1"
+            android:textColor="#727c8e"
+            android:textSize="12sp"
+            app:layout_constraintRight_toLeftOf="@+id/imgPayChoiceSelectProductPlus"
+            app:layout_constraintTop_toBottomOf="@+id/txtPayChoiceProductDescription1" />
+
         <ImageView
             android:id="@+id/imgPayChoiceSelectProductPlus"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:layout_marginRight="16dp"
             android:src="@drawable/ic_plus"
             app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/txtPayChoiceProductDescription1"
-            android:layout_marginTop="4dp"
-            android:layout_marginRight="16dp">
-        </ImageView>
+            app:layout_constraintTop_toBottomOf="@+id/txtPayChoiceProductDescription1"></ImageView>
+
         <View
             android:id="@+id/viewPayChoice3"
             android:layout_width="246dp"
             android:layout_height="1dp"
-            android:background="#20CCCCCC"
-            app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/imgPayChoiceSelectProductticket"
             android:layout_marginTop="20dp"
             android:layout_marginRight="16dp"
-            >
-        </View>
+            android:background="#20CCCCCC"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/imgPayChoiceSelectProductticket"></View>
+
         <ImageView
             android:id="@+id/imgPayChoiceSelectProductChoicePopcorn"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/viewPayChoice3"
+            android:layout_marginLeft="24dp"
             android:src="@drawable/and_popup_popcorn_img"
-            android:layout_marginLeft="24dp">
-        </ImageView>
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/viewPayChoice3"></ImageView>
+
         <TextView
             android:id="@+id/txtPayChoiceProductChoicePopcorn"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textSize="14sp"
-            android:textColor="#1d1d1d"
-            android:lineSpacingExtra="6sp"
-            app:layout_constraintLeft_toRightOf="@+id/imgPayChoiceSelectProductChoicePopcorn"
-            app:layout_constraintTop_toBottomOf="@id/viewPayChoice3"
             android:layout_marginLeft="16dp"
-            android:text="팝콘"></TextView>
+            android:lineSpacingExtra="6sp"
+            android:text="팝콘"
+            android:textColor="#1d1d1d"
+            android:textSize="14sp"
+            app:layout_constraintLeft_toRightOf="@+id/imgPayChoiceSelectProductChoicePopcorn"
+            app:layout_constraintTop_toBottomOf="@id/viewPayChoice3"></TextView>
+
         <TextView
             android:id="@+id/txtPayChoice"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textSize="14sp"
-            android:textColor="#515c6f"
+            android:layout_marginLeft="16dp"
             android:lineSpacingExtra="6sp"
             android:text="서비스 1회 이용권"
+            android:textColor="#515c6f"
+            android:textSize="14sp"
             app:layout_constraintLeft_toRightOf="@id/imgPayChoiceSelectProductChoicePopcorn"
-            app:layout_constraintTop_toBottomOf="@+id/txtPayChoiceProductChoicePopcorn"
-            android:layout_marginLeft="16dp"
-            />
+            app:layout_constraintTop_toBottomOf="@+id/txtPayChoiceProductChoicePopcorn" />
+
         <TextView
             android:id="@+id/txtPayChoicePopcornPrice"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textSize="14sp"
-            android:textColor="#ff6969"
+            android:layout_marginLeft="16dp"
             android:lineSpacingExtra="6sp"
             android:text="￦4,900"
+            android:textColor="#ff6969"
+            android:textSize="14sp"
             app:layout_constraintLeft_toRightOf="@id/imgPayChoiceSelectProductChoicePopcorn"
-            app:layout_constraintTop_toBottomOf="@+id/txtPayChoice"
-            android:layout_marginLeft="16dp"
-            />
+            app:layout_constraintTop_toBottomOf="@+id/txtPayChoice" />
+
         <ImageView
             android:id="@+id/imgPayChoiceSelectPopcornMinus"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:src="@drawable/ic_minus"
-            app:layout_constraintTop_toBottomOf="@+id/txtPayChoicePopcornPrice"
-            app:layout_constraintRight_toLeftOf="@+id/txtPopcornNum"
             android:layout_marginRight="15dp"
-            >
-        </ImageView>
+            android:src="@drawable/ic_minus"
+            app:layout_constraintRight_toLeftOf="@+id/txtPopcornNum"
+            app:layout_constraintTop_toBottomOf="@+id/txtPayChoicePopcornPrice"></ImageView>
+
         <TextView
             android:id="@+id/txtPopcornNum"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textSize="12sp"
-            android:textColor="#727c8e"
-            android:lineSpacingExtra="6sp"
-            android:gravity="end"
-            android:text="1"
-            app:layout_constraintRight_toLeftOf="@+id/imgPayChoiceSelectPopcornPlus"
-            app:layout_constraintTop_toBottomOf="@+id/txtPayChoicePopcornPrice"
             android:layout_marginRight="15dp"
-            />
+            android:gravity="end"
+            android:lineSpacingExtra="6sp"
+            android:text="1"
+            android:textColor="#727c8e"
+            android:textSize="12sp"
+            app:layout_constraintRight_toLeftOf="@+id/imgPayChoiceSelectPopcornPlus"
+            app:layout_constraintTop_toBottomOf="@+id/txtPayChoicePopcornPrice" />
+
         <ImageView
             android:id="@+id/imgPayChoiceSelectPopcornPlus"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginRight="16dp"
             android:src="@drawable/ic_plus"
             app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/txtPayChoicePopcornPrice"
-            android:layout_marginRight="16dp"></ImageView>
+            app:layout_constraintTop_toBottomOf="@+id/txtPayChoicePopcornPrice"></ImageView>
+
         <View
             android:id="@+id/viewPayChoice4"
             android:layout_width="246dp"
             android:layout_height="1dp"
-            android:background="#90CCCCCC"
-            app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/imgPayChoiceSelectProductChoicePopcorn"
             android:layout_marginTop="8dp"
             android:layout_marginRight="16dp"
-            >
-        </View>
+            android:background="#90CCCCCC"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/imgPayChoiceSelectProductChoicePopcorn"></View>
+
         <TextView
             android:id="@+id/txtPayChoiceTotal"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textSize="10sp"
-            android:textColor="#515c6f"
+            android:layout_marginLeft="24dp"
+            android:layout_marginTop="36dp"
             android:letterSpacing="0.07"
             android:lineSpacingExtra="5sp"
             android:text="총합"
-            app:layout_constraintTop_toBottomOf="@+id/viewPayChoice4"
+            android:textColor="#515c6f"
+            android:textSize="10sp"
             app:layout_constraintLeft_toLeftOf="parent"
-            android:layout_marginLeft="24dp"
-            android:layout_marginTop="36dp"
-            />
+            app:layout_constraintTop_toBottomOf="@+id/viewPayChoice4" />
+
         <TextView
             android:id="@+id/txtPayChoiceWon"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textSize="18sp"
-            android:textColor="#000000"
+            android:layout_marginLeft="24dp"
             android:lineSpacingExtra="9sp"
             android:text="￦"
+            android:textColor="#000000"
+            android:textSize="18sp"
             app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/txtPayChoiceTotal"
-            android:layout_marginLeft="24dp"
-            />
+            app:layout_constraintTop_toBottomOf="@id/txtPayChoiceTotal" />
+
         <TextView
             android:id="@+id/txtPayChoiceTotalPrice"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textSize="18sp"
-            android:textColor="#000000"
             android:lineSpacingExtra="9sp"
             android:text="0"
+            android:textColor="#000000"
+            android:textSize="18sp"
             app:layout_constraintLeft_toRightOf="@id/txtPayChoiceWon"
-            app:layout_constraintTop_toBottomOf="@id/txtPayChoiceTotal"
-            />
+            app:layout_constraintTop_toBottomOf="@id/txtPayChoiceTotal" />
+
         <ImageView
             android:id="@+id/btnPayChoicePay"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginTop="48dp"
+            android:layout_marginRight="32dp"
             android:src="@drawable/btn_timeselcet"
             app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/viewPayChoice4"
-            android:layout_marginTop="48dp"
-            android:layout_marginRight="32dp">
-        </ImageView>
+            app:layout_constraintTop_toBottomOf="@id/viewPayChoice4"></ImageView>
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 

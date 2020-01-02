@@ -23,12 +23,6 @@
         </activity>
         <activity android:name=".splash.Splash" />
         <activity android:name=".MatchingWaitingActivity">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-                <action android:name="android.intent.action.VIEW" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
         <activity android:name=".movie_selection.display.MovieSelectionActivity" />
         <activity android:name=".mypage.MyPage_new" />

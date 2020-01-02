@@ -31,13 +31,13 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            app:layout_constraintLeft_toRightOf="@+id/backBtn_movie_selection"
-            app:layout_constraintTop_toTopOf="@+id/backBtn_movie_selection"
             android:text="영화선택"
             android:textColor="#FFFFFF"
             android:textSize="22sp"
-            android:layout_marginTop="10dp"
-            android:textStyle="normal"/>
+            android:textStyle="normal"
+            app:layout_constraintLeft_toRightOf="@+id/backBtn_movie_selection"
+            app:layout_constraintTop_toTopOf="@+id/backBtn_movie_selection"
+            app:layout_constraintBottom_toBottomOf="@+id/backBtn_movie_selection"/>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
