@@ -6,6 +6,7 @@ import android.os.Bundle
 import android.os.Handler
 import com.project.mobo.R
 import com.project.mobo.main_page.MainPageActivity
+import com.project.mobo.sign.SignInActivity
 import kotlinx.android.synthetic.main.activity_splash.*
 
 class Splash : AppCompatActivity() {
@@ -14,7 +15,7 @@ class Splash : AppCompatActivity() {
     private val SPLASH_DELAY: Long = 4000 //3 seconds
     internal val mRunnable: Runnable = Runnable {
         if (!isFinishing) {
-            val intent = Intent(applicationContext, MainPageActivity::class.java)
+            val intent = Intent(applicationContext, SignInActivity::class.java)
             startActivity(intent)
             finish()
         }

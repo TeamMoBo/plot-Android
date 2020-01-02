@@ -2,22 +2,21 @@ package com.project.mobo.api
 
 //요청
 data class SignupRequest(
-    var id : String,
-    var password:String,
-    var name:String,
-    var nickname:String,
-    var age:Int,
-    var comment:String,
-    var location: String,
-    var gender:Int,
-    var selectGender:Int,
-    var selectMinAge:Int,
-    var selectMaxAge:Int,
-    var preferGenre:String,
-    var attractPoint:String,
+    val id : String,
+    val password:String,
+    val name:String,
+    val nickname:String,
+    val age:Int,
+    val comment:String,
+    val location: String,
+    val gender:Int,
+    val selectGender:Int,
+    val selectMinAge:Int,
+    val selectMaxAge:Int,
+    val preferGenre:String,
+    val attractPoint:String,
     var favor:String,
-    var school:String,
-    var major:String,
-    var kakao:String,
-    var image:String
+    val school:String,
+    val major:String,
+    val kakao:String
 )

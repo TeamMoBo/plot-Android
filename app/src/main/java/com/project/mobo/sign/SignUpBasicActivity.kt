@@ -6,18 +6,17 @@ import android.app.Activity
 import android.content.Intent
 import android.content.pm.PackageManager
 import android.os.Build
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.util.Log
-import android.widget.RadioButton
+import android.provider.MediaStore
+import android.widget.RadioGroup
 import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
 import com.project.mobo.R
 import kotlinx.android.synthetic.main.activity_my_page_new.*
 import kotlinx.android.synthetic.main.activity_sign_in.view.*
 import kotlinx.android.synthetic.main.activity_sign_up_basic.*
-import kotlinx.android.synthetic.main.activity_sign_up_basic.btnBack
-import kotlinx.android.synthetic.main.activity_sign_up_basic.btnSignupNext
 import kotlinx.android.synthetic.main.activity_sign_up_basic.profile_image
+
 
 class SignUpBasicActivity : AppCompatActivity() {
 
@@ -110,18 +109,28 @@ class SignUpBasicActivity : AppCompatActivity() {
             val major = edtSignupMajor.text.toString()
             val kakaoID = edtSignupKakao.text.toString()
             val location = edtSignupLocation.text.toString()
+            
 
-            var gender: Int = 1
+//            val radioGroup: RadioGroup = findViewById(R.id.rg_gender)
+//            val checkedRadioButtonId: Int = radioGroup.getCheckedRadioButtonId()
+//            if (checkedRadioButtonId == -1) { // No item selected
+//            } else {
+//                if (checkedRadioButtonId == R.id.rg_btn1) { // Do something with the button
+//                }
+//            }
+//            if (rg_btn1.isChecked) {
+//                gender = 1
+//            } else if(rg_btn2.isChecked) { gender = 0 }
 
-            rg_gender_basic.setOnCheckedChangeListener { group, checkedId ->
-                val checkedRadioButton =
-                    group?.findViewById(group.checkedRadioButtonId) as RadioButton
-                checkedRadioButton?.let {
-                    if (checkedRadioButton.isChecked) {
-                        gender = checkedRadioButton.tag as Int
-                    }
-                }
-            }
+//            rg_gender_basic.setOnCheckedChangeListener { group, checkedId ->
+//                val checkedRadioButton =
+//                    group?.findViewById(group.checkedRadioButtonId) as RadioButton
+//                checkedRadioButton?.let {
+//                    if (checkedRadioButton.isChecked) {
+//                        gender = checkedRadioButton.tag as Int
+//                    }
+//                }
+//            }
 
             if (nickname.isEmpty() || name.isEmpty() || age.isEmpty() || id.isEmpty() || password.isEmpty()
                 || school.isEmpty() || major.isEmpty() || kakaoID.isEmpty() || location.isEmpty()
@@ -137,6 +146,7 @@ class SignUpBasicActivity : AppCompatActivity() {
                 intent.putExtra("major", major)
                 intent.putExtra("kakaoID", kakaoID)
                 intent.putExtra("location", location)
+                //intent.putExtra("myGender", gender)
                 setResult(Activity.RESULT_OK, intent) // StartActivityForResult
 
                 startActivity(login)
@@ -147,7 +157,7 @@ class SignUpBasicActivity : AppCompatActivity() {
         }
     }
 
-    private fun condition(){
+    private fun condition() {
         edtSignupID.text.toString()
     }
 

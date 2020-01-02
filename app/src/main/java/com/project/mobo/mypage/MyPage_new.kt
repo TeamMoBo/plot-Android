@@ -63,18 +63,18 @@ class MyPage_new : AppCompatActivity() {
             edittxt_department, edittxt_livingarea, edittxt_name, edittxt_id,
             edittxt_pass, edittxt_ageMin, edittxt_ageMax)
 
-        val listRadioButton: ArrayList<RadioButton> = arrayListOf(rg_btn1, rg_btn2, rg_btn3)
+        //val listRadioButton: ArrayList<RadioButton> = arrayListOf(rg_btn1, rg_btn2, rg_btn3)
 
         btn_change_info.setOnClickListener {
             btn_change_info.visibility = EditText.INVISIBLE
             btn_change_complete.visibility = EditText.VISIBLE
-            for (i in listEditText){
-                editText(i)
-            }
+//            for (i in listEditText){
+//                editText(i)
+//            }
 
-            for (i in listRadioButton){
-                editRadio(i)
-            }
+//            for (i in listRadioButton){
+//                editRadio(i)
+//            }
 
 
         }
@@ -86,9 +86,9 @@ class MyPage_new : AppCompatActivity() {
                 editText(i)
             }
 
-            for (i in listRadioButton){
-                editRadio(i)
-            }
+//            for (i in listRadioButton){
+//                editRadio(i)
+//            }
         }
     }
 

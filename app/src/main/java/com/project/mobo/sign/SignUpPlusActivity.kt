@@ -41,15 +41,15 @@ class SignUpPlusActivity : AppCompatActivity() {
 
         var selectGender: Int = 1
 
-        rg_gender_plus.setOnCheckedChangeListener { group, checkedId ->
-            val checkedRadioButton_plus =
-                group?.findViewById(group.checkedRadioButtonId) as RadioButton
-            checkedRadioButton_plus?.let {
-                if (checkedRadioButton_plus.isChecked) {
-                    selectGender = checkedRadioButton_plus.tag as Int
-                }
-            }
-        }
+//        rg_gender_plus.setOnCheckedChangeListener { group, checkedId ->
+//            val checkedRadioButton_plus =
+//                group?.findViewById(group.checkedRadioButtonId) as RadioButton
+//            checkedRadioButton_plus?.let {
+//                if (checkedRadioButton_plus.isChecked) {
+//                    selectGender = checkedRadioButton_plus.tag as Int
+//                }
+//            }
+//        }
 
         val minAge = (txtMinAge.text.toString()).toInt()
         val maxAge = (txtMaxAge.text.toString()).toInt()
@@ -75,8 +75,7 @@ class SignUpPlusActivity : AppCompatActivity() {
                     interest,
                     school,
                     major,
-                    kakaoID,
-                    profile
+                    kakaoID
                 )
             )
 

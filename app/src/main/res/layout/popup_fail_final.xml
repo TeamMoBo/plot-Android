@@ -1,90 +1,98 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
-    xmlns:app="http://schemas.android.com/apk/res-auto">
+    android:layout_gravity="center">
+
     <ImageView
         android:id="@+id/imgback"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:background="@drawable/img_fail_popup_final"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent"/>
+        app:layout_constraintTop_toTopOf="parent" />
+
     <TextView
         android:id="@+id/txtPopupFail"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textSize="20sp"
-        android:textColor="#ffffff"
-        android:lineSpacingExtra="9sp"
-        android:gravity="center_horizontal"
-        android:text="매칭실패"
-        app:layout_constraintStart_toStartOf="@id/imgback"
-        app:layout_constraintEnd_toEndOf="@id/imgback"
-        app:layout_constraintTop_toTopOf="parent"
         android:layout_marginTop="56dp"
-        />
+        android:gravity="center_horizontal"
+        android:lineSpacingExtra="9sp"
+        android:text="매칭실패"
+        android:textColor="#ffffff"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="@id/imgback"
+        app:layout_constraintStart_toStartOf="@id/imgback"
+        app:layout_constraintTop_toTopOf="@id/imgback" />
+
     <TextView
         android:id="@+id/txtPopupFinalPerson"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textSize="14sp"
-        android:textColor="#000000"
-        android:lineSpacingExtra="6sp"
-        android:gravity="center_horizontal"
-        android:text="정현강"
-        app:layout_constraintStart_toStartOf="@id/imgback"
-        app:layout_constraintTop_toBottomOf="@id/txtPopupFail"
         android:layout_marginLeft="75dp"
         android:layout_marginTop="40dp"
-        />
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textSize="14sp"
-        android:textColor="#000000"
-        android:lineSpacingExtra="6sp"
         android:gravity="center_horizontal"
-        android:text="님과의"
-        app:layout_constraintStart_toEndOf="@id/txtPopupFinalPerson"
-        app:layout_constraintTop_toBottomOf="@id/txtPopupFail"
-        android:layout_marginTop="40dp"/>
-    <TextView
+        android:lineSpacingExtra="6sp"
+        android:text="정현강"
+        android:textColor="#000000"
+        android:textSize="14sp"
         app:layout_constraintStart_toStartOf="@id/imgback"
-        app:layout_constraintEnd_toEndOf="@id/imgback"
-        app:layout_constraintTop_toBottomOf="@id/txtPopupFinalPerson"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textSize="14sp"
-        android:textColor="#000000"
-        android:lineSpacingExtra="6sp"
-        android:gravity="center_horizontal"
-        android:text="매칭에 실패했어"
-        />
+        app:layout_constraintTop_toBottomOf="@id/txtPopupFail" />
+
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textSize="14sp"
-        android:textColor="#000000"
-        android:lineSpacingExtra="6sp"
+        android:layout_marginTop="40dp"
         android:gravity="center_horizontal"
+        android:lineSpacingExtra="6sp"
+        android:text="님과의"
+        android:textColor="#000000"
+        android:textSize="14sp"
+        app:layout_constraintStart_toEndOf="@id/txtPopupFinalPerson"
+        app:layout_constraintTop_toBottomOf="@id/txtPopupFail" />
+
+    <TextView
+        android:id="@+id/textView5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:lineSpacingExtra="6sp"
+        android:text="매칭에 실패했어"
+        android:textColor="#000000"
+        android:textSize="14sp"
+        app:layout_constraintEnd_toEndOf="@id/imgback"
+        app:layout_constraintStart_toStartOf="@id/imgback"
+        app:layout_constraintTop_toBottomOf="@id/txtPopupFinalPerson" />
+
+    <TextView
+        android:id="@+id/textView6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:gravity="center_horizontal"
+        android:lineSpacingExtra="6sp"
         android:text="갑자기 약속이 생겼다\n
 다시 한번 시도해봐!"
-        app:layout_constraintStart_toStartOf="@id/imgback"
+        android:textColor="#000000"
+        android:textSize="14sp"
         app:layout_constraintEnd_toEndOf="@id/imgback"
-        app:layout_constraintTop_toBottomOf="@id/txtPopupFinalPerson"
-        android:layout_marginTop="24dp"
-        />
+        app:layout_constraintStart_toStartOf="@id/imgback"
+        app:layout_constraintTop_toBottomOf="@+id/textView5" />
+
     <Button
         android:id="@+id/btnFailOk"
-        app:layout_constraintStart_toStartOf="@id/imgback"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:layout_marginBottom="38dp"
+        android:background="@drawable/btn_main"
+        app:layout_constraintBottom_toBottomOf="@id/imgback"
         app:layout_constraintEnd_toEndOf="@id/imgback"
-        app:layout_constraintBottom_toBottomOf="parent"
-        android:layout_width="96dp"
-        android:layout_height="28dp"
-        android:background="@drawable/shape_btn_popup_fail"
-        android:text="확인하기"
-        android:layout_marginBottom="39dp"/>
+        app:layout_constraintStart_toStartOf="@id/imgback"
+        app:layout_constraintTop_toBottomOf="@+id/textView6" />
 </androidx.constraintlayout.widget.ConstraintLayout>
