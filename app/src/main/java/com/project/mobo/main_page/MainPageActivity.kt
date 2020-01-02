@@ -23,9 +23,9 @@ import android.view.View
 import com.project.mobo.MatchingHistory.MatchingHistoryActivity
 import com.project.mobo.R
 import com.project.mobo.SharedPreferenceController
+import com.project.mobo.api.Data
 import com.project.mobo.api.UserServiceImpl
 import com.project.mobo.api.safeEnqueue
-import com.project.mobo.temp.Data
 
 
 class MainPageActivity : AppCompatActivity() {
@@ -45,7 +45,7 @@ class MainPageActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main_page)
 
-        val callMain = UserServiceImpl.userService.mainResponse(
+        val callMain = UserServiceImpl.MainService.mainResponse(
             key = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZHgiOjM3LCJpYXQiOjE1Nzc3NTk2MzIsImV4cCI6MTU3ODM2NDQzMiwiaXNzIjoibW9ib21hc3RlciJ9.k30fv2OoezYTrzMJnhaFdM0suMnnoIVfjoGkOBMe-G4"
         )
 

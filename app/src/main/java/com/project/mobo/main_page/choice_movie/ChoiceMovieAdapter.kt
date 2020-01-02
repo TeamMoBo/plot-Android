@@ -5,7 +5,7 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.project.mobo.R
-import com.project.mobo.temp.ReserveMovie
+import com.project.mobo.api.ReserveMovie
 
 class ChoiceMovieAdapter(private val context: Context, private var reserveMovie: ArrayList<ReserveMovie>) : RecyclerView.Adapter<ChoiceMovieViewHolder>(){
 

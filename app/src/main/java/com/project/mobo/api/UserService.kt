@@ -1,7 +1,6 @@
 package com.project.mobo.api
 
 import com.google.gson.annotations.SerializedName
-import com.project.mobo.temp.MainResponse
 import okhttp3.MultipartBody
 import retrofit2.Call
 import retrofit2.http.*

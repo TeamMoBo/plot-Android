@@ -5,7 +5,6 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.project.mobo.R
-import com.project.mobo.temp.ReserveDate
 
 class ChoiceDateAdapter(private val context: Context, private var reserveDate : ArrayList<Int>) : RecyclerView.Adapter<ChoiceDateViewHolder>() {
 

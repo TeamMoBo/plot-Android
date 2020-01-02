@@ -13,7 +13,7 @@ import androidx.core.content.ContextCompat.startActivity
 import androidx.viewpager.widget.PagerAdapter
 import com.bumptech.glide.Glide
 import com.project.mobo.R
-import com.project.mobo.temp.RandMovie
+import com.project.mobo.api.RandMovie
 import kotlinx.android.synthetic.main.fragment_main.view.*
 import kotlinx.android.synthetic.main.movie_choice_item.view.*
 import kotlinx.android.synthetic.main.time_choice_item.view.*

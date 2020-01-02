@@ -5,8 +5,8 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.project.mobo.R
+import com.project.mobo.api.ReserveDate
 import com.project.mobo.main_page.data.MainReserveDate
-import com.project.mobo.temp.ReserveDate
 
 class DataVerticalAdapter(private val context: Context, private var reserveDate : ArrayList<ReserveDate>) : RecyclerView.Adapter<DataVerticalViewHolder>() {
     //var data = listOf<DataVerticalItem>()

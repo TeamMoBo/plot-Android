@@ -7,10 +7,10 @@ import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import android.graphics.drawable.GradientDrawable
 import com.project.mobo.R
-import com.project.mobo.temp.ReserveMovie
 import android.R.drawable
 import androidx.appcompat.content.res.AppCompatResources.getDrawable
 import androidx.core.content.ContextCompat
+import com.project.mobo.api.ReserveMovie
 
 
 class ChoiceMovieViewHolder(view: View) : RecyclerView.ViewHolder(view){
