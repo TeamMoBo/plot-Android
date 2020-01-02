@@ -63,6 +63,7 @@ class MyPage_new : AppCompatActivity() {
             edittxt_department, edittxt_livingarea, edittxt_name, edittxt_id,
             edittxt_pass, edittxt_ageMin, edittxt_ageMax)
 
+        //val listRadioButton: ArrayList<RadioButton> = arrayListOf(rg_btn1, rg_btn2, rg_btn3)
         val listRadioButton: ArrayList<RadioButton> = arrayListOf(rg_btn1_mypage, rg_btn2_mypage, rg_btn3_mypage)
 
         btn_change_info.setOnClickListener {

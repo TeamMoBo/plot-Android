@@ -1,18 +1,25 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
+    android:layout_gravity="center"
     xmlns:app="http://schemas.android.com/apk/res-auto">
+
     <ImageView
         android:id="@+id/imgback"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:background="@drawable/img_success_popup_final"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent"
-        />
+        app:layout_constraintVertical_bias="0.0" />
+
     <TextView
         android:id="@+id/txtPopupfinalMatching"
         app:layout_constraintStart_toStartOf="@id/imgback"
@@ -52,40 +59,44 @@
         app:layout_constraintStart_toEndOf="@id/txtPopupFinalPerson"
         app:layout_constraintTop_toBottomOf="@id/txtPopupfinalMatching"
         android:layout_marginTop="40dp"/>
+
     <TextView
-        app:layout_constraintStart_toStartOf="@id/imgback"
-        app:layout_constraintEnd_toEndOf="@id/imgback"
-        app:layout_constraintTop_toBottomOf="@id/txtPopupFinalPerson"
+        android:id="@+id/textView3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textSize="14sp"
-        android:textColor="#000000"
-        android:lineSpacingExtra="6sp"
         android:gravity="center_horizontal"
+        android:lineSpacingExtra="6sp"
         android:text="매칭에 성공했어"
-        />
+        android:textColor="#000000"
+        android:textSize="14sp"
+        app:layout_constraintEnd_toEndOf="@id/imgback"
+        app:layout_constraintStart_toStartOf="@id/imgback"
+        app:layout_constraintTop_toBottomOf="@id/txtPopupFinalPerson" />
+
     <TextView
+        android:id="@+id/txtkakao"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textSize="14sp"
-        android:textColor="#000000"
-        android:lineSpacingExtra="6sp"
+        android:layout_marginTop="5dp"
         android:gravity="center_horizontal"
+        android:lineSpacingExtra="6sp"
         android:text="카카오톡 ID와\n
  영화정보를 확인하세요"
-        app:layout_constraintStart_toStartOf="@id/imgback"
+        android:textColor="#000000"
+        android:textSize="14sp"
         app:layout_constraintEnd_toEndOf="@id/imgback"
-        app:layout_constraintTop_toBottomOf="@id/txtPopupFinalPerson"
-        android:layout_marginTop="24dp"
-        />
+        app:layout_constraintStart_toStartOf="@id/imgback"
+        app:layout_constraintTop_toBottomOf="@+id/textView3" />
+
     <Button
         android:id="@+id/btnSuccessFinalOk"
-        app:layout_constraintStart_toStartOf="@id/imgback"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:layout_marginBottom="39dp"
+        android:background="@drawable/btn_okay"
+        app:layout_constraintBottom_toBottomOf="@id/imgback"
         app:layout_constraintEnd_toEndOf="@id/imgback"
-        app:layout_constraintBottom_toBottomOf="parent"
-        android:layout_width="96dp"
-        android:layout_height="28dp"
-        android:background="@drawable/shape_btn_popup_final"
-        android:text="확인하기"
-        android:layout_marginBottom="39dp"/>
+        app:layout_constraintStart_toStartOf="@id/imgback"
+        app:layout_constraintTop_toBottomOf="@+id/txtkakao" />
 </androidx.constraintlayout.widget.ConstraintLayout>

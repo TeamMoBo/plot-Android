@@ -1,21 +1,18 @@
 package com.project.mobo.chat
 
+import android.content.Intent
 import android.os.Bundle
-import android.widget.Toast
-import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.google.firebase.database.*
+import com.project.mobo.dialog.MatchingDialogActivity
 import com.project.mobo.R
 import com.project.mobo.common.FirebaseChatConstant
 import com.project.mobo.common.addChildEventListener
 import com.project.mobo.util.registerEvent
 import kotlinx.android.synthetic.main.activity_chatting.*
-import kotlinx.android.synthetic.main.date_choice_item.*
-import java.text.SimpleDateFormat
 import java.util.*
 import kotlin.collections.HashMap
-import kotlin.concurrent.schedule
 
 class ChattingActivity : AppCompatActivity() {
     //데이터베이스에 쓰기(데이터베이스의 인스턴스를 검색하고 쓰려는 위치를 참조)
@@ -36,18 +33,23 @@ class ChattingActivity : AppCompatActivity() {
 
 
     //TODO: 실제로는 로그인 시점에 받아온 firebase database uid 를 받아서 세팅해야함
-    private val uid: String = "gihyun"
+    //private val uid: String = "gihyun"
+    private lateinit var uid: String
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_chatting)
+
+        uid = intent.getStringExtra("uid")
+        chatRoomId = intent.getStringExtra("address")
 
         //TODO: 채팅방이 만들어진 시간을 기록해야함.
         //chatRoomId = intent.getStringExtra(CHATROOM_ID) ?: run {
         //    finish()
         //    return
         //}
-        chatRoomId = "something"
+        //chatRoomId = "something"
         chatRoom = databaseReference
             .child(FirebaseChatConstant.CHATROOMS)
             .child(chatRoomId)
@@ -60,7 +62,7 @@ class ChattingActivity : AppCompatActivity() {
 
         trueMap[uid] = true
         falseMap[uid] = false
-        chatUsers.push().setValue(trueMap)
+//        chatUsers.push().setValue(trueMap)
 
         //초기화
         //메시지를 보여주기 위한 리스트 어댑터 생성 및 세팅
@@ -98,23 +100,25 @@ class ChattingActivity : AppCompatActivity() {
         registerEvent(createdTime, 0.1f) {
             //Toast.makeText(this, "1단계", Toast.LENGTH_SHORT).show()
             txtQuiz.text = "우리 영화 보기 몇 분전에 만날까?"
-            imgProcess.setImageDrawable(getDrawable(R.drawable.processbar_second))
+            //imgProcess.setImageDrawable(getDrawable(R.drawable.processbar_second))
         }
 //        registerEvent(createdTime, 0.25f) {
 //            //Toast.makeText(this, "2단계", Toast.LENGTH_SHORT).show()
 //            txtQuiz.text=uid+"이 영화는 왜 보고 싶어?"
 //            imgProcess.setImageDrawable(getDrawable(R.drawable.processbar_third))
 //        }
-//        registerEvent(createdTime, 0.36f) {
-//            //Toast.makeText(this, "3단계", Toast.LENGTH_SHORT).show()
-//            txtQuiz.text="영화 보고 나서 밥 한끼 어때?"
-//            imgProcess.setImageDrawable(getDrawable(R.drawable.processbar_complete))
-//        }
-        registerEvent(createdTime, 0.5f) {
-            val dialogView = layoutInflater.inflate(R.layout.popup_matching_choice, null)
-            val dialog = AlertDialog.Builder(this)
-                .setView(dialogView)
-                .show()
+        registerEvent(createdTime, 0.2f) {
+            //Toast.makeText(this, "3단계", Toast.LENGTH_SHORT).show()
+            txtQuiz.text = "영화 보고 나서 밥 한끼 어때?"
+            imgProcess.setImageDrawable(getDrawable(R.drawable.processbar_complete))
+        }
+        registerEvent(createdTime, 0.3f) {
+            //            val dialogView = layoutInflater.inflate(R.layout.popup_matching_choice, null)
+//            val dialog = AlertDialog.Builder(this)
+//                .setView(dialogView)
+            val choice = Intent(this, MatchingDialogActivity::class.java)
+            startActivity(choice)
+            //finish()
         }
 
     }
@@ -139,17 +143,17 @@ class ChattingActivity : AppCompatActivity() {
 
     override fun onDestroy() {
         super.onDestroy()
-        chatUsers.push().setValue(falseMap)
+        //     chatUsers.push().setValue(falseMap)
     }
 
     override fun onPause() {
         super.onPause()
-        chatUsers.push().setValue(falseMap)
+        //       chatUsers.push().setValue(falseMap)
     }
 
     override fun onResume() {
         super.onResume()
-        chatUsers.push().setValue(trueMap)
+//        chatUsers.push().setValue(trueMap)
     }
 
 

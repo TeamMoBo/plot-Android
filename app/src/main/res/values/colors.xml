@@ -7,4 +7,8 @@
     <color name="white">#ffffff</color>
     <color name="chicken">#ff7e27</color>
     <color name="black">#000000</color>
+
+    <!--투명도-->
+    <color name="transcolor">#38333333</color>
+
 </resources>

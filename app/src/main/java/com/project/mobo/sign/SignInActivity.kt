@@ -6,7 +6,11 @@ import android.os.Bundle
 import android.util.Log
 import android.widget.Toast
 import com.project.mobo.R
+import com.project.mobo.SharedPreferenceController
+import com.project.mobo.api.SigninRequest
+import com.project.mobo.api.Token
 import com.project.mobo.api.UserServiceImpl
+import com.project.mobo.api.safeEnqueue
 import com.project.mobo.main_page.MainPageActivity
 import kotlinx.android.synthetic.main.activity_sign_in.*
 import retrofit2.Call
@@ -14,6 +18,9 @@ import retrofit2.Callback
 import retrofit2.Response
 
 class SignInActivity : AppCompatActivity() {
+
+
+    private lateinit var loginData: Token
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -23,7 +30,7 @@ class SignInActivity : AppCompatActivity() {
         //login()
     }
 
-    private fun initialUI(){
+    private fun initialUI() {
         btnSigninLogin.setOnClickListener {
             val id = edtSigninID?.text.toString()
             val password = edtSigninPW?.text.toString()
@@ -34,8 +41,18 @@ class SignInActivity : AppCompatActivity() {
                 return@setOnClickListener
             }
 
-            val login = Intent(this, MainPageActivity::class.java)
-            startActivity(login)
+            val callLogin = UserServiceImpl.userService.requestSignIn(SigninRequest(id, password))
+
+            callLogin.safeEnqueue(onResponse = {
+                if(it.isSuccessful){
+                    loginData=it.body()!!.data
+                    SharedPreferenceController.setUserToken(this, loginData.token)
+                    Log.v("token", loginData.token)
+                    val login = Intent(this, MainPageActivity::class.java)
+                    startActivity(login)
+                }
+            })
+
         }
         tvSigninSignup.setOnClickListener {
             val signUp = Intent(this, SignUpBasicActivity::class.java)
