@@ -5,10 +5,11 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.project.mobo.R
+import com.project.mobo.temp.ReserveMovie
 
-class ChoiceMovieAdapter(private val context: Context) : RecyclerView.Adapter<ChoiceMovieViewHolder>(){
+class ChoiceMovieAdapter(private val context: Context, private var reserveMovie: ArrayList<ReserveMovie>) : RecyclerView.Adapter<ChoiceMovieViewHolder>(){
 
-    var data = listOf<ChoiceMovieItem>()
+    //var data = listOf<ChoiceMovieItem>()
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ChoiceMovieViewHolder {
         val view = LayoutInflater.from(context).inflate(R.layout.movie_choice_item, parent, false)
@@ -16,11 +17,11 @@ class ChoiceMovieAdapter(private val context: Context) : RecyclerView.Adapter<Ch
         return ChoiceMovieViewHolder(view)
     }
 
-    override fun getItemCount(): Int {
-        return data.size
-    }
+    override fun getItemCount(): Int = reserveMovie.size
+        //return data.size
+
 
     override fun onBindViewHolder(holder: ChoiceMovieViewHolder, position: Int) {
-        holder.bind(data[position])
+        holder.bind(reserveMovie[position])
     }
 }

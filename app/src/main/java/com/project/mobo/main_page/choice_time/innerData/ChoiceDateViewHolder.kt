@@ -8,7 +8,10 @@ import com.project.mobo.R
 class ChoiceDateViewHolder (view: View) : RecyclerView.ViewHolder(view){
     val ItemTime: TextView =view.findViewById(R.id.tvMainItemTime)
 
-    fun bind(data: String){
-        ItemTime.text=data
+    //var num : Int = Integer.parseInt(ItemTime)
+
+    fun bind(data: Int){
+        //ItemTime.text=data
+        ItemTime.text=Integer.toString(data)
     }
 }

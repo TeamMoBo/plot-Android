@@ -8,8 +8,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.project.mobo.main_page.choice_movie.ChoiceMovieAdapter
 import com.project.mobo.main_page.choice_movie.ChoiceMovieRepository
 import com.project.mobo.main_page.choice_time.DataVerticalAdapter
-import com.project.mobo.main_page.choice_time.data.MainData
-import com.project.mobo.main_page.choice_time.data.MainReserveDate
+import com.project.mobo.main_page.data.MainReserveDate
 import com.project.mobo.main_page.choice_time.innerData.ChoiceDateAdapter
 import com.project.mobo.main_page.choice_time.innerData.ChoiceDateRepository
 import com.project.mobo.main_page.top_three_viewPager.MovieData
@@ -20,9 +19,13 @@ import com.project.mobo.time_choice.TimeChoiceActivity
 import kotlinx.android.synthetic.main.activity_main_page.*
 import kotlinx.android.synthetic.main.fragment_main.*
 import android.net.Uri
+import android.view.View
+import com.project.mobo.MatchingHistory.MatchingHistoryActivity
 import com.project.mobo.R
-import com.project.mobo.dialog.FailDialog
-import com.project.mobo.dialog.SuccessDialog
+import com.project.mobo.SharedPreferenceController
+import com.project.mobo.api.UserServiceImpl
+import com.project.mobo.api.safeEnqueue
+import com.project.mobo.temp.Data
 
 
 class MainPageActivity : AppCompatActivity() {
@@ -32,51 +35,55 @@ class MainPageActivity : AppCompatActivity() {
 
     private lateinit var rvdateChoice: RecyclerView
     private lateinit var dateChoiceAdapter: ChoiceDateAdapter
-    private val dateRepository=
-        ChoiceDateRepository()
+    private val dateRepository= ChoiceDateRepository()
 
-    private lateinit var mainData: MainData
-
+    //private lateinit var timeData: TimeData - 더미데이터
+    private lateinit var mainData: Data
     private lateinit var verticalAdapter : DataVerticalAdapter
 
-    var state = 1
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main_page)
 
-        //여기서부터 지울 영역
-        button_check.setOnClickListener {
-            if(state == 0){
-                val failDialog = FailDialog()
-                failDialog.show(supportFragmentManager, "fail")
-            }else{
-                val successDialog = SuccessDialog()
-                successDialog.show(supportFragmentManager, "success")
+        val callMain = UserServiceImpl.userService.mainResponse(
+            key = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZHgiOjM3LCJpYXQiOjE1Nzc3NTk2MzIsImV4cCI6MTU3ODM2NDQzMiwiaXNzIjoibW9ib21hc3RlciJ9.k30fv2OoezYTrzMJnhaFdM0suMnnoIVfjoGkOBMe-G4"
+        )
+
+        //shared 아직 안 쓰는 중
+        //SharedPreferenceController.setUserToken(this, "key")
+        //SharedPreferenceController.getUserToken(this)
+
+        callMain.safeEnqueue (onResponse = {
+            if(it.isSuccessful){
+                mainData=it.body()!!.data
+                topThree() // 뷰페이저
+                choiceMovie() // 선택한 영화 창
+                choiceDate() // 선택한 시간 창
             }
-        }
-        ///여기까지
+
+        }, onError = {})
+
         movePage() //intent
 
-        dummy()
+        //dummy()
 
-        topThree() // 뷰페이저
-        choiceMovie() // 선택한 영화 창
-        choiceDate() // 선택한 날짜 창
+
 
         //setOnClickListener()
     }
 
+    /*
     private fun dummy(){
-        mainData = MainData(ArrayList(), ArrayList(), ArrayList())
-        mainData.reserveDate.add(MainReserveDate("14", arrayListOf<String>("12", "13", "14", "15")))
-        mainData.reserveDate.add(MainReserveDate("15", arrayListOf<String>("12", "13")))
-        mainData.reserveDate.add(MainReserveDate("16", arrayListOf<String>("12", "13", "14")))
-        mainData.reserveDate.add(MainReserveDate("17", arrayListOf<String>("12", "13", "14", "15", "16")))
-        mainData.reserveDate.add(MainReserveDate("18", arrayListOf<String>("12", "13", "14")))
-        mainData.reserveDate.add(MainReserveDate("19", arrayListOf<String>("12")))
-        mainData.reserveDate.add(MainReserveDate("20", arrayListOf<String>("12", "13", "14", "15")))
+        timeData = TimeData(ArrayList(), ArrayList(), ArrayList())
+        timeData.reserveDate.add(MainReserveDate("14", arrayListOf<String>("12", "13", "14", "15")))
+        timeData.reserveDate.add(MainReserveDate("15", arrayListOf<String>("12", "13")))
+        timeData.reserveDate.add(MainReserveDate("16", arrayListOf<String>("12", "13", "14")))
+        timeData.reserveDate.add(MainReserveDate("17", arrayListOf<String>("12", "13", "14", "15", "16")))
+        timeData.reserveDate.add(MainReserveDate("18", arrayListOf<String>("12", "13", "14")))
+        timeData.reserveDate.add(MainReserveDate("19", arrayListOf<String>("12")))
+        timeData.reserveDate.add(MainReserveDate("20", arrayListOf<String>("12", "13", "14", "15")))
 
-    }
+    }*/
 
 
     private fun movePage() {
@@ -103,11 +110,19 @@ class MainPageActivity : AppCompatActivity() {
             val intent4 = Intent(this, MovieSelectionActivity::class.java)
             startActivity(intent4)
         }
+
+        //이력창으로 이동
+        btnMainChating.setOnClickListener(){
+            val intent5 = Intent(this, MatchingHistoryActivity::class.java)
+            startActivity(intent5)
+        }
+
+
     }
 
     private fun topThree() {
 
-        val adapter = MoviePagerAdapter(movieList)
+        val adapter = MoviePagerAdapter(mainData.randMovie)
         vpMain.setClipToPadding(false)
         vpMain.setPadding(34,0,34,0)
 
@@ -144,33 +159,55 @@ class MainPageActivity : AppCompatActivity() {
     }
 
     private fun choiceMovie(){
-        rvmovieChoice=findViewById(R.id.rvMovieChoice)
-        movieChoiceAdapter= ChoiceMovieAdapter(this)
 
-        rvmovieChoice.adapter=movieChoiceAdapter
+        if(mainData.reserveMovie.size==0) {
+            tvNoMovie.setVisibility(View.VISIBLE)
+            btnMovieNoChanging.setVisibility(View.VISIBLE)
+            btnMovieChanging.setVisibility(View.INVISIBLE)
+        }
+        else if(mainData.reserveMovie.size>0) {
+            tvNoMovie.setVisibility(View.INVISIBLE)
+            btnMovieNoChanging.setVisibility(View.INVISIBLE)
+            btnMovieChanging.setVisibility(View.VISIBLE)
 
-        val llm = LinearLayoutManager(this)
-        llm.orientation = LinearLayoutManager.HORIZONTAL
-        rvmovieChoice.setLayoutManager(llm)
-        rvmovieChoice.setAdapter(movieChoiceAdapter)
+            rvmovieChoice = findViewById(R.id.rvMovieChoice)
+            movieChoiceAdapter = ChoiceMovieAdapter(this, mainData.reserveMovie)
 
-        movieChoiceAdapter.data=movieRepository.getRepoList()
+            rvmovieChoice.adapter = movieChoiceAdapter
+
+            val llm = LinearLayoutManager(this)
+            llm.orientation = LinearLayoutManager.HORIZONTAL
+            rvmovieChoice.setLayoutManager(llm)
+            rvmovieChoice.setAdapter(movieChoiceAdapter)
+
+            //movieChoiceAdapter.data=movieRepository.getRepoList()
 
 
-        movieChoiceAdapter.notifyDataSetChanged()
+            movieChoiceAdapter.notifyDataSetChanged()
+        }
     }
 
 
     private fun choiceDate(){
-        //지금부터 얘는 큰 거
-        rvdateChoice=findViewById(R.id.rvMainDate)
 
-        //TODO : 서버 통신 이후, 반드시 reserveDate만 넘겨줄 것.
-        verticalAdapter = DataVerticalAdapter(this, mainData.reserveDate)
+        if(mainData.reserveDate.size==0) {
+            tvNoDate.setVisibility(View.VISIBLE)
+            btnTimeNoChanging.setVisibility(View.VISIBLE)
+            btnTimeChanging.setVisibility(View.INVISIBLE)
+        }
+        else if(mainData.reserveDate.size>0) {
+            tvNoDate.setVisibility(View.INVISIBLE)
+            btnTimeNoChanging.setVisibility(View.INVISIBLE)
+            btnTimeChanging.setVisibility(View.VISIBLE)
+            //지금부터 얘는 큰 거
+            rvdateChoice = findViewById(R.id.rvMainDate)
+
+            //TODO : 서버 통신 이후, 반드시 reserveDate만 넘겨줄 것.
+            verticalAdapter = DataVerticalAdapter(this, mainData.reserveDate)
 //        dateChoiceAdapter= choiceDateAdapter(this)
 
-        rvdateChoice.layoutManager = LinearLayoutManager(this)
-        rvdateChoice.adapter=verticalAdapter
+            rvdateChoice.layoutManager = LinearLayoutManager(this)
+            rvdateChoice.adapter = verticalAdapter
 
 //        val llm = LinearLayoutManager(this)
 //        llm.orientation = LinearLayoutManager.HORIZONTAL
@@ -181,13 +218,15 @@ class MainPageActivity : AppCompatActivity() {
 //        dateChoiceAdapter.data=dateRepository.getRepoList()
 //
 //        dateChoiceAdapter.notifyDataSetChanged()
-
+        }
     }
 
-    private fun setOnClickListener(){
-        btnMainFirstPlay.setOnClickListener(){
-            val i = Intent(Intent.ACTION_VIEW, Uri.parse("https://youtu.be/li4jOV5j7SI"))
-            startActivity(i)
+
+    //requestCode 쓸 곳
+    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+        super.onActivityResult(requestCode, resultCode, data)
+        if(requestCode == 1000){
+
         }
     }
 

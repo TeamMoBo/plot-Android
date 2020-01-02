@@ -51,7 +51,7 @@
 
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="0dp"
-                android:layout_height="829dp"
+                android:layout_height="909dp"
                 android:layout_marginTop="147dp"
                 android:background="@drawable/sign_up_box"
                 app:layout_constraintStart_toStartOf="parent"

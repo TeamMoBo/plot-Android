@@ -79,16 +79,6 @@
             app:layout_constraintTop_toTopOf="parent"
             android:layout_marginTop="76dp"/>
 
-        <Button
-            android:id="@+id/button_check"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="180dp"
-            android:text="Button"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="@+id/vpMain" />
-
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -119,7 +109,19 @@
             android:layout_marginEnd="20dp"
             android:src="@drawable/btn_change"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toTopOf="parent"
+            android:visibility="invisible"/>
+
+        <ImageView
+            android:id="@+id/btnMovieNoChanging"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="20dp"
+            android:src="@drawable/btn_change_empty"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:visibility="invisible"/>
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/rvMovieChoice"
@@ -171,7 +173,19 @@
             android:layout_marginEnd="20dp"
             android:src="@drawable/btn_change"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toTopOf="parent"
+            android:visibility="invisible"/>
+
+        <ImageView
+            android:id="@+id/btnTimeNoChanging"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="3dp"
+            android:layout_marginEnd="20dp"
+            android:src="@drawable/btn_change_empty"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:visibility="invisible"/>
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/rvMainDate"
@@ -198,5 +212,29 @@
         android:layout_marginBottom="56dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"/>
+
+    <TextView
+        android:id="@+id/tvNoMovie"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="아직 선택한 영화가 없어!"
+        android:visibility="invisible"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@id/second"
+        app:layout_constraintBottom_toBottomOf="@id/second"
+        android:textSize="14sp"/>
+
+    <TextView
+        android:id="@+id/tvNoDate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="아직 선택한 날짜가 없어!"
+        android:visibility="invisible"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@id/third"
+        android:layout_marginTop="54dp"
+        android:textSize="14sp"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
