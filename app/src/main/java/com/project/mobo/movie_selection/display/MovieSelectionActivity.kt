@@ -101,7 +101,6 @@ class MovieSelectionActivity : AppCompatActivity() {
                     }
                     fragOne.movieAdapter1.data = addListOne1
                     fragOne.movieAdapter2.data = addListOne2
-                    Log.d("test", fragOne.movieAdapter2.data[0].img_movie)
                     fragOne.movieAdapter1.notifyDataSetChanged()
                     fragOne.movieAdapter2.notifyDataSetChanged()
                     rv_dataList.add(fragOne.movieAdapter1.data)

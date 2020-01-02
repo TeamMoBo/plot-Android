@@ -5,6 +5,9 @@ import android.os.Bundle
 import android.util.Log
 import android.widget.*
 import com.project.mobo.*
+import com.project.mobo.api.ChoiceRequest
+import com.project.mobo.api.UserServiceImpl
+import com.project.mobo.api.safeEnqueue
 import khronos.Dates
 import khronos.days
 import khronos.plus
@@ -58,6 +61,7 @@ class TimeChoiceActivity : AppCompatActivity() {
         initUI()
         initDayUI()
         initChoiceTime()
+
     }
 
     private fun initUI() {
@@ -124,13 +128,30 @@ class TimeChoiceActivity : AppCompatActivity() {
         }
 
         btnTimeChoiceGo.setOnClickListener {
-            if (isValidTimeChoice()) {
-                //TODO: 선택한 데이터를 서버에 보내줘야함. chooseDates
-//                SharedPreferenceController.setTimeTable(
-//                    this@TimeChoiceActivity,
-//                    chooseDates[currentSelectedDatePosition].first,
-//                    chooseDates[currentSelectedDatePosition].second
-//                )
+            //선택한 영화
+            val movieArrayList = intent.getIntegerArrayListExtra("movieArray").toList()
+            //선택한 날짜 변환
+            val dateArrayList = makeReserveDates()
+            //선택한 시간
+            Log.d("test", dateArrayList.toString())
+            Log.d("test", currentSelectedDatePosition.toString())
+
+            Log.d("test", dateArrayList[currentSelectedDatePosition].reservationDate)
+            Log.d("test", dateArrayList[currentSelectedDatePosition].reservationTime.toString())
+            Log.d("test", movieArrayList.toString())
+
+            if (dateArrayList[currentSelectedDatePosition].reservationTime.count() >= 3) {
+                val callChoiceMovieTime = UserServiceImpl.choiceTimeService.choiceTimeInter(
+                    "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZHgiOjM3LCJpYXQiOjE1Nzc5NDU5NTYsImV4cCI6MTU3ODU1MDc1NiwiaXNzIjoibW9ib21hc3RlciJ9.ul25BkYtb4kxa8eFjHXkT6b3gMCchLfifQysp4h19MU",
+                    ChoiceRequest(movieArrayList, dateArrayList[currentSelectedDatePosition].reservationDate,
+                        dateArrayList[currentSelectedDatePosition].reservationTime)
+                )
+
+                callChoiceMovieTime.safeEnqueue {
+                    if (it.isSuccessful){
+                        Log.d("test", "Success")
+                    }
+                }
                 finish()
             } else {
                 Toast.makeText(this, "시간을 3개 이상 선택해주세요!", Toast.LENGTH_SHORT).show()
