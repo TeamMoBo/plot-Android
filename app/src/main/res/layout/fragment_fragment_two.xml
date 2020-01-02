@@ -23,12 +23,13 @@
                 android:text="예매율 TOP10"
                 android:textColor="#000000"
                 app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintLeft_toLeftOf="@+id/rv_movie3"
                 android:layout_marginLeft="10dp"/>
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/rv_movie3"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
                 app:layout_constraintLeft_toLeftOf="parent"
                 app:layout_constraintRight_toRightOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/top10" />

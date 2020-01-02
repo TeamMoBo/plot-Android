@@ -30,7 +30,7 @@
         app:layout_constraintLeft_toLeftOf="@+id/img_movie"
         app:layout_constraintTop_toBottomOf="@+id/img_movie"
         android:text="타짜 2"
-        android:layout_marginLeft="10dp"
+        android:layout_marginLeft="4dp"
         android:textColor="#000000"
         android:textSize="18sp"
         android:textStyle="bold"/>
