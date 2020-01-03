@@ -19,12 +19,13 @@ class MatchingDialogActivity : AppCompatActivity() {
         setContentView(R.layout.popup_matching_choice)
 
 
+
         //타이머 기능
         //timer()
 
         btnChoiceYes.setOnClickListener {
             val callMatchingDecision = UserServiceImpl.userService.requestMatchingDecision(
-                key = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZHgiOjQwLCJpYXQiOjE1Nzc5NDkzNDYsImV4cCI6MTU3ODU1NDE0NiwiaXNzIjoibW9ib21hc3RlciJ9.dwKFFXHdDhkb8WW25BSMyig5DFzUlKPQ-WE1lzO4JBc",
+                "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZHgiOjEwNiwiaWF0IjoxNTc3OTYyMjI4LCJleHAiOjE1Nzg1NjcwMjgsImlzcyI6Im1vYm9tYXN0ZXIifQ.0WjcIhqwjRVc-B_DxLbbyRz_OgxR-L-r6W1J1kMj8CI",
                 matchingDecisionRequest = MatchingDecisionRequest(true)
             )
             callMatchingDecision.safeEnqueue(onResponse = {
@@ -42,7 +43,8 @@ class MatchingDialogActivity : AppCompatActivity() {
             val callMatchingDecision = UserServiceImpl.userService.requestMatchingDecision(
                 //SharedPreferenceController.getUserToken(this), MatchingDecisionRequest(false)
                 //objects.myToken, MatchingDecisionRequest(false)
-            key = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZHgiOjQwLCJpYXQiOjE1Nzc5NDkzNDYsImV4cCI6MTU3ODU1NDE0NiwiaXNzIjoibW9ib21hc3RlciJ9.dwKFFXHdDhkb8WW25BSMyig5DFzUlKPQ-WE1lzO4JBc",matchingDecisionRequest = MatchingDecisionRequest(false)
+                key = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZHgiOjQwLCJpYXQiOjE1Nzc5NDkzNDYsImV4cCI6MTU3ODU1NDE0NiwiaXNzIjoibW9ib21hc3RlciJ9.dwKFFXHdDhkb8WW25BSMyig5DFzUlKPQ-WE1lzO4JBc",
+                matchingDecisionRequest = MatchingDecisionRequest(false)
             )
             callMatchingDecision.safeEnqueue(onResponse = {
                 if (it.isSuccessful) {
