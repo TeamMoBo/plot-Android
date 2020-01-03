@@ -11,6 +11,7 @@ import android.R.drawable
 import androidx.appcompat.content.res.AppCompatResources.getDrawable
 import androidx.core.content.ContextCompat
 import com.project.mobo.api.ReserveMovie
+import kotlinx.android.synthetic.main.fragment_main.view.*
 
 
 class ChoiceMovieViewHolder(view: View) : RecyclerView.ViewHolder(view){
@@ -27,7 +28,10 @@ class ChoiceMovieViewHolder(view: View) : RecyclerView.ViewHolder(view){
         tvItemTitle.text=data.movieName
         tvItemStar.text=data.movieScore.toString()
 
-       //ItemImage.setBackground()
+        ItemImage.setClipToOutline(true)
+
+
+        //ItemImage.setBackground()
         //imageView.setClipToOutline(true)
 
         //val drawable = data.poster.getDrawable(R.drawable.main_viewpager_corner) as GradientDrawable

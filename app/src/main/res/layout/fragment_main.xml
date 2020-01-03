@@ -21,6 +21,7 @@
             tools:layout_editor_absoluteY="-31dp" />
 
         <ImageView
+            android:id="@+id/imageView6"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:scaleType="fitXY"
@@ -42,15 +43,16 @@
             app:layout_constraintTop_toTopOf="parent" />
 
         <ImageView
+            android:id="@+id/imageView4"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="10dp"
             android:layout_marginTop="130dp"
+            android:scaleX="1.5"
+            android:scaleY="1.5"
             android:src="@drawable/img_star"
             app:layout_constraintStart_toEndOf="@id/tvMainFirstStar"
-            app:layout_constraintTop_toTopOf="parent"
-            android:scaleX="1.5"
-            android:scaleY="1.5"/>
+            app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
             android:id="@+id/tvMainFirstHour"
@@ -69,13 +71,12 @@
             android:id="@+id/tvItemTitle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="12dp"
-            android:layout_marginBottom="63dp"
+            android:layout_marginStart="8dp"
             android:text="How To Train Your Dragon :\nThe Hidden World"
             android:textColor="#ffffff"
             android:textSize="16sp"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintBottom_toBottomOf="parent"/>
+            app:layout_constraintBottom_toTopOf="@+id/tvMainFirstStar"
+            app:layout_constraintStart_toStartOf="parent" />
 
         <ImageView
             android:id="@+id/btnMainFirstPlay"

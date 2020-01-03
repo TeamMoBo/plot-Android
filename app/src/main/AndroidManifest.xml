@@ -24,13 +24,6 @@
             android:theme="@style/categoryEditTheme" />
         <activity android:name=".splash.Splash" />
         <activity android:name=".MatchingWaitingActivity">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-                <action android:name="android.intent.action.VIEW" />
-
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
         <activity android:name=".movie_selection.display.MovieSelectionActivity" />
         <activity android:name=".mypage.MyPage_new" />
@@ -41,7 +34,13 @@
         <activity android:name=".sign.SignUpPlusActivity" />
         <activity android:name=".sign.SignUpBasicActivity" />
         <activity android:name=".sign.SignInActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <action android:name="android.intent.action.VIEW" />
 
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
         </activity>
         <activity
             android:name=".dialog.FailDialogActivity"

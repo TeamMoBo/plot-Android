@@ -12,6 +12,8 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
+        android:background="@drawable/movie_choice_box"
+        android:scaleType="centerCrop"
         android:src="@drawable/a14cbb522349487544b0191aeb9cc156"/>
     <ImageView
         android:id="@+id/img_check"

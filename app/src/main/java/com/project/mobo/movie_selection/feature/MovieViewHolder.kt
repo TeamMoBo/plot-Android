@@ -22,6 +22,7 @@ class MovieViewHolder(view: View): RecyclerView.ViewHolder(view) {
 
     fun bind(data: MovieItem) {
         Glide.with(view).load(data.img_movie).into(img_movie)
+        img_movie.setClipToOutline(true)
         txt_movie.text = data.name
 
         txt_rating_movie.setText("${data.rating_star}/10")

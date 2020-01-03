@@ -8,7 +8,7 @@
     tools:context=".time_choice.TimeChoiceActivity">
 
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/cl1"
+        android:id="@+id/cl1_time"
         android:layout_width="match_parent"
         android:layout_height="191dp"
         app:layout_constraintHorizontal_bias="1.0"
@@ -24,7 +24,6 @@
             android:id="@+id/line_time_choice"
             android:layout_width="match_parent"
             android:layout_height="2dp"
-            android:layout_marginTop="10dp"
             android:background="@color/white"
             app:layout_constraintTop_toBottomOf="@+id/tb_time_choice"></View>
 
@@ -32,7 +31,7 @@
             android:id="@+id/txtMonth"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="24dp"
+            android:layout_marginTop="21dp"
             android:gravity="center"
             android:lineSpacingExtra="11sp"
             android:text="December"
@@ -40,7 +39,6 @@
             android:textSize="22sp"
             android:fontFamily="@font/notosans_regular"
             app:layout_constraintEnd_toEndOf="@id/rightGuide"
-            app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintTop_toBottomOf="@id/line_time_choice" />
 
         <androidx.constraintlayout.widget.Guideline
@@ -265,7 +263,7 @@
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/cl2"
+        android:id="@+id/cl2_time"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_marginTop="184dp"
@@ -273,7 +271,7 @@
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/cl1">
+        app:layout_constraintTop_toBottomOf="@id/cl1_time">
 
         <TextView
             android:id="@+id/txtChoice"
@@ -285,9 +283,9 @@
             android:text="영화가 시작될 시간을 골라줘!"
             android:textColor="#4c4c4c"
             android:textSize="18sp"
-            app:layout_constraintLeft_toLeftOf="@id/cl2"
-            app:layout_constraintRight_toRightOf="@id/cl2"
-            app:layout_constraintTop_toTopOf="@id/cl2" />
+            app:layout_constraintLeft_toLeftOf="@id/cl2_time"
+            app:layout_constraintRight_toRightOf="@id/cl2_time"
+            app:layout_constraintTop_toTopOf="@id/cl2_time" />
 
         <GridLayout
             android:id="@+id/gl1"

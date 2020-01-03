@@ -8,6 +8,7 @@ import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ImageView
 import android.widget.Toast
 import androidx.core.content.ContextCompat.startActivity
 import androidx.viewpager.widget.PagerAdapter
@@ -31,6 +32,9 @@ class MoviePagerAdapter(private val list: ArrayList<RandMovie>): PagerAdapter() 
         Glide.with(view)
             .load(list[position].movieImg)
             .into(view.imgMainFirstPoster)
+
+        view.imgMainFirstPoster.setClipToOutline(true)
+
         view.tvItemTitle.text = list[position].movieName
 
         Log.v("moviscore", list[position].movieScore.toString())
