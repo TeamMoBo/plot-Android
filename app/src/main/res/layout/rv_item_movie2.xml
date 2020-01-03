@@ -17,6 +17,7 @@
         android:background="@drawable/movie_choice_box"
         android:scaleType="centerCrop"/>
     <TextView
+        android:fontFamily="@font/notosans_bold"
         android:id="@+id/txt_movie"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"

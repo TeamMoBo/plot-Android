@@ -59,8 +59,8 @@ class PayChoiceActivity : AppCompatActivity() {
         }
 
         val callhaveTicketService = UserServiceImpl.haveTicketService.responseHaveTicket(
-            //key = SharedPreferenceController.getUserToken(this)
-            key = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZHgiOjQwLCJpYXQiOjE1Nzc5NDkzNDYsImV4cCI6MTU3ODU1NDE0NiwiaXNzIjoibW9ib21hc3RlciJ9.dwKFFXHdDhkb8WW25BSMyig5DFzUlKPQ-WE1lzO4JBc"
+            key = SharedPreferenceController.getUserToken(this)
+            //key = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZHgiOjQwLCJpYXQiOjE1Nzc5NDkzNDYsImV4cCI6MTU3ODU1NDE0NiwiaXNzIjoibW9ib21hc3RlciJ9.dwKFFXHdDhkb8WW25BSMyig5DFzUlKPQ-WE1lzO4JBc"
         )
 
         callhaveTicketService.safeEnqueue {
@@ -75,8 +75,8 @@ class PayChoiceActivity : AppCompatActivity() {
 
         btnPayChoicePay.setOnClickListener {
             val callTicketBuy = UserServiceImpl.ticketBuyService.putTicketBuy(
-                //key = SharedPreferenceController.getUserToken(this)6
-                key = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZHgiOjQwLCJpYXQiOjE1Nzc5NDkzNDYsImV4cCI6MTU3ODU1NDE0NiwiaXNzIjoibW9ib21hc3RlciJ9.dwKFFXHdDhkb8WW25BSMyig5DFzUlKPQ-WE1lzO4JBc",
+                key = SharedPreferenceController.getUserToken(this),
+                //key = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZHgiOjQwLCJpYXQiOjE1Nzc5NDkzNDYsImV4cCI6MTU3ODU1NDE0NiwiaXNzIjoibW9ib21hc3RlciJ9.dwKFFXHdDhkb8WW25BSMyig5DFzUlKPQ-WE1lzO4JBc",
                 ticketBuyData =  TicketBuyData((txtTicketNum.text.toString()).toInt(), (txtPopcornNum.text.toString()).toInt())
             )
 
