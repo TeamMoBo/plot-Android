@@ -21,7 +21,8 @@ class MatchingWaitingActivity : AppCompatActivity() {
         setContentView(R.layout.activity_matching_waiting)
 
         val callMatching=UserServiceImpl.userService.responseMatching(
-            "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZHgiOjEwNiwiaWF0IjoxNTc3OTYyMjI4LCJleHAiOjE1Nzg1NjcwMjgsImlzcyI6Im1vYm9tYXN0ZXIifQ.0WjcIhqwjRVc-B_DxLbbyRz_OgxR-L-r6W1J1kMj8CI"
+            //"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZHgiOjEwNiwiaWF0IjoxNTc3OTYyMjI4LCJleHAiOjE1Nzg1NjcwMjgsImlzcyI6Im1vYm9tYXN0ZXIifQ.0WjcIhqwjRVc-B_DxLbbyRz_OgxR-L-r6W1J1kMj8CI"
+            SharedPreferenceController.getUserToken(this)
         )
         callMatching.safeEnqueue (onResponse = {
             if(it.isSuccessful){
@@ -52,8 +53,8 @@ class MatchingWaitingActivity : AppCompatActivity() {
         btnChattingStart.setOnClickListener {
             Log.d("test", "click")
             val callChatting = UserServiceImpl.userService.responseAddress(
-                "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZHgiOjEwNiwiaWF0IjoxNTc3OTYyMjI4LCJleHAiOjE1Nzg1NjcwMjgsImlzcyI6Im1vYm9tYXN0ZXIifQ.0WjcIhqwjRVc-B_DxLbbyRz_OgxR-L-r6W1J1kMj8CI"
-                //SharedPreferenceController.getUserToken(this)
+                //"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZHgiOjEwNiwiaWF0IjoxNTc3OTYyMjI4LCJleHAiOjE1Nzg1NjcwMjgsImlzcyI6Im1vYm9tYXN0ZXIifQ.0WjcIhqwjRVc-B_DxLbbyRz_OgxR-L-r6W1J1kMj8CI"
+                SharedPreferenceController.getUserToken(this)
             )
             callChatting.safeEnqueue(onResponse = {
                 if (it.isSuccessful) {
@@ -68,7 +69,7 @@ class MatchingWaitingActivity : AppCompatActivity() {
                     Log.v("address", addressData.address)
                     Log.v("test", addressData.uid)
                     startActivity(chatting)
-                    //finish()
+                    finish()
                 }
             }
             )
