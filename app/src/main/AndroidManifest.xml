@@ -24,7 +24,8 @@
             android:theme="@style/categoryEditTheme" />
         <activity android:name=".splash.Splash">
         </activity>
-        <activity android:name=".MatchingWaitingActivity"></activity>
+        <activity android:name=".MatchingWaitingActivity">
+        </activity>
         <activity android:name=".movie_selection.display.MovieSelectionActivity" />
         <activity android:name=".mypage.MyPage_new" />
         <activity android:name=".MatchingDetailedActivity" />

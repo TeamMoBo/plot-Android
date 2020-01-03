@@ -77,7 +77,6 @@ class MainPageActivity : AppCompatActivity() {
         //dummy()
 
 
-
         //setOnClickListener()
     }
 
@@ -138,6 +137,7 @@ class MainPageActivity : AppCompatActivity() {
 
         vpMain.pageMargin=8
         vpMain.adapter = adapter
+
 
         //btnMainFirstPlay.setOnClickListener(){
         //    val i = Intent(Intent.ACTION_VIEW, Uri.parse("https://youtu.be/li4jOV5j7SI"))

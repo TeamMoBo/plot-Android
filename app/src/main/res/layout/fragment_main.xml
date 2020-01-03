@@ -34,7 +34,7 @@
             android:id="@+id/tvMainFirstStar"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="12dp"
+            android:layout_marginStart="18dp"
             android:layout_marginTop="125dp"
             android:text="4.6"
             android:textColor="#ffffff"
@@ -48,8 +48,8 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="10dp"
             android:layout_marginTop="130dp"
-            android:scaleX="1.5"
-            android:scaleY="1.5"
+            android:scaleX="1.8"
+            android:scaleY="1.8"
             android:src="@drawable/img_star"
             app:layout_constraintStart_toEndOf="@id/tvMainFirstStar"
             app:layout_constraintTop_toTopOf="parent" />
@@ -59,7 +59,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="125dp"
-            android:layout_marginEnd="80dp"
+            android:layout_marginEnd="88dp"
             android:text="1h 44min"
             android:textColor="#ffffff"
             android:textSize="12sp"
@@ -71,10 +71,10 @@
             android:id="@+id/tvItemTitle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="8dp"
+            android:layout_marginStart="18dp"
             android:text="How To Train Your Dragon :\nThe Hidden World"
             android:textColor="#ffffff"
-            android:textSize="16sp"
+            android:textSize="20sp"
             app:layout_constraintBottom_toTopOf="@+id/tvMainFirstStar"
             app:layout_constraintStart_toStartOf="parent" />
 
@@ -82,24 +82,25 @@
             android:id="@+id/btnMainFirstPlay"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="17dp"
+            android:layout_marginBottom="11dp"
             android:src="@drawable/ic_play"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent" />
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginEnd="10dp"/>
 
         <TextView
             android:id="@+id/tvViewPagerGenre"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Animation"
-            app:layout_constraintTop_toBottomOf="@id/tvMainFirstStar"
-            android:layout_marginTop="7dp"
-            android:textColor="#ffffff"
+            android:layout_marginStart="14dp"
+            android:layout_marginBottom="15dp"
             android:background="@drawable/fragment_genre"
-            app:layout_constraintStart_toStartOf="parent"
-            android:layout_marginStart="10dp"
+            android:padding="5dp"
+            android:text="Animation"
+            android:textColor="#ffffff"
             android:textSize="8sp"
-            android:padding="5dp"/>
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 </FrameLayout>
