@@ -26,14 +26,7 @@
         <activity android:name=".MatchingWaitingActivity">
         </activity>
         <activity android:name=".movie_selection.display.MovieSelectionActivity" />
-        <activity android:name=".mypage.MyPage_new" />
-        <activity android:name=".MatchingDetailedActivity" />
-        <activity android:name=".MatchingHistory.MatchingHistoryActivity" />
-        <activity android:name=".main_page.MainPageActivity" />
-        <activity android:name=".sign.SignUpSuccessActivity" />
-        <activity android:name=".sign.SignUpPlusActivity" />
-        <activity android:name=".sign.SignUpBasicActivity" />
-        <activity android:name=".sign.SignInActivity">
+        <activity android:name=".mypage.MyPage_new" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <action android:name="android.intent.action.VIEW" />
@@ -41,6 +34,15 @@
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+        </activity>
+        <activity android:name=".MatchingDetailedActivity">
+        </activity>
+        <activity android:name=".MatchingHistory.MatchingHistoryActivity" />
+        <activity android:name=".main_page.MainPageActivity" />
+        <activity android:name=".sign.SignUpSuccessActivity" />
+        <activity android:name=".sign.SignUpPlusActivity" />
+        <activity android:name=".sign.SignUpBasicActivity" />
+        <activity android:name=".sign.SignInActivity">
         </activity>
         <activity
             android:name=".dialog.FailDialogActivity"

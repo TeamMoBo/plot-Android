@@ -242,6 +242,7 @@ class MainPageActivity : AppCompatActivity() {
                 }
             }, onError = {})
         }
+
     }
 
 }
