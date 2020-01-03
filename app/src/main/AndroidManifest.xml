@@ -33,6 +33,10 @@
         <activity android:name=".sign.SignUpPlusActivity" />
         <activity android:name=".sign.SignUpBasicActivity" />
         <activity android:name=".sign.SignInActivity">
+        </activity>
+        <activity android:name=".MainActivity">
+        </activity>
+        <activity android:name=".PayChoiceActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <action android:name="android.intent.action.VIEW" />

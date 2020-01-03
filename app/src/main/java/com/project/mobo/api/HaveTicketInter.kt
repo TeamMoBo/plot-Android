@@ -14,7 +14,7 @@ interface HaveTicketInter{
 data class HaveTicketResponse(
     val status : Int,
     val message : String,
-    val data : ArrayList<HaveTicketData>
+    val data : HaveTicketData
 )
 
 data class HaveTicketData(

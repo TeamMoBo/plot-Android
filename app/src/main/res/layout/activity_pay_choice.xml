@@ -38,17 +38,19 @@
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/cl1_choice"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginTop="12dp"
         android:background="#ffffff"
-        app:layout_constraintEnd_toEndOf="@+id/parentLayout"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/toolbar_paychoice">
 
         <TextView
             android:id="@+id/txtPayChoiceHaveStatus"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginLeft="20dp"
             android:layout_marginTop="28dp"
@@ -56,29 +58,32 @@
             android:text="보유 현황"
             android:textColor="#a8adb7"
             android:textSize="12sp"
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintTop_toTopOf="parent"></TextView>
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"/>
 
         <TextView
             android:id="@+id/txtPayChoiceDescription"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginLeft="20dp"
             android:lineSpacingExtra="5sp"
             android:text="* 서비스 1회 이용 시, 티켓 1장 + 팝콘 1개가 소모됩니다."
             android:textColor="#afafaf"
             android:textSize="10sp"
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/txtPayChoiceHaveStatus"></TextView>
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/txtPayChoiceHaveStatus">
+        </TextView>
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/clPayChoice1"
             android:layout_width="334dp"
             android:layout_height="70dp"
-            android:layout_marginLeft="20dp"
             android:layout_marginTop="9dp"
             android:background="@drawable/shape_pay_choice_layout"
-            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toBottomOf="@id/txtPayChoiceDescription">
 
             <ImageView
@@ -146,10 +151,10 @@
             android:id="@+id/clPayChoice2"
             android:layout_width="334dp"
             android:layout_height="70dp"
-            android:layout_marginLeft="20dp"
             android:layout_marginTop="12dp"
             android:background="@drawable/shape_pay_choice_layout"
-            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toBottomOf="@id/clPayChoice1">
 
             <ImageView
@@ -217,10 +222,10 @@
             android:id="@+id/viewPayChoice1"
             android:layout_width="335dp"
             android:layout_height="1dp"
-            android:layout_marginLeft="20dp"
             android:layout_marginTop="24dp"
             android:background="#90CCCCCC"
-            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toBottomOf="@id/clPayChoice2"></View>
 
         <TextView
@@ -234,7 +239,7 @@
             android:text="결제 방법"
             android:textColor="#515c6f"
             android:textSize="12sp"
-            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/viewPayChoice1"></TextView>
 
         <ImageView
@@ -244,7 +249,7 @@
             android:layout_marginLeft="25dp"
             android:layout_marginTop="2dp"
             android:src="@drawable/img_mastercard"
-            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/txtPayChoiceMethod"></ImageView>
 
         <TextView
@@ -257,14 +262,14 @@
             android:text="Master Card ending **00"
             android:textColor="#515c6f"
             android:textSize="15sp"
-            app:layout_constraintLeft_toRightOf="@+id/imgPayChoiceCredit"
+            app:layout_constraintStart_toEndOf="@+id/imgPayChoiceCredit"
             app:layout_constraintTop_toBottomOf="@+id/txtPayChoiceMethod"></TextView>
 
         <ImageView
             android:id="@+id/btnPayChoiceCreditGo"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="2dp"
+            android:layout_marginLeft="12dp"
             android:layout_marginRight="6dp"
             android:src="@drawable/ic_more"
             app:layout_constraintRight_toRightOf="parent"
@@ -277,7 +282,8 @@
             android:layout_marginLeft="12dp"
             android:layout_marginTop="24dp"
             android:background="#90CCCCCC"
-            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/cl1_choice"
+            app:layout_constraintEnd_toEndOf="@+id/cl1_choice"
             app:layout_constraintTop_toBottomOf="@id/txtPayChoiceCredit"></View>
 
         <TextView
@@ -291,14 +297,17 @@
             android:text="상품 선택"
             android:textColor="#515c6f"
             android:textSize="12sp"
-            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/cl1_choice"
             app:layout_constraintTop_toBottomOf="@+id/viewPayChoice2" />
 
         <ImageView
             android:id="@+id/imgPayChoiceSelectProductticket"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="68dp"
+            android:layout_height="68dp"
             android:layout_marginLeft="24dp"
+            android:layout_marginTop="12dp"
+            android:scaleX="1.3"
+            android:scaleY="1.3"
             android:src="@drawable/and_popup_ticket_img"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/txtPayChoiceSelectProduct"></ImageView>
@@ -340,15 +349,16 @@
             app:layout_constraintLeft_toRightOf="@id/imgPayChoiceSelectProductticket"
             app:layout_constraintTop_toBottomOf="@+id/txtPayChoiceProductDescription1"></TextView>
 
-        <ImageView
+        <ImageButton
             android:id="@+id/imgPayChoiceSelectProductMinus"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="4dp"
             android:layout_marginRight="15dp"
+            android:background="#00ff0000"
             android:src="@drawable/ic_minus"
             app:layout_constraintRight_toLeftOf="@+id/txtTicketNum"
-            app:layout_constraintTop_toBottomOf="@+id/txtPayChoiceProductDescription1"></ImageView>
+            app:layout_constraintTop_toBottomOf="@+id/txtPayChoiceProductDescription1"></ImageButton>
 
         <TextView
             android:id="@+id/txtTicketNum"
@@ -358,21 +368,21 @@
             android:layout_marginRight="15dp"
             android:gravity="end"
             android:lineSpacingExtra="6sp"
-            android:text="1"
+            android:text="0"
             android:textColor="#727c8e"
             android:textSize="12sp"
             app:layout_constraintRight_toLeftOf="@+id/imgPayChoiceSelectProductPlus"
             app:layout_constraintTop_toBottomOf="@+id/txtPayChoiceProductDescription1" />
 
-        <ImageView
+        <ImageButton
             android:id="@+id/imgPayChoiceSelectProductPlus"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="4dp"
             android:layout_marginRight="16dp"
-            android:src="@drawable/ic_plus"
+            android:background="@drawable/ic_plus"
             app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/txtPayChoiceProductDescription1"></ImageView>
+            app:layout_constraintTop_toBottomOf="@+id/txtPayChoiceProductDescription1"></ImageButton>
 
         <View
             android:id="@+id/viewPayChoice3"
@@ -386,9 +396,11 @@
 
         <ImageView
             android:id="@+id/imgPayChoiceSelectProductChoicePopcorn"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="68dp"
+            android:layout_height="68dp"
             android:layout_marginLeft="24dp"
+            android:scaleX="1.3"
+            android:scaleY="1.3"
             android:src="@drawable/and_popup_popcorn_img"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/viewPayChoice3"></ImageView>
@@ -429,14 +441,15 @@
             app:layout_constraintLeft_toRightOf="@id/imgPayChoiceSelectProductChoicePopcorn"
             app:layout_constraintTop_toBottomOf="@+id/txtPayChoice" />
 
-        <ImageView
+        <ImageButton
             android:id="@+id/imgPayChoiceSelectPopcornMinus"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginRight="15dp"
+            android:background="#00ff0000"
             android:src="@drawable/ic_minus"
             app:layout_constraintRight_toLeftOf="@+id/txtPopcornNum"
-            app:layout_constraintTop_toBottomOf="@+id/txtPayChoicePopcornPrice"></ImageView>
+            app:layout_constraintTop_toBottomOf="@+id/txtPayChoicePopcornPrice"></ImageButton>
 
         <TextView
             android:id="@+id/txtPopcornNum"
@@ -445,26 +458,27 @@
             android:layout_marginRight="15dp"
             android:gravity="end"
             android:lineSpacingExtra="6sp"
-            android:text="1"
+            android:text="0"
             android:textColor="#727c8e"
             android:textSize="12sp"
             app:layout_constraintRight_toLeftOf="@+id/imgPayChoiceSelectPopcornPlus"
             app:layout_constraintTop_toBottomOf="@+id/txtPayChoicePopcornPrice" />
 
-        <ImageView
+        <ImageButton
             android:id="@+id/imgPayChoiceSelectPopcornPlus"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginRight="16dp"
+            android:background="#00ff0000"
             android:src="@drawable/ic_plus"
             app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/txtPayChoicePopcornPrice"></ImageView>
+            app:layout_constraintTop_toBottomOf="@+id/txtPayChoicePopcornPrice"></ImageButton>
 
         <View
             android:id="@+id/viewPayChoice4"
             android:layout_width="246dp"
             android:layout_height="1dp"
-            android:layout_marginTop="8dp"
+            android:layout_marginTop="13dp"
             android:layout_marginRight="16dp"
             android:background="#90CCCCCC"
             app:layout_constraintRight_toRightOf="parent"
@@ -481,8 +495,8 @@
             android:text="총합"
             android:textColor="#515c6f"
             android:textSize="10sp"
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/viewPayChoice4" />
+            app:layout_constraintStart_toStartOf="@id/cl1_choice"
+            app:layout_constraintBottom_toTopOf="@id/txtPayChoiceWon" />
 
         <TextView
             android:id="@+id/txtPayChoiceWon"
@@ -493,8 +507,9 @@
             android:text="￦"
             android:textColor="#000000"
             android:textSize="18sp"
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/txtPayChoiceTotal" />
+            android:layout_marginBottom="60dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintBottom_toBottomOf="@id/cl1_choice"/>
 
         <TextView
             android:id="@+id/txtPayChoiceTotalPrice"
@@ -504,19 +519,19 @@
             android:text="0"
             android:textColor="#000000"
             android:textSize="18sp"
-            app:layout_constraintLeft_toRightOf="@id/txtPayChoiceWon"
-            app:layout_constraintTop_toBottomOf="@id/txtPayChoiceTotal" />
+            android:layout_marginBottom="60dp"
+            app:layout_constraintStart_toEndOf="@id/txtPayChoiceWon"
+            app:layout_constraintBottom_toBottomOf="@id/cl1_choice" />
 
-        <ImageView
+        <ImageButton
             android:id="@+id/btnPayChoicePay"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="48dp"
-            android:layout_marginRight="32dp"
-            android:src="@drawable/btn_timeselcet"
+            android:layout_marginBottom="60dp"
+            android:layout_marginRight="16dp"
+            android:background="#00ff0000"
+            android:src="@drawable/btn_paymoney"
             app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/viewPayChoice4"></ImageView>
+            app:layout_constraintBottom_toBottomOf="@id/cl1_choice"></ImageButton>
     </androidx.constraintlayout.widget.ConstraintLayout>
-
-
 </androidx.constraintlayout.widget.ConstraintLayout>

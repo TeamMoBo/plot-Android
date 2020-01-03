@@ -54,7 +54,7 @@ class FragmentOne : Fragment(), View.OnClickListener {
 
         movieAdapter2.notifyDataSetChanged()
 
-        // Inflate the layout for this fragment
+        // Inflate the layout for this fragmen
         return v
     }
 
