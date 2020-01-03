@@ -142,8 +142,6 @@ Plot -Android
 
 - chatting : Firebase's Realtime Database를 사용하여 실시간 채팅 기술 구현(매칭 알고리즘으로 선정된 매칭 상대와 채팅방 주소를 받아옴)
 
-- ![image-20200103193914293](C:\Users\gh060\AppData\Roaming\Typora\typora-user-images\image-20200103193914293.png)
-
 - connect Hyperlink:
 
 - Pop-up : Custom Dialog를 이용하여 팝업 화면 구현
