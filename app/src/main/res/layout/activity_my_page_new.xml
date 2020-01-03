@@ -273,7 +273,7 @@
                     android:visibility="visible"
                     android:background="#00ff0000"
                     android:contentDescription="@string/todo"
-                    android:src="@drawable/btn_change_mypage"
+                    android:src="@drawable/btn_change"
                     app:layout_constraintRight_toRightOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/layout_ticketandpopcorn" />
 

@@ -1,9 +1,11 @@
 package com.project.mobo
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import com.project.mobo.api.UserServiceImpl
-import com.project.mobo.api.safeEnqueue
+import android.util.Log
+import com.project.mobo.chat.ChattingActivity
+import com.project.mobo.main_page.MainPageActivity
 import kotlinx.android.synthetic.main.activity_matching_detailed.*
 
 class MatchingDetailedActivity : AppCompatActivity() {
@@ -12,25 +14,10 @@ class MatchingDetailedActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_matching_detailed)
 
-        btnMatchingDetailedBack.setOnClickListener(){
+        btnMatchingDetailedBack.setOnClickListener {
+            val main = Intent(this, MainPageActivity::class.java)
+            startActivity(main)
             finish()
         }
-
-//        val callMain = UserServiceImpl.detailService.matchingDetailResponse(
-//            key = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZHgiOjM3LCJpYXQiOjE1Nzc3NTk2MzIsImV4cCI6MTU3ODM2NDQzMiwiaXNzIjoibW9ib21hc3RlciJ9.k30fv2OoezYTrzMJnhaFdM0suMnnoIVfjoGkOBMe-G4",
-//
-//            //key = SharedPreferenceController.getUserToken(this)
-//        )
-
-
-//        callMain.safeEnqueue (onResponse = {
-//            if(it.isSuccessful){
-//                mainData=it.body()!!.data
-//                topThree() // 뷰페이저
-//                choiceMovie() // 선택한 영화 창
-//                choiceDate() // 선택한 시간 창
-//            }
-//
-//        }, onError = {})
     }
 }

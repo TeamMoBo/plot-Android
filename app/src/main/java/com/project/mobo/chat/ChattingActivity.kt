@@ -4,9 +4,11 @@ import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.bumptech.glide.Glide
 import com.google.firebase.database.*
 import com.project.mobo.dialog.MatchingDialogActivity
 import com.project.mobo.R
+import com.project.mobo.SharedPreferenceController
 import com.project.mobo.common.FirebaseChatConstant
 import com.project.mobo.common.addChildEventListener
 import com.project.mobo.util.registerEvent
@@ -17,7 +19,6 @@ import kotlin.collections.HashMap
 class ChattingActivity : AppCompatActivity() {
     //데이터베이스에 쓰기(데이터베이스의 인스턴스를 검색하고 쓰려는 위치를 참조)
     private val databaseReference: DatabaseReference = FirebaseDatabase.getInstance().reference
-
     private lateinit var createdTime: Date
 
     private lateinit var mchildEventListener: ChildEventListener
@@ -35,7 +36,8 @@ class ChattingActivity : AppCompatActivity() {
     //TODO: 실제로는 로그인 시점에 받아온 firebase database uid 를 받아서 세팅해야함
     //private val uid: String = "gihyun"
     private lateinit var uid: String
-
+    private lateinit var opponentName: String
+    private lateinit var opponentImg: String
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -43,6 +45,13 @@ class ChattingActivity : AppCompatActivity() {
 
         uid = intent.getStringExtra("uid")
         chatRoomId = intent.getStringExtra("address")
+        opponentName = intent.getStringExtra("opponentName")
+        opponentImg = intent.getStringExtra("opponentImg")
+
+        SharedPreferenceController.setUserName(this, opponentName)
+
+        txtName.text=opponentName
+        Glide.with(this).load(opponentImg).into(imgProfile)
 
         //TODO: 채팅방이 만들어진 시간을 기록해야함.
         //chatRoomId = intent.getStringExtra(CHATROOM_ID) ?: run {
@@ -77,6 +86,9 @@ class ChattingActivity : AppCompatActivity() {
 
         //타이머 기능
         timer()
+
+        //파이어베이스에서 서버가 넘겨준 user의 이름, 사진 값 불러오기
+        //load()
     }
 
     //TODO: 특정 시간이 지났는지 파악
@@ -97,25 +109,34 @@ class ChattingActivity : AppCompatActivity() {
 //        registerEvent(createdTime, 0.5f){
 //            txtQuiz.text=uid+"에 대한 첫인상은 어때?"
 //        }
-        registerEvent(createdTime, 0.1f) {
-            //Toast.makeText(this, "1단계", Toast.LENGTH_SHORT).show()
-            txtQuiz.text = "우리 영화 보기 몇 분전에 만날까?"
-            //imgProcess.setImageDrawable(getDrawable(R.drawable.processbar_second))
-        }
+
+//        registerEvent(createdTime, 0.1f) {
+//            //Toast.makeText(this, "1단계", Toast.LENGTH_SHORT).show()
+//            txtQuiz.text = "우리 영화 보기 몇 분전에 만날까?"
+//            //imgProcess.setImageDrawable(getDrawable(R.drawable.processbar_second))
+//        }
+
 //        registerEvent(createdTime, 0.25f) {
 //            //Toast.makeText(this, "2단계", Toast.LENGTH_SHORT).show()
 //            txtQuiz.text=uid+"이 영화는 왜 보고 싶어?"
 //            imgProcess.setImageDrawable(getDrawable(R.drawable.processbar_third))
 //        }
-        registerEvent(createdTime, 0.2f) {
+
+        registerEvent(createdTime, 0.45f) {
             //Toast.makeText(this, "3단계", Toast.LENGTH_SHORT).show()
-            txtQuiz.text = "영화 보고 나서 밥 한끼 어때?"
-            imgProcess.setImageDrawable(getDrawable(R.drawable.processbar_complete))
+            txtQuiz.text = "서로 인사해!"
+            //imgProcess.setImageDrawable(getDrawable(R.drawable.processbar_complete))
         }
-        registerEvent(createdTime, 0.3f) {
+
+        registerEvent(createdTime, 0.9f) {
             //            val dialogView = layoutInflater.inflate(R.layout.popup_matching_choice, null)
 //            val dialog = AlertDialog.Builder(this)
 //                .setView(dialogView)
+            imgProcess.setImageDrawable(getDrawable(R.drawable.processbar_complete))
+            txtQuiz.text = "영화 끝나고 뭐 먹을래?"
+        }
+
+        registerEvent(createdTime, 1.0f) {
             val choice = Intent(this, MatchingDialogActivity::class.java)
             startActivity(choice)
             //finish()
@@ -199,6 +220,7 @@ class ChattingActivity : AppCompatActivity() {
             )
 
     }
+
 
     companion object {
         const val CHATROOM_ID = "chat_room_id"

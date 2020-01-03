@@ -9,6 +9,10 @@ data class AddressResponse(
 )
 
 data class Chatting(
+    @SerializedName("opponentName")
+    val opponentName:String,
+    @SerializedName("opponentImg")
+    val opponentImg:String,
     @SerializedName("uid")
     val uid: String,
     @SerializedName("address")

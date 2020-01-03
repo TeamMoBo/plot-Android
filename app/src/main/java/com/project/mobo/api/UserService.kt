@@ -15,7 +15,7 @@ interface UserService {
     ): Call<SigninResponse>
 
     /**
-     *회원가입
+     *회원가입 V
      */
     @POST("/user/signup")
     fun requestSignUp(
@@ -28,7 +28,7 @@ interface UserService {
 //    ): Call<MainResponse>
 
     /**
-     *매칭 화면
+     *매칭 화면 v -> 한 줄 소개
      */
     @GET("/matching")
     fun responseMatching(
@@ -36,7 +36,7 @@ interface UserService {
         ):Call<MatchingResponse>
 
     /**
-     *매칭 확인/취소 요청
+     *매칭 확인/취소 요청 -> 매칭 결과를 어떻게 알려줌?
      */
     @POST("/matching/comfirm")
     fun requestMatchingConfirm(
@@ -53,13 +53,23 @@ interface UserService {
     ): Call<AddressResponse>
 
     /**
-     *매칭 결정
+     *매칭 결정 V
      */
     @POST("/matching/decision")
     fun requestMatchingDecision(
         @Header("authorization") key: String,
         @Body matchingDecisionRequest: MatchingDecisionRequest
     ): Call<MatchingDecisionResponse>
+
+    /**
+     *매칭 이력 페이지
+     */
+//    @GET("matching/info/{matchingIdx}")
+//    fun responseMatchingInfo(
+//        @Header("authorization") key: String
+//    ):Call<MatchingInfoResponse>
+
+
 
 
 
