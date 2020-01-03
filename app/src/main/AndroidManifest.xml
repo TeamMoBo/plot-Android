@@ -31,7 +31,8 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".MatchingWaitingActivity"></activity>
+        <activity android:name=".MatchingWaitingActivity">
+        </activity>
         <activity android:name=".movie_selection.display.MovieSelectionActivity" />
         <activity android:name=".mypage.MyPage_new" />
         <activity android:name=".MatchingDetailedActivity" />
