@@ -88,7 +88,7 @@
                     android:focusableInTouchMode="false"
                     android:gravity="center"
                     android:text="@string/profiletxt"
-                    android:maxLength="15"
+                    android:maxLength="30"
                     android:textColor="#FFFFFF"
                     android:textColorHint="#6BFFFFFF"
                     android:textSize="24sp"
@@ -124,7 +124,7 @@
                         android:background="@null"
                         android:focusableInTouchMode="false"
                         android:gravity="center"
-                        android:maxLength="4"
+                        android:maxLength="10"
                         android:text="@string/dummyname"
                         android:textColor="#FFFFFF"
                         android:textColorHint="#6BFFFFFF"
@@ -441,13 +441,13 @@
 
                 <EditText
                     android:textColor="#000000"
-                    android:id="@+id/edittxt_pass"
+                    android:id="@+id/edittxt_kakaotalk"
                     android:layout_width="300dp"
                     android:layout_height="50dp"
                     android:layout_marginTop="40dp"
                     android:focusableInTouchMode="false"
                     android:enabled="false"
-                    android:hint="@string/dummy_password"
+                    android:hint ="카카오톡"
                     android:importantForAutofill="no"
                     android:inputType="text"
                     app:layout_constraintLeft_toLeftOf="parent"
@@ -457,11 +457,11 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/password"
+                    android:text="카카오톡 ID"
                     android:textColor="#95000000"
-                    app:layout_constraintBottom_toBottomOf="@+id/edittxt_pass"
-                    app:layout_constraintRight_toRightOf="@+id/edittxt_pass"
-                    app:layout_constraintTop_toTopOf="@+id/edittxt_pass"
+                    app:layout_constraintBottom_toBottomOf="@+id/edittxt_kakaotalk"
+                    app:layout_constraintRight_toRightOf="@+id/edittxt_kakaotalk"
+                    app:layout_constraintTop_toTopOf="@+id/edittxt_kakaotalk"
                     android:layout_marginRight="10dp"/>
 
                 <TextView
@@ -473,8 +473,8 @@
                     android:textColor="#a7a2a2"
                     android:textSize="17sp"
                     android:textStyle="bold"
-                    app:layout_constraintLeft_toLeftOf="@id/edittxt_pass"
-                    app:layout_constraintTop_toBottomOf="@+id/edittxt_pass" />
+                    app:layout_constraintLeft_toLeftOf="@id/edittxt_kakaotalk"
+                    app:layout_constraintTop_toBottomOf="@+id/edittxt_kakaotalk" />
 
                 <RadioGroup
                     android:id="@+id/rg_gender_mypage"

@@ -8,12 +8,14 @@ import android.content.pm.PackageManager
 import android.os.Build.*
 import android.os.Bundle
 import android.text.Editable
+import android.util.Log
 import android.widget.EditText
 import android.widget.RadioButton
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.project.mobo.PayChoiceActivity
 import com.project.mobo.R
+import com.project.mobo.api.*
 import kotlinx.android.synthetic.main.activity_my_page_new.*
 
 class MyPage_new : AppCompatActivity() {
@@ -22,6 +24,34 @@ class MyPage_new : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_my_page_new)
+
+        val callMypage = UserServiceImpl.myPageService.myPageRead(
+            "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZHgiOjM3LCJpYXQiOjE1Nzc5NDU5NTYsImV4cCI6MTU3ODU1MDc1NiwiaXNzIjoibW9ib21hc3RlciJ9.ul25BkYtb4kxa8eFjHXkT6b3gMCchLfifQysp4h19MU"
+        )
+
+        var mypageInfo: MyPageDataD
+        callMypage.safeEnqueue {
+            if (it.isSuccessful){
+                mypageInfo = it.body()!!.data
+                profiletxt.setText(mypageInfo.userComment)
+                profile_name.setText(mypageInfo.userNickname)
+                edittxt_age.setText(mypageInfo.userAge.toString())
+                edittxt_school.setText(mypageInfo.userSchool)
+                edittxt_department.setText(mypageInfo.userMajor)
+                edittxt_livingarea.setText(mypageInfo.userLocation)
+                edittxt_name.setText(mypageInfo.userName)
+                edittxt_id.setText(mypageInfo.userId)
+                when(mypageInfo.userSelectGender){
+                    0 -> rg_btn2_mypage.isChecked = true
+                    1 -> rg_btn1_mypage.isChecked = true
+                    2 -> rg_btn3_mypage.isChecked = true
+                }
+                edittxt_ageMin.setText(mypageInfo.userSelectMinAge.toString())
+                edittxt_ageMax.setText(mypageInfo.userSelectMaxAge.toString())
+                edittxt_kakaotalk.setText(mypageInfo.userKakao)
+            }
+        }
+
 
         //Change profile Image
         profile_image.setOnClickListener {
@@ -61,7 +91,7 @@ class MyPage_new : AppCompatActivity() {
 
         val listEditText: ArrayList<EditText> = arrayListOf<EditText>(edittxt_age, edittxt_school,
             edittxt_department, edittxt_livingarea, edittxt_name, edittxt_id,
-            edittxt_pass, edittxt_ageMin, edittxt_ageMax)
+            edittxt_kakaotalk, edittxt_ageMin, edittxt_ageMax)
 
         //val listRadioButton: ArrayList<RadioButton> = arrayListOf(rg_btn1, rg_btn2, rg_btn3)
         val listRadioButton: ArrayList<RadioButton> = arrayListOf(rg_btn1_mypage, rg_btn2_mypage, rg_btn3_mypage)
