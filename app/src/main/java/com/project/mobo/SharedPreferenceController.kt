@@ -54,6 +54,7 @@ object SharedPreferenceController {
         return pref.getString(TOKEN, "")?:""
     }
 
+
 //    fun clearUserSharedPreferences(ctx: Context){
 //        val preference : SharedPreferences =
 //        ctx.getSharedPreferences(USER_)

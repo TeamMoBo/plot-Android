@@ -1,6 +1,8 @@
 package com.project.mobo.MatchingHistory
 
 import android.content.Context
+import android.content.Intent
+import android.graphics.Color
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -9,28 +11,47 @@ import android.widget.TextView
 import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
+import com.project.mobo.MatchingDetailedActivity
 import com.project.mobo.R
+import com.project.mobo.api.HistoryData
 
-class MatchingHistoryViewAdapter(val ctx : Context, val dataList : ArrayList<MatchingHistoryData>) : RecyclerView.Adapter<MatchingHistoryViewAdapter.Holder>(){
+class MatchingHistoryViewAdapter(val ctx : Context, val historydata : ArrayList<HistoryData>) : RecyclerView.Adapter<MatchingHistoryViewAdapter.Holder>(){
+
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): Holder {
         val view : View = LayoutInflater.from(ctx).inflate(R.layout.rv_match_list, parent, false)
         return Holder(view)
     }
+    //val ItemImageState: RecyclerView =ctx.findViewById(R.id.rvMainDay)
 
-    override fun getItemCount(): Int = dataList.size
+    override fun getItemCount(): Int = historydata.size
 
     override fun onBindViewHolder(holder: Holder, position: Int) {
-        holder.date.text = dataList[position].date
-        holder.movie_title.text = dataList[position].movie_title
+        holder.date.text = historydata[position].date
+        holder.movie_title.text = historydata[position].movieTitle
         Glide.with(ctx)
-            .load(dataList[position].profile_img)
+            .load(historydata[position].img)
             .into(holder.profile_img)
-        holder.name.text = dataList[position].name
-        holder.age.text = dataList[position].age.toString()
-        holder.kakaoId.text = dataList[position].kakaoId
+        holder.name.text = historydata[position].name
+        holder.age.text = historydata[position].age.toString()
+        holder.kakaoId.text = historydata[position].kakaotalk
+
+        var state : Boolean = historydata[position].state
+        if(state){
+            holder.txtStatus.text="진행중"
+            holder.txtStatus.setTextColor(Color.parseColor("#58d07a"))
+            holder.viewState.setBackgroundColor(Color.parseColor("#58d07a"))
+        } else {
+            holder.txtStatus.text="완료됨"
+            holder.txtStatus.setTextColor(Color.parseColor("#9e9e9e"))
+            holder.viewState.setBackgroundColor(Color.parseColor("#9e9e9e"))
+        }
+
+        var imageIdx : Int = historydata[position].matchingIdx // matchingIdx 값 받아온 것
+
 
         holder.item_btn.setOnClickListener {
             //ctx.startActivity<MatchingDetailedActivity>()
+            //val i = Intent(this, MatchingDetailedActivity::class.java)
         }
     }
 
@@ -41,6 +62,8 @@ class MatchingHistoryViewAdapter(val ctx : Context, val dataList : ArrayList<Mat
         val name = itemView.findViewById(R.id.txtMAtchingName) as TextView
         val age = itemView.findViewById(R.id.txtMAtchingAge) as TextView
         val kakaoId  = itemView.findViewById(R.id.txtMAtchingKaKaoId) as TextView
+        val txtStatus = itemView.findViewById(R.id.txtMatchingStatus) as TextView
+        val viewState = itemView.findViewById(R.id.viewMatchingStatus) as View
 
         val item_btn = itemView.findViewById(R.id.rv_match_list_item) as ConstraintLayout
     }

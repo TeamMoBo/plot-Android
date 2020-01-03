@@ -19,4 +19,6 @@ object UserServiceImpl {
     val movieList: MovieList = retrofit.create(MovieList::class.java)
     val choiceTimeService: ChoiceTimeInter = retrofit.create(ChoiceTimeInter::class.java)
     val myPageService: MypageInter = retrofit.create(MypageInter::class.java)
+    val historyService: MatchingHistoryInter = retrofit.create(MatchingHistoryInter::class.java)
+    val detailService: MatchingDetailInter = retrofit.create(MatchingDetailInter::class.java)
 }

@@ -27,7 +27,7 @@ class ChoiceMovieViewHolder(view: View) : RecyclerView.ViewHolder(view){
         tvItemTitle.text=data.movieName
         tvItemStar.text=data.movieScore.toString()
 
-       //ItemImage.setBackground(corner)
+       //ItemImage.setBackground()
         //imageView.setClipToOutline(true)
 
         //val drawable = data.poster.getDrawable(R.drawable.main_viewpager_corner) as GradientDrawable
