@@ -50,7 +50,7 @@ class ChattingActivity : AppCompatActivity() {
 
         SharedPreferenceController.setUserName(this, opponentName)
 
-        txtName.text=opponentName
+        txtName.text = opponentName
         Glide.with(this).load(opponentImg).into(imgProfile)
 
         //TODO: 채팅방이 만들어진 시간을 기록해야함.
@@ -116,19 +116,24 @@ class ChattingActivity : AppCompatActivity() {
 //            //imgProcess.setImageDrawable(getDrawable(R.drawable.processbar_second))
 //        }
 
-//        registerEvent(createdTime, 0.25f) {
-//            //Toast.makeText(this, "2단계", Toast.LENGTH_SHORT).show()
-//            txtQuiz.text=uid+"이 영화는 왜 보고 싶어?"
-//            imgProcess.setImageDrawable(getDrawable(R.drawable.processbar_third))
-//        }
 
-        registerEvent(createdTime, 0.45f) {
+        registerEvent(createdTime, 0.1f) {
             //Toast.makeText(this, "3단계", Toast.LENGTH_SHORT).show()
             txtQuiz.text = "서로 인사해!"
             //imgProcess.setImageDrawable(getDrawable(R.drawable.processbar_complete))
         }
 
-        registerEvent(createdTime, 0.9f) {
+        registerEvent(createdTime, 0.2f) {
+            //Toast.makeText(this, "2단계", Toast.LENGTH_SHORT).show()
+            //txtQuiz.text = uid + "이 영화는 왜 보고 싶어?"
+            imgProcess.setImageDrawable(getDrawable(R.drawable.processbar_second))
+        }
+
+        registerEvent(createdTime, 0.3f) {
+            imgProcess.setImageDrawable(getDrawable(R.drawable.processbar_third))
+        }
+
+        registerEvent(createdTime, 0.4f) {
             //            val dialogView = layoutInflater.inflate(R.layout.popup_matching_choice, null)
 //            val dialog = AlertDialog.Builder(this)
 //                .setView(dialogView)
@@ -136,7 +141,7 @@ class ChattingActivity : AppCompatActivity() {
             txtQuiz.text = "영화 끝나고 뭐 먹을래?"
         }
 
-        registerEvent(createdTime, 1.0f) {
+        registerEvent(createdTime, 0.5f) {
             val choice = Intent(this, MatchingDialogActivity::class.java)
             startActivity(choice)
             //finish()

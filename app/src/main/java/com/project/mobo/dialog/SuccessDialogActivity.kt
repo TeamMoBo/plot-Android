@@ -4,6 +4,7 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.project.mobo.MatchingDetailedActivity
+import com.project.mobo.MatchingHistory.MatchingHistoryActivity
 import com.project.mobo.R
 import com.project.mobo.SharedPreferenceController
 import kotlinx.android.synthetic.main.popup_success_final.*
@@ -19,7 +20,7 @@ class SuccessDialogActivity : AppCompatActivity() {
         txtPopupFinalPerson.text = userName
 
         btnSuccessFinalOk.setOnClickListener {
-            val choice = Intent(this, MatchingDetailedActivity::class.java)
+            val choice = Intent(this, MatchingHistoryActivity::class.java)
             startActivity(choice)
             finish()
         }
