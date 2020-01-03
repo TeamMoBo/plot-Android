@@ -27,7 +27,7 @@ import com.project.mobo.api.Data
 import com.project.mobo.api.UserServiceImpl
 import com.project.mobo.api.safeEnqueue
 
-
+//
 class MainPageActivity : AppCompatActivity() {
     private lateinit var rvmovieChoice: RecyclerView
     private lateinit var movieChoiceAdapter: ChoiceMovieAdapter
@@ -46,8 +46,8 @@ class MainPageActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main_page)
 
         val callMain = UserServiceImpl.MainService.mainResponse(
-            key = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZHgiOjM3LCJpYXQiOjE1Nzc3NTk2MzIsImV4cCI6MTU3ODM2NDQzMiwiaXNzIjoibW9ib21hc3RlciJ9.k30fv2OoezYTrzMJnhaFdM0suMnnoIVfjoGkOBMe-G4"
-            //key = SharedPreferenceController.getUserToken(this)
+            //key = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZHgiOjM3LCJpYXQiOjE1Nzc3NTk2MzIsImV4cCI6MTU3ODM2NDQzMiwiaXNzIjoibW9ib21hc3RlciJ9.k30fv2OoezYTrzMJnhaFdM0suMnnoIVfjoGkOBMe-G4"
+            key = SharedPreferenceController.getUserToken(this)
         )
 
         //shared 아직 안 쓰는 중
@@ -230,8 +230,8 @@ class MainPageActivity : AppCompatActivity() {
         super.onActivityResult(requestCode, resultCode, data)
         if(requestCode == 2000){
             val callMain2 = UserServiceImpl.MainService.mainResponse(
-                key = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZHgiOjM3LCJpYXQiOjE1Nzc3NTk2MzIsImV4cCI6MTU3ODM2NDQzMiwiaXNzIjoibW9ib21hc3RlciJ9.k30fv2OoezYTrzMJnhaFdM0suMnnoIVfjoGkOBMe-G4"
-                //key = SharedPreferenceController.getUserToken(this)
+                //key = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZHgiOjM3LCJpYXQiOjE1Nzc3NTk2MzIsImV4cCI6MTU3ODM2NDQzMiwiaXNzIjoibW9ib21hc3RlciJ9.k30fv2OoezYTrzMJnhaFdM0suMnnoIVfjoGkOBMe-G4"
+                key = SharedPreferenceController.getUserToken(this)
             )
             callMain2.safeEnqueue (onResponse = {
                 if(it.isSuccessful){

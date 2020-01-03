@@ -12,7 +12,9 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        android:src="@drawable/a14cbb522349487544b0191aeb9cc156"/>
+        android:src="@drawable/a14cbb522349487544b0191aeb9cc156"
+        android:background="@drawable/movie_choice_box"
+        android:scaleType="centerCrop"/>
     <ImageView
         android:id="@+id/img_check"
         android:layout_width="50dp"

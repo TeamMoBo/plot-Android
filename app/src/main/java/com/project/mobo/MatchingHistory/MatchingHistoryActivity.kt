@@ -6,6 +6,7 @@ import android.util.Log
 import android.view.View
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.project.mobo.R
+import com.project.mobo.SharedPreferenceController
 import com.project.mobo.api.HistoryData
 import com.project.mobo.api.HistoryResponse
 import com.project.mobo.api.UserServiceImpl
@@ -24,8 +25,8 @@ class MatchingHistoryActivity : AppCompatActivity() {
 
 
         val callHistpry = UserServiceImpl.historyService.historyResponse(
-            "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZHgiOjQwLCJpYXQiOjE1Nzc5NDkzNDYsImV4cCI6MTU3ODU1NDE0NiwiaXNzIjoibW9ib21hc3RlciJ9.dwKFFXHdDhkb8WW25BSMyig5DFzUlKPQ-WE1lzO4JBc"
-            //key = SharedPreferenceController.getUserToken(this)
+            //"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZHgiOjQwLCJpYXQiOjE1Nzc5NDkzNDYsImV4cCI6MTU3ODU1NDE0NiwiaXNzIjoibW9ib21hc3RlciJ9.dwKFFXHdDhkb8WW25BSMyig5DFzUlKPQ-WE1lzO4JBc"
+            key = SharedPreferenceController.getUserToken(this)
         )
 
         var historyData: ArrayList<HistoryData> = arrayListOf()
