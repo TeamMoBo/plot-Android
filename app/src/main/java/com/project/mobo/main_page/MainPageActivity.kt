@@ -253,6 +253,7 @@ class MainPageActivity : AppCompatActivity() {
             ////////
             timer()
         }
+
     }
 
     private fun timer(){
