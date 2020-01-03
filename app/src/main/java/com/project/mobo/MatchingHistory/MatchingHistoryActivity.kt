@@ -1,10 +1,13 @@
 package com.project.mobo.MatchingHistory
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.view.View
 import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
+import com.project.mobo.MatchingDetailedActivity
 import com.project.mobo.R
 import com.project.mobo.SharedPreferenceController
 import com.project.mobo.api.HistoryData
@@ -14,32 +17,37 @@ import com.project.mobo.api.safeEnqueue
 import kotlinx.android.synthetic.main.activity_matching_detailed.*
 import kotlinx.android.synthetic.main.activity_matching_history.*
 
-class MatchingHistoryActivity : AppCompatActivity() {
-    lateinit var matchingHistoryViewAdapter: MatchingHistoryViewAdapter
-
-
+class MatchingHistoryActivity : AppCompatActivity(), View.OnClickListener {
+    var matchingHistoryViewAdapter: MatchingHistoryViewAdapter = MatchingHistoryViewAdapter(this)
+    private lateinit var rv: RecyclerView
+    var matchingData: ArrayList<HistoryData> = arrayListOf()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_matching_history)
 
+        rv = findViewById(R.id.rvbtnMatchDetailedList)
+        matchingHistoryViewAdapter.notifyDataSetChanged()
 
         val callHistpry = UserServiceImpl.historyService.historyResponse(
             //"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZHgiOjQwLCJpYXQiOjE1Nzc5NDkzNDYsImV4cCI6MTU3ODU1NDE0NiwiaXNzIjoibW9ib21hc3RlciJ9.dwKFFXHdDhkb8WW25BSMyig5DFzUlKPQ-WE1lzO4JBc"
-            key = SharedPreferenceController.getUserToken(this)
+            //key = SharedPreferenceController.getUserToken(this)
+            "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZHgiOjEwNiwiaWF0IjoxNTc3OTYyMjI4LCJleHAiOjE1Nzg1NjcwMjgsImlzcyI6Im1vYm9tYXN0ZXIifQ.0WjcIhqwjRVc-B_DxLbbyRz_OgxR-L-r6W1J1kMj8CI"
         )
-
-        var historyData: ArrayList<HistoryData> = arrayListOf()
 
         callHistpry.safeEnqueue {
             if(it.isSuccessful){
-                Log.d("test", "서버 연결 성공")
+                Log.d("test", "서버 연결 성공 1")
 
-                historyData = it.body()!!.data
-                matchingHistoryViewAdapter = MatchingHistoryViewAdapter(this, historyData)
-                rvbtnMatchDetailedList.adapter = matchingHistoryViewAdapter
-                rvbtnMatchDetailedList.layoutManager = LinearLayoutManager(this)
-                (rvbtnMatchDetailedList.adapter as MatchingHistoryViewAdapter).notifyDataSetChanged()
+                matchingHistoryViewAdapter.historydata = it.body()!!.data
+                matchingData = it.body()!!.data
+
+                rv.layoutManager = LinearLayoutManager(this)
+                matchingHistoryViewAdapter.notifyDataSetChanged()
+                matchingHistoryViewAdapter.onItemClick(this)
+
+                rv.adapter = matchingHistoryViewAdapter
+
             }
         }
 
@@ -53,7 +61,7 @@ class MatchingHistoryActivity : AppCompatActivity() {
             imgMatchDetailed1.setVisibility(View.INVISIBLE)
         }*/
 
-        btnMatchDetailedBack.setOnClickListener(){
+        btnMatchDetailedBack.setOnClickListener{
             finish()
         }
         //setRecyclerView()
@@ -74,5 +82,15 @@ class MatchingHistoryActivity : AppCompatActivity() {
         //matchingHistoryViewAdapter = MatchingHistoryViewAdapter(this, dataList)
         //rvbtnMatchDetailedList.adapter = matchingHistoryViewAdapter
         //rvbtnMatchDetailedList.layoutManager = LinearLayoutManager(this)
+    }
+
+    override fun onClick(v: View?) {
+        Log.d("test","click")
+        if (v?.parent == rv){
+            val intent: Intent = Intent(this, MatchingDetailedActivity::class.java)
+            intent.putExtra("matchingIdx", matchingData[rv.getChildAdapterPosition(v)].matchingIdx)
+            startActivity(intent)
+        }
+        //Log.d("test",idx.toString())
     }
 }
