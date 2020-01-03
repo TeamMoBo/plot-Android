@@ -10,7 +10,7 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/cl1"
         android:layout_width="match_parent"
-        android:layout_height="191dp"
+        android:layout_height="181dp"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
@@ -144,6 +144,7 @@
         </LinearLayout>
 
         <RadioGroup
+            android:id="@+id/rg_time_choice"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
@@ -266,13 +267,13 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/cl2"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_marginTop="184dp"
+        android:layout_height="0dp"
         android:background="@drawable/shape_layout_time_choice"
-        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/cl1">
+        app:layout_constraintTop_toBottomOf="@+id/cl1"
+        app:layout_constraintBottom_toBottomOf="parent">
 
         <TextView
             android:id="@+id/txtChoice"
@@ -286,7 +287,7 @@
             android:textSize="18sp"
             app:layout_constraintLeft_toLeftOf="@id/cl2"
             app:layout_constraintRight_toRightOf="@id/cl2"
-            app:layout_constraintTop_toTopOf="@id/cl2" />
+            app:layout_constraintTop_toTopOf="parent" />
 
         <GridLayout
             android:id="@+id/gl1"
@@ -308,8 +309,8 @@
                 android:gravity="center"
                 android:tag="12"
                 android:text="12PM"
-                android:textColor="@color/txt_color_btn"
-                android:textAlignment="center" />
+                android:textAlignment="center"
+                android:textColor="@color/txt_color_btn" />
 
             <CheckedTextView
                 android:id="@+id/btnTimeChoice1pm"
@@ -321,8 +322,8 @@
                 android:gravity="center"
                 android:tag="13"
                 android:text="1PM"
-                android:textColor="@color/txt_color_btn"
-                android:textAlignment="center" />
+                android:textAlignment="center"
+                android:textColor="@color/txt_color_btn" />
 
             <CheckedTextView
                 android:id="@+id/btnTimeChoice2pm"
@@ -334,8 +335,8 @@
                 android:gravity="center"
                 android:tag="14"
                 android:text="2PM"
-                android:textColor="@color/txt_color_btn"
-                android:textAlignment="center" />
+                android:textAlignment="center"
+                android:textColor="@color/txt_color_btn" />
 
             <CheckedTextView
                 android:id="@+id/btnTimeChoice3pm"
@@ -346,8 +347,8 @@
                 android:gravity="center"
                 android:tag="15"
                 android:text="3PM"
-                android:textColor="@color/txt_color_btn"
-                android:textAlignment="center" />
+                android:textAlignment="center"
+                android:textColor="@color/txt_color_btn" />
 
             <CheckedTextView
                 android:id="@+id/btnTimeChoice4pm"
@@ -358,8 +359,8 @@
                 android:gravity="center"
                 android:tag="16"
                 android:text="4PM"
-                android:textColor="@color/txt_color_btn"
-                android:textAlignment="center" />
+                android:textAlignment="center"
+                android:textColor="@color/txt_color_btn" />
 
             <CheckedTextView
                 android:id="@+id/btnTimeChoice5pm"
@@ -371,8 +372,8 @@
                 android:gravity="center"
                 android:tag="17"
                 android:text="5PM"
-                android:textColor="@color/txt_color_btn"
-                android:textAlignment="center" />
+                android:textAlignment="center"
+                android:textColor="@color/txt_color_btn" />
 
             <CheckedTextView
                 android:id="@+id/btnTimeChoice6pm"
@@ -384,8 +385,8 @@
                 android:gravity="center"
                 android:tag="18"
                 android:text="6PM"
-                android:textColor="@color/txt_color_btn"
-                android:textAlignment="center" />
+                android:textAlignment="center"
+                android:textColor="@color/txt_color_btn" />
 
             <CheckedTextView
                 android:id="@+id/btnTimeChoice7pm"
@@ -397,8 +398,8 @@
                 android:gravity="center"
                 android:tag="19"
                 android:text="7PM"
-                android:textColor="@color/txt_color_btn"
-                android:textAlignment="center" />
+                android:textAlignment="center"
+                android:textColor="@color/txt_color_btn" />
 
             <CheckedTextView
                 android:id="@+id/btnTimeChoice8pm"
@@ -409,8 +410,8 @@
                 android:gravity="center"
                 android:tag="20"
                 android:text="8PM"
-                android:textColor="@color/txt_color_btn"
-                android:textAlignment="center" />
+                android:textAlignment="center"
+                android:textColor="@color/txt_color_btn" />
 
             <CheckedTextView
                 android:id="@+id/btnTimeChoice9pm"
@@ -422,8 +423,8 @@
                 android:gravity="center"
                 android:tag="21"
                 android:text="9PM"
-                android:textColor="@color/txt_color_btn"
-                android:textAlignment="center" />
+                android:textAlignment="center"
+                android:textColor="@color/txt_color_btn" />
 
             <CheckedTextView
                 android:id="@+id/btnTimeChoice10pm"
@@ -435,8 +436,8 @@
                 android:gravity="center"
                 android:tag="22"
                 android:text="10PM"
-                android:textColor="@color/txt_color_btn"
-                android:textAlignment="center" />
+                android:textAlignment="center"
+                android:textColor="@color/txt_color_btn" />
 
             <CheckedTextView
                 android:id="@+id/btnTimeChoice11pm"
@@ -448,8 +449,8 @@
                 android:gravity="center"
                 android:tag="23"
                 android:text="11PM"
-                android:textColor="@color/txt_color_btn"
-                android:textAlignment="center" />
+                android:textAlignment="center"
+                android:textColor="@color/txt_color_btn" />
 
             <CheckedTextView
                 android:id="@+id/btnTimeChoice12am"
@@ -460,8 +461,8 @@
                 android:gravity="center"
                 android:tag="24"
                 android:text="12AM"
-                android:textColor="@color/txt_color_btn"
-                android:textAlignment="center" />
+                android:textAlignment="center"
+                android:textColor="@color/txt_color_btn" />
 
             <CheckedTextView
                 android:id="@+id/btnTimeChoice1am"
@@ -473,8 +474,8 @@
                 android:gravity="center"
                 android:tag="25"
                 android:text="1AM"
-                android:textColor="@color/txt_color_btn"
-                android:textAlignment="center" />
+                android:textAlignment="center"
+                android:textColor="@color/txt_color_btn" />
 
             <CheckedTextView
                 android:id="@+id/btnTimeChoice2am"
@@ -486,32 +487,34 @@
                 android:gravity="center"
                 android:tag="26"
                 android:text="2AM"
-                android:textColor="@color/txt_color_btn"
-                android:textAlignment="center" />
+                android:textAlignment="center"
+                android:textColor="@color/txt_color_btn" />
         </GridLayout>
 
         <TextView
             android:id="@+id/txtFindFriend"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="79dp"
+            android:layout_marginTop="50dp"
             android:lineSpacingExtra="8sp"
             android:text="친구 찾으러 가기!"
             android:textColor="#000000"
             android:textSize="14sp"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/gl1"
-            app:layout_constraintBottom_toTopOf="@+id/btnTimeChoiceGo" />
+            app:layout_constraintTop_toBottomOf="@+id/gl1" />
 
         <ImageView
             android:id="@+id/btnTimeChoiceGo"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginBottom="59dp"
             android:background="@drawable/an_ic_next_btn"
             app:layout_constraintLeft_toLeftOf="@id/txtFindFriend"
             app:layout_constraintRight_toRightOf="@id/txtFindFriend"
-            app:layout_constraintTop_toBottomOf="@id/txtFindFriend"
-            android:layout_marginBottom="59dp"></ImageView>
+            app:layout_constraintTop_toBottomOf="@id/txtFindFriend"/>
+
+
+
     </androidx.constraintlayout.widget.ConstraintLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
