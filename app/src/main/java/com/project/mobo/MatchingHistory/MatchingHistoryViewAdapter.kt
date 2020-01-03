@@ -15,15 +15,22 @@ import com.project.mobo.MatchingDetailedActivity
 import com.project.mobo.R
 import com.project.mobo.api.HistoryData
 
-class MatchingHistoryViewAdapter(val ctx : Context, val historydata : ArrayList<HistoryData>) : RecyclerView.Adapter<MatchingHistoryViewAdapter.Holder>(){
+class MatchingHistoryViewAdapter(val ctx : Context) : RecyclerView.Adapter<MatchingHistoryViewAdapter.Holder>(){
+    var historydata = arrayListOf<HistoryData>()
+    private var onItemClickListener: View.OnClickListener? = null
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): Holder {
         val view : View = LayoutInflater.from(ctx).inflate(R.layout.rv_match_list, parent, false)
+        view.setOnClickListener(onItemClickListener)
         return Holder(view)
     }
     //val ItemImageState: RecyclerView =ctx.findViewById(R.id.rvMainDay)
 
     override fun getItemCount(): Int = historydata.size
+
+    fun onItemClick(l: View.OnClickListener){
+        onItemClickListener = l
+    }
 
     override fun onBindViewHolder(holder: Holder, position: Int) {
         holder.date.text = historydata[position].date
@@ -48,11 +55,6 @@ class MatchingHistoryViewAdapter(val ctx : Context, val historydata : ArrayList<
 
         var imageIdx : Int = historydata[position].matchingIdx // matchingIdx 값 받아온 것
 
-
-        holder.item_btn.setOnClickListener {
-            //ctx.startActivity<MatchingDetailedActivity>()
-            //val i = Intent(this, MatchingDetailedActivity::class.java)
-        }
     }
 
     inner class Holder(itemView : View) : RecyclerView.ViewHolder(itemView){
@@ -64,7 +66,5 @@ class MatchingHistoryViewAdapter(val ctx : Context, val historydata : ArrayList<
         val kakaoId  = itemView.findViewById(R.id.txtMAtchingKaKaoId) as TextView
         val txtStatus = itemView.findViewById(R.id.txtMatchingStatus) as TextView
         val viewState = itemView.findViewById(R.id.viewMatchingStatus) as View
-
-        val item_btn = itemView.findViewById(R.id.rv_match_list_item) as ConstraintLayout
     }
 }

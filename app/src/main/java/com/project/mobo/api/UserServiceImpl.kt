@@ -22,4 +22,5 @@ object UserServiceImpl {
     val myPageService: MypageInter = retrofit.create(MypageInter::class.java)
     val historyService: MatchingHistoryInter = retrofit.create(MatchingHistoryInter::class.java)
     val detailService: MatchingDetailInter = retrofit.create(MatchingDetailInter::class.java)
+    val matchingDetailService: MatchingInter = retrofit.create(MatchingInter::class.java)
 }
