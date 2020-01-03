@@ -8,17 +8,18 @@ Plot -Android
 
 
 
-
-
-# **Project Environment**
+# Project Environment**
 
 ![](https://img.shields.io/badge/Android-29-green) ![](https://img.shields.io/badge/Kotlin-1.3.41-blue)
 
 
 
-## Application Service Work flow
+
+
+# Application Service Work flow
 
 ![image](https://user-images.githubusercontent.com/50284754/71726182-aad18600-2e79-11ea-8d07-4c41837010c0.png)
+
 
 
 # Using Library
@@ -89,7 +90,7 @@ Plot -Android
 
   
 
-## Program Structure
+# Program Structure
 
 * api: 통신 간 사용되는 interface, Object
 
@@ -110,11 +111,11 @@ Plot -Android
 
 |             Activity             |                         Description                          |
 | :------------------------------: | :----------------------------------------------------------: |
-|         `SplashActivity`         |        First run of the app using the Lottie Library         |
-| `SignInActivity, SignUpActivity` | 1. If ID exists, Login successful & Move to MainActivity<br />2.Move to membership activity if ID does not exist |
-|          `MainActivity`          | 1. Show Recommendation Movie, Selected Movie, Selected Time<br />2.Move to MyPageActivity, ModifyMovieActivity, ModifyTimeActivity, MovieSelectionActivity |
+|         `SplashActivity`         |           Lottie 라이브러리를 이용한 스플래시 화면           |
+| `SignInActivity, SignUpActivity` | 아이디가 존재하면 메인 화면으로 ,<br />아이디가 존재하지 않는다면 회원가입화면으로 이동 |
+|          `MainActivity`          | 추천영화, 선택영화, 선택시간을 보여주는 화면,<br />마이페이지/영화수정/시간수정/영화선택 화면 이동 |
 |     `MovieSelectionActivity`     | Tablayout, RecyclerView, Fragment, ViewPager를 이용한 영화 선택 알고리즘 화면 |
-|       `TimeChoiceActivity`       |  Date라이브러리 시간 선택 알고리즘을 이용한 시간 선택 화면   |
+|       `TimeChoiceActivity`       |  Date 라이브러리 시간 선택 알고리즘을 이용한 시간 선택 화면  |
 |         `MyPageActivity`         | 사용자 갤러리에 접근하여 이미지 불러오기, 사용자 정보 수정 알고리즘 화면 |
 |    `MatchingHistoryActivity`     |               매칭된 상대 이력을 보여주는 화면               |
 |     MatchingWaitingActivity      |            매칭된 사람과 채팅시작을 결정하는 화면            |
