@@ -142,7 +142,8 @@ class TimeChoiceActivity : AppCompatActivity() {
 
             if (dateArrayList[currentSelectedDatePosition].reservationTime.count() >= 3) {
                 val callChoiceMovieTime = UserServiceImpl.choiceTimeService.choiceTimeInter(
-                    "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZHgiOjM3LCJpYXQiOjE1Nzc5NDU5NTYsImV4cCI6MTU3ODU1MDc1NiwiaXNzIjoibW9ib21hc3RlciJ9.ul25BkYtb4kxa8eFjHXkT6b3gMCchLfifQysp4h19MU",
+                    //"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZHgiOjM3LCJpYXQiOjE1Nzc5NDU5NTYsImV4cCI6MTU3ODU1MDc1NiwiaXNzIjoibW9ib21hc3RlciJ9.ul25BkYtb4kxa8eFjHXkT6b3gMCchLfifQysp4h19MU",
+                    SharedPreferenceController.getUserToken(this),
                     ChoiceRequest(movieArrayList, dateArrayList[currentSelectedDatePosition].reservationDate,
                         dateArrayList[currentSelectedDatePosition].reservationTime)
                 )

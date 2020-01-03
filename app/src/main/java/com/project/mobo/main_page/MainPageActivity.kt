@@ -26,6 +26,11 @@ import com.project.mobo.SharedPreferenceController
 import com.project.mobo.api.Data
 import com.project.mobo.api.UserServiceImpl
 import com.project.mobo.api.safeEnqueue
+import com.project.mobo.dialog.MatchingDialogActivity
+import com.project.mobo.dialog.MatchingSuccessActivity
+import com.project.mobo.util.registerEvent
+import kotlinx.android.synthetic.main.activity_chatting.*
+import java.util.*
 
 
 class MainPageActivity : AppCompatActivity() {
@@ -40,6 +45,9 @@ class MainPageActivity : AppCompatActivity() {
     //private lateinit var timeData: TimeData - 더미데이터
     private lateinit var mainData: Data
     private lateinit var verticalAdapter : DataVerticalAdapter
+
+    private lateinit var createdTime: Date
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -241,7 +249,21 @@ class MainPageActivity : AppCompatActivity() {
                     choiceDate() // 선택한 시간 창
                 }
             }, onError = {})
+
+            ////////
+            timer()
         }
+    }
+
+    private fun timer(){
+        createdTime = Date()
+
+        registerEvent(createdTime, 0.05f) {
+            val choice = Intent(this, MatchingSuccessActivity::class.java)
+            startActivity(choice)
+            //finish()
+        }
+
     }
 
 }
