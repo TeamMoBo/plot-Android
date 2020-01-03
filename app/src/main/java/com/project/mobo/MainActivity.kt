@@ -20,7 +20,7 @@ class MainActivity : AppCompatActivity() {
 
         btnLogin.setOnClickListener {
             val callUrl = UserServiceImpl.userService.responseAddress(
-                "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZHgiOjEwNiwiaWF0IjoxNTc3OTYyMjI4LCJleHAiOjE1Nzg1NjcwMjgsImlzcyI6Im1vYm9tYXN0ZXIifQ.0WjcIhqwjRVc-B_DxLbbyRz_OgxR-L-r6W1J1kMj8CI"
+                "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZHgiOjExMywiaWF0IjoxNTc3OTYyMzkzLCJleHAiOjE1Nzg1NjcxOTMsImlzcyI6Im1vYm9tYXN0ZXIifQ.qIOz_9fwzFHgiaJI9m5RVUep0Rt1DIXETlig6wLu-iU"
                 //SharedPreferenceController.getUserToken(this)
             )
             callUrl.safeEnqueue(onResponse = {

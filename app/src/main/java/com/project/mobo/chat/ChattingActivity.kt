@@ -86,7 +86,7 @@ class ChattingActivity : AppCompatActivity() {
         rvChatList.scrollToPosition(rvChatList.adapter!!.itemCount - 1) // 첫 접속시 리싸이클러뷰가 상단에 올라가기 때문.
 
         //타이머 기능
-        timer()
+        //timer()
 
         //파이어베이스에서 서버가 넘겨준 user의 이름, 사진 값 불러오기
         //load()
@@ -96,59 +96,59 @@ class ChattingActivity : AppCompatActivity() {
     //TODO: 일정 시간마다, 화면을 갱신해줘얗 함
     //TODO: 특정 시간 ~ 특정 시간 사이의 시간을, 받아올 수 있어야함. (분 단위) v
     //TODO: 특정 시간으로 부터, 특정 분이 지났을 때, 이벤트를 등록 할 수 있으면 v
-    private fun timer() {
-//        val timer= Timer("schdule", true)
+//    private fun timer() {
+////        val timer= Timer("schdule", true)
+////
+////        timer.schedule(10000, 60000){
+////            //if(delay)
+////            txtQuiz.text = "이걸로 바뀌지롱ㅎ"
+////            imgProcess.setImageDrawable(getDrawable(R.drawable.processbar_second))
+////        }
 //
-//        timer.schedule(10000, 60000){
-//            //if(delay)
-//            txtQuiz.text = "이걸로 바뀌지롱ㅎ"
+//        //액티비티가 만들어진 시간
+//        createdTime = Date()
+////        registerEvent(createdTime, 0.5f){
+////            txtQuiz.text=uid+"에 대한 첫인상은 어때?"
+////        }
+//
+////        registerEvent(createdTime, 0.1f) {
+////            //Toast.makeText(this, "1단계", Toast.LENGTH_SHORT).show()
+////            txtQuiz.text = "우리 영화 보기 몇 분전에 만날까?"
+////            //imgProcess.setImageDrawable(getDrawable(R.drawable.processbar_second))
+////        }
+//
+//
+//        registerEvent(createdTime, 0.1f) {
+//            //Toast.makeText(this, "3단계", Toast.LENGTH_SHORT).show()
+//            txtQuiz.text = "서로 인사해!"
+//            //imgProcess.setImageDrawable(getDrawable(R.drawable.processbar_complete))
+//        }
+//
+//        registerEvent(createdTime, 0.2f) {
+//            //Toast.makeText(this, "2단계", Toast.LENGTH_SHORT).show()
+//            //txtQuiz.text = uid + "이 영화는 왜 보고 싶어?"
 //            imgProcess.setImageDrawable(getDrawable(R.drawable.processbar_second))
 //        }
-
-        //액티비티가 만들어진 시간
-        createdTime = Date()
-//        registerEvent(createdTime, 0.5f){
-//            txtQuiz.text=uid+"에 대한 첫인상은 어때?"
+//
+//        registerEvent(createdTime, 0.3f) {
+//            imgProcess.setImageDrawable(getDrawable(R.drawable.processbar_third))
 //        }
-
-//        registerEvent(createdTime, 0.1f) {
-//            //Toast.makeText(this, "1단계", Toast.LENGTH_SHORT).show()
-//            txtQuiz.text = "우리 영화 보기 몇 분전에 만날까?"
-//            //imgProcess.setImageDrawable(getDrawable(R.drawable.processbar_second))
+//
+//        registerEvent(createdTime, 0.4f) {
+//            //            val dialogView = layoutInflater.inflate(R.layout.popup_matching_choice, null)
+////            val dialog = AlertDialog.Builder(this)
+////                .setView(dialogView)
+//            imgProcess.setImageDrawable(getDrawable(R.drawable.processbar_complete))
+//            txtQuiz.text = "영화 끝나고 뭐 먹을래?"
 //        }
-
-
-        registerEvent(createdTime, 0.1f) {
-            //Toast.makeText(this, "3단계", Toast.LENGTH_SHORT).show()
-            txtQuiz.text = "서로 인사해!"
-            //imgProcess.setImageDrawable(getDrawable(R.drawable.processbar_complete))
-        }
-
-        registerEvent(createdTime, 0.2f) {
-            //Toast.makeText(this, "2단계", Toast.LENGTH_SHORT).show()
-            //txtQuiz.text = uid + "이 영화는 왜 보고 싶어?"
-            imgProcess.setImageDrawable(getDrawable(R.drawable.processbar_second))
-        }
-
-        registerEvent(createdTime, 0.3f) {
-            imgProcess.setImageDrawable(getDrawable(R.drawable.processbar_third))
-        }
-
-        registerEvent(createdTime, 0.4f) {
-            //            val dialogView = layoutInflater.inflate(R.layout.popup_matching_choice, null)
-//            val dialog = AlertDialog.Builder(this)
-//                .setView(dialogView)
-            imgProcess.setImageDrawable(getDrawable(R.drawable.processbar_complete))
-            txtQuiz.text = "영화 끝나고 뭐 먹을래?"
-        }
-
-        registerEvent(createdTime, 0.5f) {
-            val choice = Intent(this, MatchingDialogActivity::class.java)
-            startActivityForResult(choice, 3000)
-            //finish()
-        }
-
-    }
+//
+//        registerEvent(createdTime, 0.5f) {
+//            val choice = Intent(this, MatchingDialogActivity::class.java)
+//            startActivityForResult(choice, 3000)
+//            //finish()
+//        }
+//
+//    }
 
     private fun init() {
         lm = LinearLayoutManager(applicationContext, LinearLayoutManager.VERTICAL, false)
