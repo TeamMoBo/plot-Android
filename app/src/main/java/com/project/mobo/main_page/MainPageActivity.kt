@@ -27,7 +27,7 @@ import com.project.mobo.api.Data
 import com.project.mobo.api.UserServiceImpl
 import com.project.mobo.api.safeEnqueue
 
-//
+
 class MainPageActivity : AppCompatActivity() {
     private lateinit var rvmovieChoice: RecyclerView
     private lateinit var movieChoiceAdapter: ChoiceMovieAdapter
