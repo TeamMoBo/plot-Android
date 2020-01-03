@@ -17,6 +17,7 @@
         app:layout_constraintTop_toTopOf="parent">
     </View>
     <TextView
+        android:fontFamily="@font/notosans_regular"
         android:id="@+id/txtMatchingStatus"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -30,6 +31,7 @@
         android:layout_marginTop="14dp"
         />
     <TextView
+        android:fontFamily="@font/notosans_regular"
         android:id="@+id/txtMatchingDate"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -43,6 +45,7 @@
         android:layout_marginTop="16dp"
         />
     <TextView
+        android:fontFamily="@font/notosans_bold"
         android:id="@+id/txtMatchingMovie"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -56,6 +59,7 @@
         android:layout_marginTop="12dp"
         />
     <TextView
+        android:fontFamily="@font/notosans_bold"
         android:id="@+id/txtMatchingMovieName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -79,6 +83,7 @@
         app:layout_constraintTop_toBottomOf="@id/txtMatchingMovie" />
 
     <TextView
+        android:fontFamily="@font/notosans_regular"
         android:id="@+id/txtMAtchingNa"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -92,6 +97,7 @@
         android:layout_marginTop="19dp"
         />
     <TextView
+        android:fontFamily="@font/notosans_bold"
         android:id="@+id/txtMAtchingName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -103,6 +109,7 @@
         app:layout_constraintTop_toBottomOf="@+id/txtMatchingMovieName"
         android:layout_marginTop="19dp"/>
     <TextView
+        android:fontFamily="@font/notosans_regular"
         android:id="@+id/txtMatchingAg"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -116,6 +123,7 @@
         android:layout_marginTop="4dp"
         />
     <TextView
+        android:fontFamily="@font/notosans_bold"
         android:id="@+id/txtMAtchingAge"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -125,7 +133,7 @@
         android:text="21"
         app:layout_constraintLeft_toRightOf="@id/txtMatchingAg"
         app:layout_constraintTop_toBottomOf="@id/txtMAtchingName"
-        android:layout_marginTop="4dp"
+        android:layout_marginTop="6dp"
         />
     <ImageView
         android:id="@+id/btnMatchingMore"
@@ -137,6 +145,7 @@
         android:layout_marginRight="20dp"
         android:layout_marginTop="61dp"/>
     <TextView
+        android:fontFamily="@font/notosans_regular"
         android:id="@+id/txtMAtchingKaKao"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -150,6 +159,7 @@
         android:layout_marginTop="4dp"
         />
     <TextView
+        android:fontFamily="@font/notosans_bold"
         android:id="@+id/txtMAtchingKaKaoId"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"

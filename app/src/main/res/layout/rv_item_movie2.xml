@@ -15,6 +15,7 @@
         app:layout_constraintRight_toRightOf="parent"
         android:src="@drawable/a14cbb522349487544b0191aeb9cc156"/>
     <TextView
+        android:fontFamily="@font/notosans_bold"
         android:id="@+id/txt_movie"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"

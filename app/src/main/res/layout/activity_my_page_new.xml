@@ -68,6 +68,7 @@
                     app:layout_constraintTop_toTopOf="parent" />
 
                 <TextView
+                    android:fontFamily="@font/notosans_medium"
                     android:layout_width="wrap_content"
                     android:layout_height="40dp"
                     android:layout_marginTop="10dp"
@@ -80,6 +81,7 @@
                     app:layout_constraintTop_toTopOf="parent" />
 
                 <EditText
+                    android:fontFamily="@font/notosans_medium"
                     android:id="@+id/profiletxt"
                     android:layout_width="290dp"
                     android:layout_height="40dp"
@@ -118,6 +120,7 @@
                     app:layout_constraintTop_toBottomOf="@+id/profiletxt">
 
                     <EditText
+                        android:fontFamily="@font/notosans_medium"
                         android:id="@+id/profile_name"
                         android:layout_width="100dp"
                         android:layout_height="30dp"
@@ -162,6 +165,7 @@
                         android:layout_height="25dp"
                         android:background="@null"
                         android:focusableInTouchMode="false"
+                        android:fontFamily="@font/notosans_medium"
                         android:gravity="center"
                         android:text="@string/dummyoneline"
                         android:textColor="#FFFFFF"
@@ -197,6 +201,7 @@
                     app:layout_constraintTop_toBottomOf="@+id/layout_introOneLine">
 
                     <TextView
+                        android:fontFamily="@font/notosans_medium"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="10dp"
@@ -217,16 +222,28 @@
                         app:layout_constraintLeft_toLeftOf="parent"
                         app:layout_constraintRight_toLeftOf="@+id/txt_ticket"
                         app:layout_constraintTop_toTopOf="parent" />
+                    <TextView
+                        android:fontFamily="@font/notosans_medium"
+                        android:id="@+id/txtTickX"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="30dp"
+                        android:text="X "
+                        android:textColor="#5a5858"
+                        android:textSize="20sp"
+                        app:layout_constraintLeft_toRightOf="@+id/img_ticket"
+                        app:layout_constraintTop_toTopOf="parent" />
 
                     <TextView
+                        android:fontFamily="@font/notosans_medium"
                         android:id="@+id/txt_ticket"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="30dp"
-                        android:text="@string/x_2"
+                        android:text="2"
                         android:textColor="#5a5858"
                         android:textSize="20sp"
-                        app:layout_constraintLeft_toRightOf="@+id/img_ticket"
+                        app:layout_constraintLeft_toRightOf="@+id/txtTickX"
                         app:layout_constraintTop_toTopOf="parent" />
 
                     <ImageView
@@ -241,14 +258,27 @@
                         app:layout_constraintTop_toTopOf="parent" />
 
                     <TextView
+                        android:fontFamily="@font/notosans_medium"
+                        android:id="@+id/txtPopX"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="30dp"
+                        android:text="X "
+                        android:textColor="#5a5858"
+                        android:textSize="20sp"
+                        app:layout_constraintLeft_toRightOf="@+id/img_popcorn"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:fontFamily="@font/notosans_medium"
                         android:id="@+id/txt_popcorn"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="30dp"
-                        android:text="@string/x_2"
+                        android:text="2"
                         android:textColor="#5a5858"
                         android:textSize="20sp"
-                        app:layout_constraintLeft_toRightOf="@+id/img_popcorn"
+                        app:layout_constraintLeft_toRightOf="@+id/txtPopX"
                         app:layout_constraintTop_toTopOf="parent" />
                 </androidx.constraintlayout.widget.ConstraintLayout>
 

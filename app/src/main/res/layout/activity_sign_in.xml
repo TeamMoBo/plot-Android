@@ -10,34 +10,40 @@
         android:id="@+id/imageView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:scaleType="fitXY"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/img_top_bg"
-        android:scaleType="fitXY"/>
+        app:srcCompat="@drawable/img_top_bg" />
+
     <ImageView
+        android:id="@+id/logo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginRight="41dp"
         android:src="@drawable/plot_symbollogo"
-        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintBottom_toTopOf="@+id/txtLogin"
-        android:layout_marginRight="41dp"/>
+        app:layout_constraintEnd_toEndOf="parent" />
 
     <TextView
+        android:fontFamily="@font/notosans_medium"
         android:id="@+id/txtLogin"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textSize="30sp"
-        android:textColor="#ffffff"
         android:letterSpacing="0.02"
         android:lineSpacingExtra="15sp"
         android:text="Log-in"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginEnd="16dp"
-        app:layout_constraintTop_toTopOf="parent"
-        android:layout_marginTop="128dp"/>
+        android:textColor="#A8FFFFFF"
+        android:textSize="30sp"
+        app:layout_constraintStart_toStartOf="@id/logo"
+        app:layout_constraintEnd_toEndOf="@id/logo"
+        tools:layout_editor_absoluteY="128dp"
+        app:layout_constraintBottom_toBottomOf="@id/imageView"
+        android:layout_marginBottom="4dp"/>
 
     <EditText
+        android:fontFamily="@font/notosans_medium"
         android:id="@+id/edtSigninID"
         android:layout_width="0dp"
         android:layout_height="52dp"
@@ -54,6 +60,7 @@
         android:maxLines="1"/>
 
     <EditText
+        android:fontFamily="@font/notosans_medium"
         android:id="@+id/edtSigninPW"
         android:layout_width="0dp"
         android:layout_height="52dp"
@@ -80,16 +87,15 @@
         app:layout_constraintEnd_toEndOf="@+id/edtSigninPW"
         app:layout_constraintTop_toBottomOf="@id/edtSigninPW" />
 
-    <Button
+    <ImageButton
         android:id="@+id/btnSigninLogin"
-        android:layout_width="327dp"
-        android:layout_height="52dp"
-        android:background="#FF5722"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/an_login_btn"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@id/edtSigninPW"
         android:layout_marginTop="63dp"
-        android:text="로그인"
         android:textColor="#ffffff"
         android:textSize="20dp"/>
 
