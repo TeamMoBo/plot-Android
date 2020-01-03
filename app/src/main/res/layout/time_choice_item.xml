@@ -14,7 +14,6 @@
         app:layout_constraintTop_toTopOf="parent">
 
         <TextView
-            android:fontFamily="@font/notosans_regular"
             android:id="@+id/tvMainItemTime"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -26,7 +25,6 @@
             app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
-            android:fontFamily="@font/notosans_regular"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text=":00"

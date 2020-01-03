@@ -30,7 +30,6 @@
                 app:layout_constraintTop_toTopOf="parent" />
 
             <TextView
-                android:fontFamily="@font/notosans_medium"
                 android:id="@+id/tvSignup_Title"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -65,7 +64,6 @@
                 android:layout_marginEnd="32dp">
 
                 <TextView
-                    android:fontFamily="@font/notosans_medium"
                     android:id="@+id/tvSignupTitle"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -225,7 +223,6 @@
                     android:layout_marginEnd="18dp"/>
 
                 <TextView
-                    android:fontFamily="@font/notosans_medium"
                     android:id="@+id/textview_matching_gender"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -247,7 +244,6 @@
                     app:layout_constraintTop_toBottomOf="@id/textview_matching_gender">
 
                     <TextView
-                        android:fontFamily="@font/notosans_medium"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="88dp"
@@ -258,7 +254,6 @@
                         app:layout_constraintTop_toTopOf="parent" />
 
                     <TextView
-                        android:fontFamily="@font/notosans_medium"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="178dp"
@@ -269,7 +264,6 @@
                         app:layout_constraintTop_toTopOf="parent" />
 
                     <TextView
-                        android:fontFamily="@font/notosans_medium"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="260dp"
@@ -330,7 +324,6 @@
 
 
                 <TextView
-                    android:fontFamily="@font/notosans_medium"
                     android:id="@+id/textview_matching_age"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -361,7 +354,6 @@
                         app:layout_constraintTop_toTopOf="parent">
 
                         <TextView
-                            android:fontFamily="@font/notosans_medium"
                             android:id="@+id/textview_agemin"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
@@ -412,7 +404,6 @@
                         app:layout_constraintTop_toTopOf="parent">
 
                         <TextView
-                            android:fontFamily="@font/notosans_medium"
                             android:id="@+id/textview_agemax"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"

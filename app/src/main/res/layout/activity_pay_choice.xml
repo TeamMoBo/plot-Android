@@ -25,7 +25,6 @@
             app:layout_constraintTop_toTopOf="parent"/>
 
         <TextView
-            android:fontFamily="@font/notosans_bold"
             android:id="@+id/txtPayChoiceTitle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -50,7 +49,6 @@
         app:layout_constraintTop_toBottomOf="@+id/toolbar_paychoice">
 
         <TextView
-            android:fontFamily="@font/notosans_bold"
             android:id="@+id/txtPayChoiceHaveStatus"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
@@ -65,7 +63,6 @@
             app:layout_constraintTop_toTopOf="parent"/>
 
         <TextView
-            android:fontFamily="@font/notosans_regular"
             android:id="@+id/txtPayChoiceDescription"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
@@ -100,7 +97,6 @@
                 app:layout_constraintTop_toTopOf="@id/clPayChoice1"></ImageView>
 
             <TextView
-                android:fontFamily="@font/notosans_regular"
                 android:id="@+id/txtPayChoiceticket"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -126,7 +122,6 @@
                 app:layout_constraintTop_toTopOf="@id/clPayChoice1"></TextView>
 
             <TextView
-                android:fontFamily="@font/notosans_regular"
                 android:id="@+id/txtPayChoiceQuantity1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -140,7 +135,6 @@
                 app:layout_constraintTop_toBottomOf="@id/txtPayChoiceticket" />
 
             <TextView
-                android:fontFamily="@font/notosans_regular"
                 android:id="@+id/txtPayChoiceTicketNum"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -174,7 +168,6 @@
                 app:layout_constraintTop_toTopOf="@id/clPayChoice2"></ImageView>
 
             <TextView
-                android:fontFamily="@font/notosans_regular"
                 android:id="@+id/txtPayChoicePopcorn"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -200,7 +193,6 @@
                 app:layout_constraintTop_toTopOf="@id/clPayChoice2"></TextView>
 
             <TextView
-                android:fontFamily="@font/notosans_regular"
                 android:id="@+id/txtPayChoiceQuantity2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -214,7 +206,6 @@
                 app:layout_constraintTop_toBottomOf="@+id/txtPayChoicePopcorn" />
 
             <TextView
-                android:fontFamily="@font/notosans_regular"
                 android:id="@+id/txtPayChoicePopcornNum"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -238,7 +229,6 @@
             app:layout_constraintTop_toBottomOf="@id/clPayChoice2"></View>
 
         <TextView
-            android:fontFamily="@font/notosans_bold"
             android:id="@+id/txtPayChoiceMethod"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -263,7 +253,6 @@
             app:layout_constraintTop_toBottomOf="@+id/txtPayChoiceMethod"></ImageView>
 
         <TextView
-            android:fontFamily="@font/notosans_bold"
             android:id="@+id/txtPayChoiceCredit"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -298,7 +287,6 @@
             app:layout_constraintTop_toBottomOf="@id/txtPayChoiceCredit"></View>
 
         <TextView
-            android:fontFamily="@font/notosans_bold"
             android:id="@+id/txtPayChoiceSelectProduct"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -325,7 +313,6 @@
             app:layout_constraintTop_toBottomOf="@+id/txtPayChoiceSelectProduct"></ImageView>
 
         <TextView
-            android:fontFamily="@font/notosans_black"
             android:id="@+id/txtPayChoiceMovieTicket"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -339,7 +326,6 @@
             app:layout_constraintTop_toBottomOf="@+id/txtPayChoiceSelectProduct"></TextView>
 
         <TextView
-            android:fontFamily="@font/notosans_regular"
             android:id="@+id/txtPayChoiceProductDescription1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -352,7 +338,6 @@
             app:layout_constraintTop_toBottomOf="@+id/txtPayChoiceMovieTicket"></TextView>
 
         <TextView
-            android:fontFamily="@font/notosans_bold"
             android:id="@+id/txtPayChoiceTicketPrice"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -376,7 +361,6 @@
             app:layout_constraintTop_toBottomOf="@+id/txtPayChoiceProductDescription1"></ImageButton>
 
         <TextView
-            android:fontFamily="@font/notosans_regular"
             android:id="@+id/txtTicketNum"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -422,7 +406,6 @@
             app:layout_constraintTop_toBottomOf="@+id/viewPayChoice3"></ImageView>
 
         <TextView
-            android:fontFamily="@font/notosans_black"
             android:id="@+id/txtPayChoiceProductChoicePopcorn"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -435,7 +418,6 @@
             app:layout_constraintTop_toBottomOf="@id/viewPayChoice3"></TextView>
 
         <TextView
-            android:fontFamily="@font/notosans_regular"
             android:id="@+id/txtPayChoice"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -448,7 +430,6 @@
             app:layout_constraintTop_toBottomOf="@+id/txtPayChoiceProductChoicePopcorn" />
 
         <TextView
-            android:fontFamily="@font/notosans_bold"
             android:id="@+id/txtPayChoicePopcornPrice"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -471,7 +452,6 @@
             app:layout_constraintTop_toBottomOf="@+id/txtPayChoicePopcornPrice"></ImageButton>
 
         <TextView
-            android:fontFamily="@font/notosans_regular"
             android:id="@+id/txtPopcornNum"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -519,7 +499,6 @@
             app:layout_constraintBottom_toTopOf="@id/txtPayChoiceWon" />
 
         <TextView
-            android:fontFamily="@font/notosans_bold"
             android:id="@+id/txtPayChoiceWon"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -533,7 +512,6 @@
             app:layout_constraintBottom_toBottomOf="@id/cl1_choice"/>
 
         <TextView
-            android:fontFamily="@font/notosans_bold"
             android:id="@+id/txtPayChoiceTotalPrice"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"

@@ -17,7 +17,6 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:fontFamily="@font/notosans_medium"
         android:id="@+id/tvSignup_Title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
