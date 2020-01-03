@@ -14,7 +14,7 @@ import kotlinx.android.synthetic.main.activity_matching_waiting.*
 class MatchingWaitingActivity : AppCompatActivity() {
 
     private lateinit var addressData: Chatting
-    private lateinit var matchingData: Matching
+    private var matchingData: Matching? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -24,25 +24,26 @@ class MatchingWaitingActivity : AppCompatActivity() {
             //"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZHgiOjEwNiwiaWF0IjoxNTc3OTYyMjI4LCJleHAiOjE1Nzg1NjcwMjgsImlzcyI6Im1vYm9tYXN0ZXIifQ.0WjcIhqwjRVc-B_DxLbbyRz_OgxR-L-r6W1J1kMj8CI"
             SharedPreferenceController.getUserToken(this)
         )
+        matchingData = null
         callMatching.safeEnqueue (onResponse = {
             if(it.isSuccessful){
                 matchingData=it.body()!!.data
 
-                waitingName.text = matchingData.name
-                tvWaitingAge.text = matchingData.age.toString()
-                tvWaitingUniv.text = matchingData.school
-                tvWaitingLocation.text = matchingData.location
-                tvWaitingMajor.text=matchingData.major
-                tvWaitingGenre1.text= matchingData.genreHash[0]
-                tvWaitingGenre2.text=matchingData.genreHash[1]
-                tvWaitingGenre3.text=matchingData.genreHash[2]
-                tvWaitingPoint1.text=matchingData.charmingHash[0]
-                tvWaitingPoint2.text=matchingData.charmingHash[1]
-                tvWaitingPoint3.text=matchingData.charmingHash[2]
-                tvWaitingInterest1.text=matchingData.favorHash[0]
-                tvWaitingInterest2.text=matchingData.favorHash[1]
-                tvWaitingInterest3.text=matchingData.favorHash[2]
-                tvMovieTitle.text=matchingData.movieInfo
+                waitingName.text = matchingData?.name
+                tvWaitingAge.text = matchingData?.age.toString()
+                tvWaitingUniv.text = matchingData?.school
+                tvWaitingLocation.text = matchingData?.location
+                tvWaitingMajor.text=matchingData?.major
+//                tvWaitingGenre1.text= matchingData!!.genreHash[0]
+//                tvWaitingGenre2.text=matchingData!!.genreHash[1]
+//                tvWaitingGenre3.text=matchingData!!.genreHash[2]
+//                tvWaitingPoint1.text=matchingData!!.charmingHash[0]
+//                tvWaitingPoint2.text=matchingData!!.charmingHash[1]
+//                tvWaitingPoint3.text=matchingData!!.charmingHash[2]
+//                tvWaitingInterest1.text=matchingData!!.favorHash[0]
+//                tvWaitingInterest2.text=matchingData!!.favorHash[1]
+//                tvWaitingInterest3.text=matchingData!!.favorHash[2]
+//                tvMovieTitle.text=matchingData?.movieInfo
 
 
             }
