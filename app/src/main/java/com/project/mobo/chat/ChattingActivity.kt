@@ -1,5 +1,6 @@
 package com.project.mobo.chat
 
+import android.annotation.SuppressLint
 import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
@@ -143,7 +144,7 @@ class ChattingActivity : AppCompatActivity() {
 
         registerEvent(createdTime, 0.5f) {
             val choice = Intent(this, MatchingDialogActivity::class.java)
-            startActivity(choice)
+            startActivityForResult(choice, 3000)
             //finish()
         }
 
@@ -238,5 +239,12 @@ class ChattingActivity : AppCompatActivity() {
 
     private fun getCurrentTime(): String {
         return System.currentTimeMillis().toString()
+    }
+
+    @SuppressLint("MissingSuperCall")
+    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+        if(requestCode == 3000){
+            finish()
+        }
     }
 }

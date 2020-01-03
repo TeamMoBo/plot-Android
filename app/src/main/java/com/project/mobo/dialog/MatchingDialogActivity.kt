@@ -1,5 +1,6 @@
 package com.project.mobo.dialog
 
+import android.annotation.SuppressLint
 import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
@@ -32,8 +33,7 @@ class MatchingDialogActivity : AppCompatActivity() {
                 if (it.isSuccessful) {
                     if (it.body()!!.status == 200) {
                         val choice = Intent(this, SuccessDialogActivity::class.java)
-                        startActivity(choice)
-                        finish()
+                        startActivityForResult(choice, 3000)
                     }
                 }
             }
@@ -50,12 +50,21 @@ class MatchingDialogActivity : AppCompatActivity() {
                 if (it.isSuccessful) {
                     if (it.body()!!.status == 202) {
                         val choice = Intent(this, FailDialogActivity::class.java)
-                        startActivity(choice)
-                        finish()
+                        startActivityForResult(choice,4000)
                     }
                 }
             })
 
+        }
+    }
+
+    @SuppressLint("MissingSuperCall")
+    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+        if(requestCode == 3000){
+            finish()
+        }
+        if(requestCode == 4000){
+            finish()
         }
     }
 

@@ -20,8 +20,6 @@ class FailDialogActivity : AppCompatActivity() {
         txtPopupFinalPerson.text = userName
 
         btnFailOk.setOnClickListener{
-            val choice = Intent(this, MainPageActivity::class.java)
-            startActivity(choice)
             finish()
         }
     }

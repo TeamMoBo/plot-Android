@@ -4,6 +4,7 @@ import android.Manifest
 import android.annotation.SuppressLint
 import android.app.Activity
 import android.content.Intent
+import android.content.SharedPreferences
 import android.content.pm.PackageManager
 import android.os.Build.*
 import android.os.Bundle
@@ -15,6 +16,7 @@ import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.project.mobo.PayChoiceActivity
 import com.project.mobo.R
+import com.project.mobo.SharedPreferenceController
 import com.project.mobo.api.*
 import kotlinx.android.synthetic.main.activity_my_page_new.*
 
@@ -26,7 +28,7 @@ class MyPage_new : AppCompatActivity() {
         setContentView(R.layout.activity_my_page_new)
 
         val callMypage = UserServiceImpl.myPageService.myPageRead(
-            "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZHgiOjM3LCJpYXQiOjE1Nzc5NDU5NTYsImV4cCI6MTU3ODU1MDc1NiwiaXNzIjoibW9ib21hc3RlciJ9.ul25BkYtb4kxa8eFjHXkT6b3gMCchLfifQysp4h19MU"
+            SharedPreferenceController.getUserToken(this)
         )
 
         var mypageInfo: MyPageDataD

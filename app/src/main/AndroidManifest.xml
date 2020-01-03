@@ -22,7 +22,13 @@
         <activity
             android:name=".dialog.SuccessDialogActivity"
             android:theme="@style/categoryEditTheme" />
-        <activity android:name=".splash.Splash" />
+        <activity android:name=".splash.Splash" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <action android:name="android.intent.action.VIEW" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
         <activity android:name=".MatchingWaitingActivity">
         </activity>
         <activity android:name=".movie_selection.display.MovieSelectionActivity" />
@@ -37,16 +43,7 @@
         <activity
             android:name=".dialog.FailDialogActivity"
             android:theme="@style/categoryEditTheme" />
-        <activity android:name=".MainActivity" >
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-                <action android:name="android.intent.action.VIEW" />
-
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
-
+        <activity android:name=".MainActivity"/>
         <activity android:name=".PayChoiceActivity" />
         <activity android:name=".time_choice.TimeChoiceActivity" />
         <activity android:name=".chat.ChattingActivity"/>
@@ -57,6 +54,5 @@
         <activity
             android:name=".dialog.MatchingSuccessActivity"
             android:theme="@style/categoryEditTheme" />
-
     </application>
 </manifest>

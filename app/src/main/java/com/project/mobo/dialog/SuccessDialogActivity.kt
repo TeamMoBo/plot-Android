@@ -1,5 +1,6 @@
 package com.project.mobo.dialog
 
+import android.annotation.SuppressLint
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -21,7 +22,13 @@ class SuccessDialogActivity : AppCompatActivity() {
 
         btnSuccessFinalOk.setOnClickListener {
             val choice = Intent(this, MatchingHistoryActivity::class.java)
-            startActivity(choice)
+            startActivityForResult(choice, 3000)
+        }
+    }
+
+    @SuppressLint("MissingSuperCall")
+    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+        if(requestCode == 3000){
             finish()
         }
     }

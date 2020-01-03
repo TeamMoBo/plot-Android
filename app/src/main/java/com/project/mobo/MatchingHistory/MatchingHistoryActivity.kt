@@ -31,8 +31,7 @@ class MatchingHistoryActivity : AppCompatActivity(), View.OnClickListener {
 
         val callHistpry = UserServiceImpl.historyService.historyResponse(
             //"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZHgiOjQwLCJpYXQiOjE1Nzc5NDkzNDYsImV4cCI6MTU3ODU1NDE0NiwiaXNzIjoibW9ib21hc3RlciJ9.dwKFFXHdDhkb8WW25BSMyig5DFzUlKPQ-WE1lzO4JBc"
-            //key = SharedPreferenceController.getUserToken(this)
-            "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZHgiOjEwNiwiaWF0IjoxNTc3OTYyMjI4LCJleHAiOjE1Nzg1NjcwMjgsImlzcyI6Im1vYm9tYXN0ZXIifQ.0WjcIhqwjRVc-B_DxLbbyRz_OgxR-L-r6W1J1kMj8CI"
+            key = SharedPreferenceController.getUserToken(this)
         )
 
         callHistpry.safeEnqueue {
