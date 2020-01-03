@@ -37,7 +37,6 @@
             android:text="December"
             android:textColor="#ffffff"
             android:textSize="22sp"
-            android:fontFamily="@font/notosans_regular"
             app:layout_constraintEnd_toEndOf="@id/rightGuide"
             app:layout_constraintTop_toBottomOf="@id/line_time_choice" />
 

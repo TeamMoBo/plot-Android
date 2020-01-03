@@ -6,12 +6,12 @@
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
-        <item name="android:buttonStyle">@style/NotoSansButtonStyle</item>
-        <item name="android:editTextStyle">@style/NotoSansEditTextStyle</item>
-        <item name="android:radioButtonStyle">@style/NotoSansRadioButtonStyle</item>
-        <item name="checkboxStyle">@style/NotoSansCheckboxStyle</item>
-        <item name="android:textViewStyle">@style/NotoSansTextViewStyle</item>
-        <item name="android:imageButtonStyle">@style/NotoSansImageButtonStyle</item>
+<!--        <item name="android:buttonStyle">@style/NotoSansButtonStyle</item>-->
+<!--        <item name="android:editTextStyle">@style/NotoSansEditTextStyle</item>-->
+<!--        <item name="android:radioButtonStyle">@style/NotoSansRadioButtonStyle</item>-->
+<!--        <item name="checkboxStyle">@style/NotoSansCheckboxStyle</item>-->
+<!--        <item name="android:textViewStyle">@style/NotoSansTextViewStyle</item>-->
+<!--        <item name="android:imageButtonStyle">@style/NotoSansImageButtonStyle</item>-->
     </style>
 
     <!--투명도-->
@@ -22,33 +22,33 @@
         <item name="android:windowAnimationStyle">@null</item>
     </style>
 
-    <style name="NotoSansTextViewStyle"
-        parent="@android:style/Widget.DeviceDefault.TextView">
-        <item name="android:fontFamily">@font/notosans_medium</item>
-    </style>
+<!--    <style name="NotoSansTextViewStyle"-->
+<!--        parent="@android:style/Widget.DeviceDefault.TextView">-->
+<!--        <item name="android:fontFamily">@font/notosans_medium</item>-->
+<!--    </style>-->
 
-    <style name="NotoSansButtonStyle"
-        parent="@android:style/Widget.DeviceDefault.Button.Borderless">
-        <item name="android:fontFamily">@font/notosans_medium</item>
-    </style>
+<!--    <style name="NotoSansButtonStyle"-->
+<!--        parent="@android:style/Widget.DeviceDefault.Button.Borderless">-->
+<!--        <item name="android:fontFamily">@font/notosans_medium</item>-->
+<!--    </style>-->
 
-    <style name="NotoSansEditTextStyle"
-        parent="@android:style/Widget.DeviceDefault.EditText">
-        <item name="android:fontFamily">@font/notosans_medium</item>
-    </style>
+<!--    <style name="NotoSansEditTextStyle"-->
+<!--        parent="@android:style/Widget.DeviceDefault.EditText">-->
+<!--        <item name="android:fontFamily">@font/notosans_medium</item>-->
+<!--    </style>-->
 
-    <style name="NotoSansRadioButtonStyle"
-        parent="@android:style/Widget.DeviceDefault.CompoundButton.RadioButton">
-        <item name="android:fontFamily">@font/notosans_medium</item>
-    </style>
+<!--    <style name="NotoSansRadioButtonStyle"-->
+<!--        parent="@android:style/Widget.DeviceDefault.CompoundButton.RadioButton">-->
+<!--        <item name="android:fontFamily">@font/notosans_medium</item>-->
+<!--    </style>-->
 
-    <style name="NotoSansCheckboxStyle"
-        parent="@android:style/Widget.DeviceDefault.CompoundButton.CheckBox">
-        <item name="android:fontFamily">@font/notosans_regular</item>
-    </style>
+<!--    <style name="NotoSansCheckboxStyle"-->
+<!--        parent="@android:style/Widget.DeviceDefault.CompoundButton.CheckBox">-->
+<!--        <item name="android:fontFamily">@font/notosans_regular</item>-->
+<!--    </style>-->
 
-    <style name="NotoSansImageButtonStyle"
-        parent="@android:style/Widget.DeviceDefault.CompoundButton.CheckBox">
-        <item name="android:fontFamily">@font/notosans_regular</item>
-    </style>
+<!--    <style name="NotoSansImageButtonStyle"-->
+<!--        parent="@android:style/Widget.DeviceDefault.CompoundButton.CheckBox">-->
+<!--        <item name="android:fontFamily">@font/notosans_regular</item>-->
+<!--    </style>-->
 </resources>
