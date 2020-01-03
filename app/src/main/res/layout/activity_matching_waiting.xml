@@ -57,9 +57,10 @@
                 android:layout_marginEnd="25dp">
 
                 <TextView
+                    android:id="@+id/waitingSay"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="영화 소울메이트 찾아요! 찾는다고요 이거 세줄이 최대"
+                    android:text="영화 소울메이트 찾아요! 찾는다고요! 바로 여기에서~!"
                     android:textSize="14sp"
                     android:textColor="#ffffff"
                     app:layout_constraintStart_toStartOf="parent"
@@ -556,11 +557,11 @@
             </androidx.constraintlayout.widget.ConstraintLayout>
 
 
-            <ImageView
+            <ImageButton
                 android:id="@+id/btnChattingStart"
                 android:layout_width="156dp"
                 android:layout_height="46dp"
-                android:background="@drawable/btn_gochat"
+                android:src="@drawable/btn_gochat"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"

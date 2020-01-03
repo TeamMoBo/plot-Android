@@ -44,6 +44,7 @@
         app:layout_constraintTop_toBottomOf="@id/txtFinal" />
 
     <TextView
+        android:id="@+id/textView8"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
@@ -60,25 +61,27 @@
 
     <ImageView
         android:id="@+id/btnChoiceYes"
-        android:layout_width="36dp"
-        android:layout_height="36dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_marginBottom="35dp"
         android:background="@drawable/btn_yes"
         android:scaleX="1.1"
         android:scaleY="1.1"
         app:layout_constraintBottom_toBottomOf="@+id/imgback"
         app:layout_constraintEnd_toStartOf="@id/btnChoiceNo"
-        app:layout_constraintStart_toStartOf="@+id/imgback" />
+        app:layout_constraintStart_toStartOf="@+id/imgback"
+        app:layout_constraintTop_toBottomOf="@+id/textView8" />
 
     <ImageView
         android:id="@+id/btnChoiceNo"
-        android:layout_width="36dp"
-        android:layout_height="36dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_marginBottom="35dp"
         android:background="@drawable/btn_no"
         android:scaleX="1.1"
         android:scaleY="1.1"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="@+id/imgback"
-        app:layout_constraintStart_toEndOf="@+id/btnChoiceYes" />
+        app:layout_constraintStart_toEndOf="@+id/btnChoiceYes"
+        app:layout_constraintTop_toBottomOf="@+id/textView8" />
 </androidx.constraintlayout.widget.ConstraintLayout>
