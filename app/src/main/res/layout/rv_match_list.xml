@@ -10,7 +10,7 @@
     <View
         android:id="@+id/viewMatchingStatus"
         android:layout_width="28dp"
-        android:layout_height="1.5dp"
+        android:layout_height="2dp"
         app:layout_constraintLeft_toLeftOf="parent"
         android:layout_marginLeft="20dp"
         android:background="#58d07a"

@@ -47,10 +47,11 @@ class MainPageActivity : AppCompatActivity() {
 
         val callMain = UserServiceImpl.MainService.mainResponse(
             key = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZHgiOjM3LCJpYXQiOjE1Nzc3NTk2MzIsImV4cCI6MTU3ODM2NDQzMiwiaXNzIjoibW9ib21hc3RlciJ9.k30fv2OoezYTrzMJnhaFdM0suMnnoIVfjoGkOBMe-G4"
+            //key = SharedPreferenceController.getUserToken(this)
         )
 
         //shared 아직 안 쓰는 중
-        //SharedPreferenceController.setUserToken(this, "key")
+
         //SharedPreferenceController.getUserToken(this)
 
         callMain.safeEnqueue (onResponse = {
@@ -108,7 +109,8 @@ class MainPageActivity : AppCompatActivity() {
         //영화/시간 선택 시작
         btnMovieChoiceStart.setOnClickListener(){
             val intent4 = Intent(this, MovieSelectionActivity::class.java)
-            startActivity(intent4)
+            //startActivity(intent4)
+            startActivityForResult(intent4, 2000)
         }
 
         //이력창으로 이동
@@ -223,10 +225,22 @@ class MainPageActivity : AppCompatActivity() {
 
 
     //requestCode 쓸 곳
+
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         super.onActivityResult(requestCode, resultCode, data)
-        if(requestCode == 1000){
-
+        if(requestCode == 2000){
+            val callMain2 = UserServiceImpl.MainService.mainResponse(
+                key = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZHgiOjM3LCJpYXQiOjE1Nzc3NTk2MzIsImV4cCI6MTU3ODM2NDQzMiwiaXNzIjoibW9ib21hc3RlciJ9.k30fv2OoezYTrzMJnhaFdM0suMnnoIVfjoGkOBMe-G4"
+                //key = SharedPreferenceController.getUserToken(this)
+            )
+            callMain2.safeEnqueue (onResponse = {
+                if(it.isSuccessful){
+                    mainData=it.body()!!.data
+                    topThree() // 뷰페이저
+                    choiceMovie() // 선택한 영화 창
+                    choiceDate() // 선택한 시간 창
+                }
+            }, onError = {})
         }
     }
 

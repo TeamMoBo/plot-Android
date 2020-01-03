@@ -110,7 +110,7 @@
             android:src="@drawable/btn_change"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            android:visibility="invisible"/>
+            android:visibility="visible"/>
 
         <ImageView
             android:id="@+id/btnMovieNoChanging"
@@ -174,7 +174,7 @@
             android:src="@drawable/btn_change"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            android:visibility="invisible"/>
+            android:visibility="visible"/>
 
         <ImageView
             android:id="@+id/btnTimeNoChanging"

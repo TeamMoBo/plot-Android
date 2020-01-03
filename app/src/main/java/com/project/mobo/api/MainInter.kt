@@ -8,7 +8,7 @@ import retrofit2.http.Header
 interface MainInter{
     @GET("/main")
     fun mainResponse(
-        @Header("Authorization") key: String
+        @Header("authorization") key: String
     ): Call<MainResponse>
 }
 
